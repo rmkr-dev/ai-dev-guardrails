@@ -1,0 +1,46 @@
+from __future__ import annotations
+
+import json
+
+from click.testing import CliRunner
+
+from ai_guardrails.cli import main
+from ai_guardrails.profiles import packs_for
+
+
+def test_packs_for_baseline() -> None:
+    packs = packs_for("baseline")
+    assert packs is not None
+    assert "agents/core.md" in packs
+    assert packs[0] == "agents/core.md"
+
+
+def test_packs_for_ops_includes_cost() -> None:
+    packs = packs_for("ops")
+    assert packs is not None
+    assert "agents/cost.md" in packs
+    assert "checklists/cost.md" in packs
+
+
+def test_cli_profiles_text() -> None:
+    runner = CliRunner()
+    result = runner.invoke(main, ["profiles"])
+    assert result.exit_code == 0
+    assert "baseline:" in result.output
+    assert "agents/core.md" in result.output
+    assert "ops:" in result.output
+
+
+def test_cli_profiles_json_one() -> None:
+    runner = CliRunner()
+    result = runner.invoke(main, ["profiles", "--profile", "api", "--format", "json"])
+    assert result.exit_code == 0
+    data = json.loads(result.output)
+    assert data["profile"] == "api"
+    assert "agents/api.md" in data["packs"]
+
+
+def test_cli_profiles_unknown() -> None:
+    runner = CliRunner()
+    result = runner.invoke(main, ["profiles", "--profile", "nope"])
+    assert result.exit_code != 0

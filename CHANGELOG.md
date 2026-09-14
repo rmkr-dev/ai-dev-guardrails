@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.2] — 2026-09-14
+
+### Added
+
+- CLI: `ai-guardrails profiles` (+ `--profile`, `--format json`) mirroring install profile catalog
+
 ## [0.3.1] — 2026-09-14
 
 ### Added

@@ -33,6 +33,15 @@ Print check names in run order.
 | --- | --- | --- |
 | `--format text\|json` | `text` | One name per line, or `{"checks":[...],"total":N}` |
 
+### `ai-guardrails profiles`
+
+Print install profile pack lists (mirrors `scripts/install-packs.sh --list-profiles`).
+
+| Option | Default | Meaning |
+| --- | --- | --- |
+| `--format text\|json` | `text` | Human catalog or JSON |
+| `--profile NAME` | *(all)* | Restrict to one profile |
+
 ### Version
 
 `ai-guardrails --version`
