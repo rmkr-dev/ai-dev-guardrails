@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.34] — 2026-09-14
+
+### Added
+
+- CLI: `ai-guardrails check --only` / `--skip` to select checks
+
 ## [0.2.33] — 2026-09-14
 
 ### Added
