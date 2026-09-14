@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.7] — 2026-09-14
+
+### Changed
+
+- `install-packs.sh --help`: document nested layout and flat leftover warnings
+
 ## [0.4.6] — 2026-09-14
 
 ### Changed
