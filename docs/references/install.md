@@ -39,16 +39,18 @@ No Node/npm. Requires `bash` and `cp`.
 
 ## Option B — manual copy
 
+Preserve category folders (do not flatten to basenames):
+
 ```bash
 TARGET=/path/to/consumer-repo
-mkdir -p "$TARGET/docs/guardrails"
-cp packs/agents/core.md \
-   packs/agents/security.md \
-   packs/checklists/definition-of-done.md \
-   "$TARGET/docs/guardrails/"
+DEST="$TARGET/docs/guardrails"
+mkdir -p "$DEST/agents" "$DEST/checklists" "$DEST/prompts"
+cp packs/agents/core.md "$DEST/agents/"
+cp packs/agents/security.md "$DEST/agents/"
+cp packs/checklists/definition-of-done.md "$DEST/checklists/"
 ```
 
-See [examples.md](examples.md) for more copy recipes and [pack-matrix.md](pack-matrix.md) for when to install each module.
+See [examples.md](examples.md) for more copy recipes, [pack-matrix.md](pack-matrix.md) for when to install each module, and [migrate-nested-install.md](migrate-nested-install.md) if you still have flat copies from 0.2.x.
 
 ## Wire into consumer AGENTS.md
 
