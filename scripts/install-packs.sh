@@ -252,6 +252,34 @@ else
   esac
 fi
 
+warn_flat_leftovers() {
+  # Warn about flat 0.2.x leftovers (basename *.md at dest root) without deleting.
+  local flat_left=0
+  local flat base
+  [[ -d "$DEST" ]] || return 0
+  shopt -s nullglob
+  for flat in "$DEST"/*.md; do
+    base=$(basename "$flat")
+    if [[ -f "$DEST/agents/$base" || -f "$DEST/checklists/$base" || -f "$DEST/prompts/$base" ]]; then
+      echo "warning: flat leftover $DEST_REL/$base (nested copy exists); see docs/references/migrate-nested-install.md" >&2
+      flat_left=$((flat_left + 1))
+    else
+      # dry-run / pre-nested: flag flats whose basename matches a selected pack
+      for rel in "${selected[@]}"; do
+        if [[ "$(basename "$rel")" == "$base" ]]; then
+          echo "warning: flat leftover $DEST_REL/$base (selected pack $rel); see docs/references/migrate-nested-install.md" >&2
+          flat_left=$((flat_left + 1))
+          break
+        fi
+      done
+    fi
+  done
+  shopt -u nullglob
+  if [[ "$flat_left" -gt 0 ]]; then
+    echo "warning: $flat_left flat leftover(s) detected; update AGENTS.md links then remove flats" >&2
+  fi
+}
+
 if [[ "$DRY_RUN" -eq 1 ]]; then
   echo "DRY-RUN profile=$PROFILE_LABEL dest=$DEST_REL (${#selected[@]} pack(s))"
   for rel in "${selected[@]}"; do
@@ -263,6 +291,7 @@ if [[ "$DRY_RUN" -eq 1 ]]; then
     echo "would copy $rel -> $DEST_REL/$rel"
   done
   echo "would write $DEST_REL/INSTALL_MANIFEST.txt"
+  warn_flat_leftovers
   exit 0
 fi
 
@@ -297,20 +326,5 @@ done
 echo "wrote $DEST_REL/INSTALL_MANIFEST.txt"
 
 echo "Installed $copied pack file(s) into $DEST"
-
-# Warn about flat 0.2.x leftovers (basename *.md at dest root) without deleting.
-flat_left=0
-shopt -s nullglob
-for flat in "$DEST"/*.md; do
-  base=$(basename "$flat")
-  if [[ -f "$DEST/agents/$base" || -f "$DEST/checklists/$base" || -f "$DEST/prompts/$base" ]]; then
-    echo "warning: flat leftover $DEST_REL/$base (nested copy exists); see docs/references/migrate-nested-install.md" >&2
-    flat_left=$((flat_left + 1))
-  fi
-done
-shopt -u nullglob
-if [[ "$flat_left" -gt 0 ]]; then
-  echo "warning: $flat_left flat leftover(s) detected; update AGENTS.md links then remove flats" >&2
-fi
-
+warn_flat_leftovers
 echo "Next: link them from $TARGET/AGENTS.md (see docs/references/install.md)."
