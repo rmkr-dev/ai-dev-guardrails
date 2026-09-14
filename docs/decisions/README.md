@@ -13,3 +13,4 @@ ADRs record significant choices for **ai-dev-guardrails**.
 | ADR | Title | Status |
 | --- | --- | --- |
 | [ADR-001](ADR-001-pack-plus-optional-validator.md) | Pack modules plus an optional Python validator | Accepted |
+| [ADR-002](ADR-002-expanding-hygiene-checks.md) | Expanding hygiene checks incrementally | Accepted |
