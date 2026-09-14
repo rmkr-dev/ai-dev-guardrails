@@ -7,6 +7,7 @@ import pytest
 from ai_guardrails.checks import (
     check_agents_md,
     check_architecture_docs,
+    check_codeowners,
     check_license,
     check_readme,
     check_security_md,
@@ -60,13 +61,16 @@ def test_ci_workflow_indicator(tmp_path: Path) -> None:
     assert "ci:" in result.detail
 
 
-def test_license_and_security(tmp_path: Path) -> None:
+def test_license_security_codeowners(tmp_path: Path) -> None:
     assert check_license(tmp_path).ok is False
     assert check_security_md(tmp_path).ok is False
+    assert check_codeowners(tmp_path).ok is False
     _touch(tmp_path / "LICENSE", "MIT\n")
     _touch(tmp_path / "SECURITY.md")
+    _touch(tmp_path / ".github" / "CODEOWNERS", "* @owner\n")
     assert check_license(tmp_path).ok is True
     assert check_security_md(tmp_path).ok is True
+    assert check_codeowners(tmp_path).ok is True
 
 
 def _seed_all(tmp_path: Path) -> None:
@@ -76,6 +80,7 @@ def _seed_all(tmp_path: Path) -> None:
     _touch(tmp_path / "tests" / "test_x.py", "def test_x():\n    assert 1\n")
     _touch(tmp_path / "LICENSE", "MIT\n")
     _touch(tmp_path / "SECURITY.md")
+    _touch(tmp_path / ".github" / "CODEOWNERS", "* @rmkr-dev\n")
 
 
 def test_run_checks_all_pass(tmp_path: Path) -> None:
@@ -89,6 +94,7 @@ def test_run_checks_all_pass(tmp_path: Path) -> None:
         "tests_or_ci",
         "license",
         "security_md",
+        "codeowners",
     }
 
 

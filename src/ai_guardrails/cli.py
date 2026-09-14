@@ -8,7 +8,7 @@ from pathlib import Path
 import click
 
 from ai_guardrails import __version__
-from ai_guardrails.checks import run_checks
+from ai_guardrails.checks import DEFAULT_CHECKS, run_checks
 
 
 @click.group()
@@ -26,7 +26,7 @@ def main() -> None:
     help="Exit non-zero when any check fails.",
 )
 def check_cmd(target: Path, strict: bool) -> None:
-    """Check TARGET repo for AGENTS.md, README, architecture docs, and tests/CI."""
+    """Check TARGET repo for required hygiene files and indicators."""
     results = run_checks(target)
     failed = 0
     for r in results:
@@ -37,6 +37,25 @@ def check_cmd(target: Path, strict: bool) -> None:
     click.echo(f"{len(results) - failed}/{len(results)} checks passed")
     if strict and failed:
         sys.exit(1)
+
+
+@main.command("list-checks")
+def list_checks_cmd() -> None:
+    """Print the default check names in run order."""
+    for fn in DEFAULT_CHECKS:
+        # function names are check_*; strip prefix for display consistency with result.name
+        name = fn.__name__.removeprefix("check_")
+        # Map to CheckResult.name conventions
+        mapping = {
+            "agents_md": "agents_md",
+            "readme": "readme",
+            "architecture_docs": "architecture_docs",
+            "tests_or_ci": "tests_or_ci",
+            "license": "license",
+            "security_md": "security_md",
+            "codeowners": "codeowners",
+        }
+        click.echo(mapping.get(name, name))
 
 
 if __name__ == "__main__":

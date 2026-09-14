@@ -110,6 +110,18 @@ def check_security_md(root: Path) -> CheckResult:
     )
 
 
+
+def check_codeowners(root: Path) -> CheckResult:
+    for rel in (".github/CODEOWNERS", "CODEOWNERS", "docs/CODEOWNERS"):
+        if _exists(root, rel):
+            return CheckResult("codeowners", True, f"{rel} present")
+    return CheckResult(
+        "codeowners",
+        False,
+        "missing CODEOWNERS (.github/CODEOWNERS preferred)",
+    )
+
+
 DEFAULT_CHECKS = (
     check_agents_md,
     check_readme,
@@ -117,6 +129,7 @@ DEFAULT_CHECKS = (
     check_tests_or_ci,
     check_license,
     check_security_md,
+    check_codeowners,
 )
 
 

@@ -12,6 +12,9 @@ def _seed_good(root: Path) -> None:
     (root / "README.md").write_text("# readme\n")
     (root / "LICENSE").write_text("MIT\n")
     (root / "SECURITY.md").write_text("# security\n")
+    github = root / ".github"
+    github.mkdir()
+    (github / "CODEOWNERS").write_text("* @rmkr-dev\n")
     arch = root / "docs" / "architecture"
     arch.mkdir(parents=True)
     (arch / "architecture.md").write_text("# arch\n")
@@ -26,7 +29,7 @@ def test_cli_check_pass(tmp_path: Path) -> None:
     result = runner.invoke(main, ["check", str(tmp_path)])
     assert result.exit_code == 0
     assert "PASS" in result.output
-    assert "6/6 checks passed" in result.output
+    assert "7/7 checks passed" in result.output
 
 
 def test_cli_check_fail_strict(tmp_path: Path) -> None:
@@ -42,3 +45,19 @@ def test_cli_check_no_strict(tmp_path: Path) -> None:
     result = runner.invoke(main, ["check", "--no-strict", str(tmp_path)])
     assert result.exit_code == 0
     assert "FAIL" in result.output
+
+
+def test_cli_list_checks() -> None:
+    runner = CliRunner()
+    result = runner.invoke(main, ["list-checks"])
+    assert result.exit_code == 0
+    lines = [ln.strip() for ln in result.output.splitlines() if ln.strip()]
+    assert lines == [
+        "agents_md",
+        "readme",
+        "architecture_docs",
+        "tests_or_ci",
+        "license",
+        "security_md",
+        "codeowners",
+    ]
