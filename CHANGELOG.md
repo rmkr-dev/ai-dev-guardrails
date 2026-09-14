@@ -2,6 +2,16 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.17] — 2026-09-14
+
+### Added
+
+- Shell tests: custom `--dest` and `web` profile nested install
+
+### Changed
+
+- Install docs profile table includes `web`
+
 ## [0.4.16] — 2026-09-14
 
 ### Added
