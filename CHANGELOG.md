@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.11] — 2026-09-14
+
+### Added
+
+- Validator check: `issue_templates` (`.github/ISSUE_TEMPLATE/` or `ISSUE_TEMPLATE.md`)
+- Default GitHub issue templates for this repository
+
 ## [0.2.10] — 2026-09-14
 
 ### Changed
