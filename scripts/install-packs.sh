@@ -5,6 +5,7 @@
 #   bash scripts/install-packs.sh /path/to/consumer-repo --profile baseline
 #   bash scripts/install-packs.sh /path/to/consumer-repo --profile full
 #   bash scripts/install-packs.sh --list-profiles
+#   bash scripts/install-packs.sh --version
 #   bash scripts/install-packs.sh /path/to/consumer-repo --dry-run
 #   PACKS="agents/core.md agents/api.md" bash scripts/install-packs.sh /path/to/consumer-repo
 set -euo pipefail
@@ -14,6 +15,7 @@ usage() {
 Usage:
   bash scripts/install-packs.sh TARGET_REPO [--profile NAME] [--dest RELDIR] [--dry-run] [--quiet]
   bash scripts/install-packs.sh --list-profiles
+  bash scripts/install-packs.sh --version
 
 Copies markdown packs from this repository into TARGET_REPO/RELDIR (default: docs/guardrails),
 preserving agents|checklists|prompts/ relative paths (avoids basename collisions).
@@ -34,6 +36,7 @@ Flags:
   --dry-run        Print planned copies; do not write files (also warns on flat leftovers)
   --quiet          Suppress per-file copy lines; still print summary + warnings
   --list-profiles  Print profiles and exact pack lists; exit
+  --version        Print distributor version from pyproject.toml; exit
 
 Notes:
   Nested agents|checklists|prompts paths. Flat 0.2.x leftover *.md at dest root are
@@ -118,6 +121,13 @@ fi
 
 if [[ "${1:-}" == "--list-profiles" ]]; then
   list_profiles
+  exit 0
+fi
+
+if [[ "${1:-}" == "--version" ]]; then
+  ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+  ver=$(sed -n 's/^version *= *"\([^"]*\)".*/\1/p' "$ROOT/pyproject.toml" | head -n1)
+  echo "ai-dev-guardrails ${ver:-unknown}"
   exit 0
 fi
 

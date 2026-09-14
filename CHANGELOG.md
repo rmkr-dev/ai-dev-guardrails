@@ -22,6 +22,8 @@ All notable changes to **ai-dev-guardrails** are documented here.
 - Installer: reject absolute or `..` `--dest` paths
 - CLI: unknown `--profile` values include close-match suggestions
 
+- Installer: `--version` prints distributor version from pyproject.toml
+
 ### Changed
 
 - Examples: prefer nested install script over flat `cp`; document `--quiet` / validator tips

@@ -22,7 +22,7 @@ bash scripts/install-packs.sh /path/to/consumer-repo --profile api --dry-run
 bash scripts/install-packs.sh --list-profiles
 ```
 
-`--dest` must be a relative path under the target (no absolute paths or `..` segments). `--quiet` suppresses per-file copy lines (summary and warnings remain). Installs write `source:` (from `pyproject.toml`) and `categories:` into `INSTALL_MANIFEST.txt`. `--dry-run` (and a successful install) also warn on stderr if flat 0.2.x leftover `*.md` files sit at the destination root beside nested paths — see [migrate-nested-install.md](migrate-nested-install.md).
+`--version` prints the distributor version from `pyproject.toml`. `--dest` must be a relative path under the target (no absolute paths or `..` segments). `--quiet` suppresses per-file copy lines (summary and warnings remain). Installs write `source:` (from `pyproject.toml`) and `categories:` into `INSTALL_MANIFEST.txt`. `--dry-run` (and a successful install) also warn on stderr if flat 0.2.x leftover `*.md` files sit at the destination root beside nested paths — see [migrate-nested-install.md](migrate-nested-install.md).
 
 Custom set:
 
