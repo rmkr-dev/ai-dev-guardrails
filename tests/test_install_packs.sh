@@ -93,4 +93,21 @@ run_install "$target6" --profile web >/dev/null
 [[ -f "$target6/docs/guardrails/checklists/i18n.md" ]] || fail "web missing checklists/i18n.md"
 pass "web profile nested"
 
+
+# --- security + data profiles nested ---
+target7="$TMP/security"
+mkdir -p "$target7"
+run_install "$target7" --profile security >/dev/null
+[[ -f "$target7/docs/guardrails/agents/threat-model.md" ]] || fail "security missing agents/threat-model.md"
+[[ -f "$target7/docs/guardrails/prompts/security-review.md" ]] || fail "security missing prompts/security-review.md"
+[[ -f "$target7/docs/guardrails/prompts/threat-model.md" ]] || fail "security missing prompts/threat-model.md"
+pass "security profile nested"
+
+target8="$TMP/data"
+mkdir -p "$target8"
+run_install "$target8" --profile data >/dev/null
+[[ -f "$target8/docs/guardrails/agents/data.md" ]] || fail "data missing agents/data.md"
+[[ -f "$target8/docs/guardrails/prompts/migration-review.md" ]] || fail "data missing prompts/migration-review.md"
+pass "data profile nested"
+
 echo "All install-packs shell tests passed."
