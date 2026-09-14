@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.1.6] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/observability.md`
+- Expanded `packs/agents/testing.md` (layout, isolation, review prompt)
+- Examples coverage for testing + observability install
+
 ## [0.1.5] — 2026-09-14
 
 ### Added
@@ -55,6 +63,7 @@ All notable changes to **ai-dev-guardrails** are documented here.
 - Dependabot (Actions + pip), `CODEOWNERS`, `SECURITY.md`
 - `docs/references/examples.md` and ADR-001
 
+[0.1.6]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.6
 [0.1.5]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.5
 [0.1.4]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.4
 [0.1.3]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.3

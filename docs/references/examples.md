@@ -9,6 +9,7 @@ How to install **ai-dev-guardrails** modules into a consumer repository for Copi
    - [`packs/agents/core.md`](../../packs/agents/core.md)
    - [`packs/agents/security.md`](../../packs/agents/security.md) (if auth/secrets/CI permissions apply)
    - [`packs/agents/testing.md`](../../packs/agents/testing.md) and [`packs/agents/docs.md`](../../packs/agents/docs.md) as needed
+   - [`packs/agents/observability.md`](../../packs/agents/observability.md) when adding logs, metrics, or health probes
    - [`packs/agents/ci.md`](../../packs/agents/ci.md) when editing workflows
 3. Optionally keep the full files under `docs/guardrails/` or `packs/` in the consumer tree and link them from `AGENTS.md`.
 
@@ -16,6 +17,7 @@ How to install **ai-dev-guardrails** modules into a consumer repository for Copi
 # from a clone of ai-dev-guardrails
 mkdir -p "$TARGET/docs/guardrails"
 cp packs/agents/core.md packs/agents/security.md "$TARGET/docs/guardrails/"
+cp packs/agents/testing.md packs/agents/observability.md "$TARGET/docs/guardrails/"
 cp packs/checklists/definition-of-done.md "$TARGET/docs/guardrails/"
 cp packs/prompts/change-impact.md "$TARGET/docs/guardrails/"
 ```
@@ -27,6 +29,8 @@ Then add a short pointer in the consumer `AGENTS.md`:
 
 - [Core](docs/guardrails/core.md)
 - [Security](docs/guardrails/security.md)
+- [Testing](docs/guardrails/testing.md)
+- [Observability](docs/guardrails/observability.md)
 - [Definition of Done](docs/guardrails/definition-of-done.md)
 - [Change impact prompt](docs/guardrails/change-impact.md)
 ```
@@ -38,6 +42,14 @@ Copy checklist items from [`packs/checklists/definition-of-done.md`](../../packs
 ## Change-impact prompt
 
 Before a large edit, paste [`packs/prompts/change-impact.md`](../../packs/prompts/change-impact.md) into the Copilot / Claude / Codex chat (or `@`-mention the file when the tool allows).
+
+## Testing + observability slices
+
+When a PR adds behavior **and** instrumentation:
+
+1. Follow [`packs/agents/testing.md`](../../packs/agents/testing.md) for same-PR coverage.
+2. Follow [`packs/agents/observability.md`](../../packs/agents/observability.md) so failure paths are visible without logging secrets.
+3. Ask the agent: “List missing edge cases and any PII or high-cardinality risk in this diff.”
 
 ## Optional validator in consumer CI
 
