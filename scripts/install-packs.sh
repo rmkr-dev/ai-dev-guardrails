@@ -16,7 +16,7 @@ Copies markdown packs from this repository into TARGET_REPO/RELDIR (default: doc
 Profiles:
   baseline  core, security, secrets, testing, docs, commits + DoD + pr-self-review
   api       baseline + api, deps + test-plan, change-impact
-  ops       baseline + observability, ci, incidents, performance + incident/runbook prompts
+  ops       baseline + observability, ci, incidents, performance, a11y + incident/runbook + a11y checklist
   full      all agents, checklists, and prompts under packs/
 
 Environment:
@@ -79,9 +79,11 @@ ops_extra=(
   agents/ci.md
   agents/incidents.md
   agents/performance.md
+  agents/a11y.md
   prompts/incident-response.md
   prompts/runbook-draft.md
   checklists/observability.md
+  checklists/accessibility.md
 )
 
 if [[ -n "${PACKS:-}" ]]; then
