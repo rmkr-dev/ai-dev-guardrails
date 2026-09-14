@@ -55,3 +55,13 @@ ai-guardrails list-checks --format json
 ```
 
 Full CLI flag reference: [cli.md](../references/cli.md).
+
+## Install script tests
+
+```bash
+make install-packs-test
+# or: bash tests/test_install_packs.sh
+```
+
+Covered automatically via `tests/test_install_packs_sh.py` in the default pytest CI job.
+
