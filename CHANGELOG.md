@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.15] — 2026-09-14
+
+### Added
+
+- ADR-008: v0.4 nested-install maturity (no layout break; prefer installer/docs/CI over pack spam)
+- Decisions index table cleaned up; README links ADR-008
+
 ## [0.3.14] — 2026-09-14
 
 ### Added

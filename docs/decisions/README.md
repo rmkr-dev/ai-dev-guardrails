@@ -16,7 +16,7 @@ ADRs record significant choices for **ai-dev-guardrails**.
 | [ADR-002](ADR-002-expanding-hygiene-checks.md) | Expanding hygiene checks incrementally | Accepted |
 | [ADR-003](ADR-003-pr-template-and-changelog-checks.md) | Changelog and PR template hygiene checks | Accepted |
 | [ADR-004](ADR-004-v0.2-pack-and-check-suite.md) | v0.2 pack and check suite milestone | Accepted |
-- [ADR-005](ADR-005-a11y-data-and-issue-templates.md) — Accessibility, data packs, and issue-template checks
-- [ADR-006](ADR-006-0.2x-expansion-checks-and-packs.md) — 0.2.x expansion: checks and domain packs
-
-- [ADR-007](ADR-007-v0.3-install-layout-and-suite.md) — v0.3 install layout and suite
+| [ADR-005](ADR-005-a11y-data-and-issue-templates.md) | Accessibility, data packs, and issue-template checks | Accepted |
+| [ADR-006](ADR-006-0.2x-expansion-checks-and-packs.md) | 0.2.x expansion: checks and domain packs | Accepted |
+| [ADR-007](ADR-007-v0.3-install-layout-and-suite.md) | v0.3 install layout and suite | Accepted |
+| [ADR-008](ADR-008-v0.4-nested-install-maturity.md) | v0.4 nested-install maturity (no layout break) | Accepted |
