@@ -2,6 +2,20 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.0] — 2026-09-14
+
+### Changed
+
+- **Maturity milestone** (ADR-008): nested-install story is coherent — no second layout break vs 0.3.0
+- Summarizes 0.3.x hardening: migration guide + nested samples/Option B, flat leftover warnings (install + `--dry-run`), profile/`--list-profiles` sync tests, CI pin `python-ci@v0.4.0`
+- Prefer installer/docs/CI polish over new pack modules unless a profile need is clear
+
+### Notes
+
+- Install paths remain `agents/` / `checklists/` / `prompts/` under the destination
+- Validator remains presence-oriented and optional
+- Niche packs (for example governance) may stay `full`-only
+
 ## [0.3.16] — 2026-09-14
 
 ### Changed

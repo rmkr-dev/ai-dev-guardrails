@@ -69,3 +69,7 @@ bash scripts/install-packs.sh /path/to/consumer-repo --profile baseline
 ```
 
 Install profiles: [docs/references/profiles.md](../docs/references/profiles.md).
+
+## Profile inclusion
+
+Named profiles (`baseline`, `api`, `ops`, `data`, `security`, `web`) stay focused. Modules such as `agents/governance.md` ship in the tree and in `--profile full` until a clear named-profile need appears (ADR-008: avoid pack spam).

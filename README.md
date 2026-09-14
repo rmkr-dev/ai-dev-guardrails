@@ -9,10 +9,10 @@ Complements [llm-eval-harness](https://github.com/rmkr-dev/llm-eval-harness) and
 
 ## Status
 
-**v0.3.16** — see [CHANGELOG.md](CHANGELOG.md).
+**v0.4.0** — nested-install maturity (ADR-008); see [CHANGELOG.md](CHANGELOG.md).
 
 - Packs: [packs/README.md](packs/README.md) · [pack matrix](docs/references/pack-matrix.md)
-- Install: [docs/references/install.md](docs/references/install.md) · [profiles](docs/references/profiles.md) (`scripts/install-packs.sh`, `--dry-run` / `--list-profiles`) · [0.3 migrate](docs/references/migrate-nested-install.md)
+- Install: [docs/references/install.md](docs/references/install.md) · [profiles](docs/references/profiles.md) (`scripts/install-packs.sh`, `--dry-run` / `--list-profiles`) · [nested migrate](docs/references/migrate-nested-install.md)
 - Examples: [docs/references/examples.md](docs/references/examples.md), [sample AGENTS.md](docs/references/sample-agents-md.md), [validator checks](docs/references/validator-checks.md), [CLI](docs/references/cli.md)
 - With [enterprise-github-template](https://github.com/rmkr-dev/enterprise-github-template): [integration guide](docs/references/enterprise-github-template.md)
 - Development: [docs/development/development.md](docs/development/development.md)
