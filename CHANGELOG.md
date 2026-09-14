@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.7] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/api.md` (API / contracts)
+
 ## [0.2.6] — 2026-09-14
 
 ### Added
