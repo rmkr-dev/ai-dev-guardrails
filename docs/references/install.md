@@ -84,6 +84,7 @@ ai-guardrails check /path/to/consumer-repo
 | `ops` | Baseline + observability/CI/incidents/runbooks |
 | `data` | Baseline + data/migrations |
 | `security` | Baseline + privacy/threat-model reviews |
+| `web` | Baseline + frontend/a11y/i18n agents and checklists |
 | `full` | Every file under `packs/agents`, `packs/checklists`, `packs/prompts` |
 
 Exact pack lists: [profiles.md](profiles.md) or `bash scripts/install-packs.sh --list-profiles`.

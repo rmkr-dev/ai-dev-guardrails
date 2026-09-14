@@ -70,4 +70,25 @@ echo "$dryw" | grep -q "flat leftover docs/guardrails/core.md" || fail "dry-run 
 [[ ! -f "$target4/docs/guardrails/agents/core.md" ]] || fail "dry-run should not write nested"
 pass "dry-run flat leftover warning"
 
+
+# --- custom --dest ---
+target5="$TMP/customdest"
+mkdir -p "$target5"
+run_install "$target5" --profile baseline --dest vendor/guardrails >/dev/null
+[[ -f "$target5/vendor/guardrails/agents/core.md" ]] || fail "custom dest missing agents/core.md"
+[[ -f "$target5/vendor/guardrails/INSTALL_MANIFEST.txt" ]] || fail "custom dest missing manifest"
+grep -q 'dest: vendor/guardrails' "$target5/vendor/guardrails/INSTALL_MANIFEST.txt" || fail "manifest dest path"
+[[ ! -e "$target5/docs/guardrails" ]] || fail "default dest should not exist when --dest set"
+pass "custom --dest"
+
+# --- web profile nested ---
+target6="$TMP/web"
+mkdir -p "$target6"
+run_install "$target6" --profile web >/dev/null
+[[ -f "$target6/docs/guardrails/agents/frontend.md" ]] || fail "web missing agents/frontend.md"
+[[ -f "$target6/docs/guardrails/agents/a11y.md" ]] || fail "web missing agents/a11y.md"
+[[ -f "$target6/docs/guardrails/checklists/accessibility.md" ]] || fail "web missing checklists/accessibility.md"
+[[ -f "$target6/docs/guardrails/checklists/i18n.md" ]] || fail "web missing checklists/i18n.md"
+pass "web profile nested"
+
 echo "All install-packs shell tests passed."
