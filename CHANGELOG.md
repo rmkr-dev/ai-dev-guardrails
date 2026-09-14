@@ -21,6 +21,9 @@ All notable changes to **ai-dev-guardrails** are documented here.
 
 ### Changed
 
+- Examples: prefer nested install script over flat `cp`; document `--quiet` / validator tips
+- profiles.md: document manifest `source:` / `categories:` and `--quiet`
+- Development docs: `QUIET=1`, check JSON `version`, `--fail-only`
 - Consolidated catalog sync tests into `tests/test_catalog_sync.py` (fewer one-off sync modules)
 - Folded tiny CLI/profile smoke tests into `test_cli.py` / `test_profiles.py`
 - Docs point maintainers at the single catalog-sync module

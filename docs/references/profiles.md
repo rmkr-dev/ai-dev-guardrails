@@ -97,7 +97,7 @@ Every `*.md` under `packs/agents`, `packs/checklists`, and `packs/prompts` (sort
 
 ## Manifest
 
-Successful installs write `INSTALL_MANIFEST.txt` in the destination directory with profile name and copied paths.
+Successful installs write `INSTALL_MANIFEST.txt` in the destination directory with `source:` (distributor version), `profile:`, `dest:`, `count:`, `categories:` (agents/checklists/prompts), and copied paths. Use `--quiet` to suppress per-file copy lines.
 
 See [install.md](install.md) and [pack-matrix.md](pack-matrix.md).
 
