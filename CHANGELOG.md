@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.15] — 2026-09-14
+
+### Added
+
+- Validator check: `pre_commit` (`.pre-commit-config.yaml`)
+- Root `.pre-commit-config.yaml` with basic hygiene hooks
+
 ## [0.2.14] — 2026-09-14
 
 ### Added
