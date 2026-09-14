@@ -22,6 +22,7 @@ def _seed_good(root: Path) -> None:
     github.mkdir()
     (github / "CODEOWNERS").write_text("* @rmkr-dev\n")
     (github / "PULL_REQUEST_TEMPLATE.md").write_text("## Summary\n")
+    (github / "dependabot.yml").write_text("version: 2\n")
     arch = root / "docs" / "architecture"
     arch.mkdir(parents=True)
     (arch / "architecture.md").write_text("# arch\n")
@@ -35,7 +36,7 @@ def test_cli_check_pass(tmp_path: Path) -> None:
     runner = CliRunner()
     result = runner.invoke(main, ["check", str(tmp_path)])
     assert result.exit_code == 0
-    assert "11/11 checks passed" in result.output
+    assert "12/12 checks passed" in result.output
 
 
 def test_cli_check_fail_strict(tmp_path: Path) -> None:
@@ -62,4 +63,5 @@ def test_cli_list_checks() -> None:
         "gitignore",
         "changelog",
         "pr_template",
+        "dependabot",
     ]

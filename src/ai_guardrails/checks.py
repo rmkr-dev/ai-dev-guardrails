@@ -177,6 +177,23 @@ def check_pr_template(root: Path) -> CheckResult:
     )
 
 
+
+def check_dependabot(root: Path) -> CheckResult:
+    candidates = [
+        ".github/dependabot.yml",
+        ".github/dependabot.yaml",
+        ".dependabot/config.yml",
+    ]
+    for rel in candidates:
+        if _exists(root, rel):
+            return CheckResult("dependabot", True, f"{rel} present")
+    return CheckResult(
+        "dependabot",
+        False,
+        "missing Dependabot config (.github/dependabot.yml preferred)",
+    )
+
+
 DEFAULT_CHECKS = (
     check_agents_md,
     check_readme,
@@ -189,6 +206,7 @@ DEFAULT_CHECKS = (
     check_gitignore,
     check_changelog,
     check_pr_template,
+    check_dependabot,
 )
 
 
