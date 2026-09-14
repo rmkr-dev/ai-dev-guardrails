@@ -187,3 +187,11 @@ Paste [`packs/prompts/incident-response.md`](../../packs/prompts/incident-respon
 | [enterprise-github-template](https://github.com/rmkr-dev/enterprise-github-template) | Full template (issues, CodeQL, release, ops docs) |
 | [llm-eval-harness](https://github.com/rmkr-dev/llm-eval-harness) | Offline golden-fixture LLM eval |
 | **ai-dev-guardrails** (this repo) | Agent/human pack modules + light hygiene CLI |
+
+## Accessibility slices
+
+When a PR changes UI, docs sites, or CLI help:
+
+1. Follow [`packs/agents/a11y.md`](../../packs/agents/a11y.md).
+2. Run through [`packs/checklists/accessibility.md`](../../packs/checklists/accessibility.md).
+3. Ask the agent: “List keyboard and accessible-name gaps in this diff.”

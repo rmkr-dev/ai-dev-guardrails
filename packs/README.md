@@ -16,11 +16,13 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [agents/performance.md](agents/performance.md) | Copilot / Claude / Codex | Performance expectations |
 | [agents/api.md](agents/api.md) | Copilot / Claude / Codex | API / contracts expectations |
 | [agents/incidents.md](agents/incidents.md) | Copilot / Claude / Codex | Incident / runbook expectations |
+| [agents/a11y.md](agents/a11y.md) | Copilot / Claude / Codex | Accessibility expectations |
 | [checklists/definition-of-done.md](checklists/definition-of-done.md) | Humans + agents | Slice Definition of Done |
 | [checklists/pr-self-review.md](checklists/pr-self-review.md) | Humans + agents | Pre-review checklist |
 | [checklists/release.md](checklists/release.md) | Humans + agents | Release / tag checklist |
 | [checklists/testing.md](checklists/testing.md) | Humans + agents | Testing readiness checklist |
 | [checklists/observability.md](checklists/observability.md) | Humans + agents | Observability readiness checklist |
+| [checklists/accessibility.md](checklists/accessibility.md) | Humans + agents | Accessibility readiness checklist |
 | [prompts/change-impact.md](prompts/change-impact.md) | Copilot / Claude / Codex | Blast-radius prompt |
 | [prompts/adr-draft.md](prompts/adr-draft.md) | Copilot / Claude / Codex | ADR drafting prompt |
 | [prompts/pr-body.md](prompts/pr-body.md) | Copilot / Claude / Codex | PR description prompt |
