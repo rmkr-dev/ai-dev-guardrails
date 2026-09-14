@@ -34,6 +34,14 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [prompts/pr-review-claude.md](prompts/pr-review-claude.md) | Claude | Claude-oriented PR review |
 | [prompts/pr-review-codex.md](prompts/pr-review-codex.md) | Codex | Codex-oriented PR review |
 
-See [docs/references/examples.md](../docs/references/examples.md) for copy instructions.
+See [docs/references/install.md](../docs/references/install.md) for the install script and copy workflow.
 
-See [docs/references/pack-matrix.md](../docs/references/pack-matrix.md) for a install-when matrix.
+See [docs/references/examples.md](../docs/references/examples.md) for additional copy recipes.
+
+See [docs/references/pack-matrix.md](../docs/references/pack-matrix.md) for an install-when matrix.
+
+Quick start:
+
+```bash
+bash scripts/install-packs.sh /path/to/consumer-repo --profile baseline
+```
