@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.1] — 2026-09-14
+
+### Added
+
+- Shell + pytest coverage for `install-packs.sh` nested layout (`make install-packs-test`)
+
 ## [0.3.0] — 2026-09-14
 
 ### Changed
