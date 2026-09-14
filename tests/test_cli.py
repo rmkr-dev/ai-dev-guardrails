@@ -25,6 +25,9 @@ def _seed_good(root: Path) -> None:
     (github / "dependabot.yml").write_text("version: 2\n")
     (root / ".editorconfig").write_text("root = true\n")
     (root / "Makefile").write_text("test:\n\tpytest -q\n")
+    issue = github / "ISSUE_TEMPLATE"
+    issue.mkdir()
+    (issue / "bug_report.md").write_text("## Bug\n")
     arch = root / "docs" / "architecture"
     arch.mkdir(parents=True)
     (arch / "architecture.md").write_text("# arch\n")
@@ -38,7 +41,7 @@ def test_cli_check_pass(tmp_path: Path) -> None:
     runner = CliRunner()
     result = runner.invoke(main, ["check", str(tmp_path)])
     assert result.exit_code == 0
-    assert "14/14 checks passed" in result.output
+    assert "15/15 checks passed" in result.output
 
 
 def test_cli_check_fail_strict(tmp_path: Path) -> None:
@@ -68,4 +71,5 @@ def test_cli_list_checks() -> None:
         "dependabot",
         "editorconfig",
         "makefile",
+        "issue_templates",
     ]

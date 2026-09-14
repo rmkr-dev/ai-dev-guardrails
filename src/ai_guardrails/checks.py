@@ -216,6 +216,34 @@ def check_makefile(root: Path) -> CheckResult:
     )
 
 
+
+def check_issue_templates(root: Path) -> CheckResult:
+    """Pass if GitHub issue templates or contact links config exist."""
+    candidates = [
+        ".github/ISSUE_TEMPLATE.md",
+        ".github/issue_template.md",
+        "ISSUE_TEMPLATE.md",
+    ]
+    for rel in candidates:
+        if _exists(root, rel):
+            return CheckResult("issue_templates", True, f"{rel} present")
+    issue_dir = root / ".github" / "ISSUE_TEMPLATE"
+    if issue_dir.is_dir():
+        if any(issue_dir.glob("*.md")) or any(issue_dir.glob("*.yml")) or any(
+            issue_dir.glob("*.yaml")
+        ):
+            return CheckResult(
+                "issue_templates",
+                True,
+                ".github/ISSUE_TEMPLATE/* present",
+            )
+    return CheckResult(
+        "issue_templates",
+        False,
+        "missing issue templates (.github/ISSUE_TEMPLATE/ preferred)",
+    )
+
+
 DEFAULT_CHECKS = (
     check_agents_md,
     check_readme,
@@ -231,6 +259,7 @@ DEFAULT_CHECKS = (
     check_dependabot,
     check_editorconfig,
     check_makefile,
+    check_issue_templates,
 )
 
 
