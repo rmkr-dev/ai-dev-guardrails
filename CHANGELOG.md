@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.30] — 2026-09-14
+
+### Added
+
+- `docs/references/cli.md` CLI flag reference
+
 ## [0.2.29] — 2026-09-14
 
 ### Added
