@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.14] — 2026-09-14
+
+### Changed
+
+- Architecture diagram: nested install path via `install-packs.sh` + migrate pointer
+
 ## [0.4.13] — 2026-09-14
 
 ### Changed
