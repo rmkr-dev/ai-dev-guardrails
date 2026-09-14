@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.30] — 2026-09-14
+
+### Added
+
+- Shell tests: `security` and `data` profile nested install paths
+
 ## [0.4.29] — 2026-09-14
 
 ### Added
