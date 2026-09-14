@@ -69,3 +69,12 @@ A change is done when all of the following are true:
 3. Confirm you did **not** add Node/npm or company-specific content.
 4. Confirm commit messages are conventional and read like a person wrote them.
 5. Re-read this file. Fix anything that now contradicts it.
+
+## Newer packs (0.2.x)
+
+Prefer linking rather than inlining:
+
+- Accessibility: `packs/agents/a11y.md`
+- Data/migrations: `packs/agents/data.md`
+- Supply-chain: `packs/agents/supply-chain.md`
+- Privacy: `packs/agents/privacy.md`

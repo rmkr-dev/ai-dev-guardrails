@@ -220,3 +220,14 @@ When a PR touches personal data, analytics, or retention:
 
 1. Follow [`packs/agents/privacy.md`](../../packs/agents/privacy.md).
 2. Paste [`packs/prompts/privacy-review.md`](../../packs/prompts/privacy-review.md) into the review chat.
+
+## Local Makefile helpers
+
+In this repository (and consumers who copy the pattern):
+
+```bash
+make lint
+make fmt
+```
+
+`lint` runs `compileall` plus pytest collection; `fmt` is a placeholder until a formatter is adopted.

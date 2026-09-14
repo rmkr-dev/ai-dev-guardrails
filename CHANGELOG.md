@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.19] — 2026-09-14
+
+### Added
+
+- Makefile targets: `lint`, `fmt`
+- Docs for lint/fmt helpers; root AGENTS.md pointers to newer packs
+
 ## [0.2.18] — 2026-09-14
 
 ### Added
