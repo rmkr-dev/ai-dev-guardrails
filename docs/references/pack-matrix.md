@@ -19,6 +19,8 @@ Quick map of **ai-dev-guardrails** modules by audience and when to install them.
 | `agents/a11y.md` | UI, docs sites, CLI help, human-facing surfaces |
 | `agents/data.md` | Schema, migrations, ETL, persisted shapes |
 | `agents/supply-chain.md` | Dependencies, CI permissions, release artifacts |
+| `agents/privacy.md` | Personal data, analytics, retention |
+| `prompts/privacy-review.md` | Reviewing PII-sensitive diffs |
 | `checklists/supply-chain.md` | Pre-merge supply-chain self-review |
 | `prompts/migration-review.md` | Reviewing migration diffs |
 | `checklists/accessibility.md` | Pre-merge a11y self-review |

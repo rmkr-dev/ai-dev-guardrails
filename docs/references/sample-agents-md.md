@@ -41,3 +41,7 @@ ai-guardrails check .
 
 Do not add Node/npm unless this repo already depends on it. Do not commit secrets.
 ```
+
+## Optional: privacy
+
+When handling personal data, also install [`packs/agents/privacy.md`](../../packs/agents/privacy.md).
