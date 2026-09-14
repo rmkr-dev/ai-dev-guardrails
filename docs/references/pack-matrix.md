@@ -27,5 +27,6 @@ Quick map of **ai-dev-guardrails** modules by audience and when to install them.
 | `prompts/test-plan.md` | Writing PR test plans |
 | `prompts/security-review.md` | Security-sensitive diffs |
 | `prompts/pr-body.md` / `change-impact.md` / `adr-draft.md` | Drafting artifacts |
+| `prompts/refactor-plan.md` | Multi-step structural cleanup planning |
 
 See [examples.md](examples.md) and [sample-agents-md.md](sample-agents-md.md).
