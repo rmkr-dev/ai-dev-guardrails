@@ -276,6 +276,19 @@ def check_code_of_conduct(root: Path) -> CheckResult:
     )
 
 
+
+def check_funding(root: Path) -> CheckResult:
+    """Pass if GitHub FUNDING.yml exists."""
+    for rel in (".github/FUNDING.yml", ".github/FUNDING.yaml"):
+        if _exists(root, rel):
+            return CheckResult("funding", True, f"{rel} present")
+    return CheckResult(
+        "funding",
+        False,
+        "missing .github/FUNDING.yml",
+    )
+
+
 DEFAULT_CHECKS = (
     check_agents_md,
     check_readme,
@@ -294,6 +307,7 @@ DEFAULT_CHECKS = (
     check_issue_templates,
     check_pre_commit,
     check_code_of_conduct,
+    check_funding,
 )
 
 
