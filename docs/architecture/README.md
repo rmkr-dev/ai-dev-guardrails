@@ -12,3 +12,4 @@ ADRs live under [`../decisions/`](../decisions/).
 
 Nested install layout and maturity: [ADR-007](../decisions/ADR-007-v0.3-install-layout-and-suite.md), [ADR-008](../decisions/ADR-008-v0.4-nested-install-maturity.md). Docs index: [../README.md](../README.md).
 
+Maintainer sync tests (checks catalogs, migrate mapping, versions, profiles docs) are listed in [../README.md](../README.md) and [../development/development.md](../development/development.md).

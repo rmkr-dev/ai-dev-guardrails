@@ -110,4 +110,13 @@ run_install "$target8" --profile data >/dev/null
 [[ -f "$target8/docs/guardrails/prompts/migration-review.md" ]] || fail "data missing prompts/migration-review.md"
 pass "data profile nested"
 
+
+# --- dry-run custom --dest ---
+target9="$TMP/drydest"
+mkdir -p "$target9"
+dryd="$(run_install "$target9" --profile baseline --dest vendor/g --dry-run)"
+echo "$dryd" | grep -q 'would copy agents/core.md -> vendor/g/agents/core.md' || fail "dry-run custom dest path"
+[[ ! -e "$target9/vendor" ]] || fail "dry-run should not create custom dest"
+pass "dry-run custom --dest"
+
 echo "All install-packs shell tests passed."
