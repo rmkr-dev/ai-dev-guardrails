@@ -297,4 +297,20 @@ done
 echo "wrote $DEST_REL/INSTALL_MANIFEST.txt"
 
 echo "Installed $copied pack file(s) into $DEST"
+
+# Warn about flat 0.2.x leftovers (basename *.md at dest root) without deleting.
+flat_left=0
+shopt -s nullglob
+for flat in "$DEST"/*.md; do
+  base=$(basename "$flat")
+  if [[ -f "$DEST/agents/$base" || -f "$DEST/checklists/$base" || -f "$DEST/prompts/$base" ]]; then
+    echo "warning: flat leftover $DEST_REL/$base (nested copy exists); see docs/references/migrate-nested-install.md" >&2
+    flat_left=$((flat_left + 1))
+  fi
+done
+shopt -u nullglob
+if [[ "$flat_left" -gt 0 ]]; then
+  echo "warning: $flat_left flat leftover(s) detected; update AGENTS.md links then remove flats" >&2
+fi
+
 echo "Next: link them from $TARGET/AGENTS.md (see docs/references/install.md)."
