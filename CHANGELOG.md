@@ -2,6 +2,20 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.0] — 2026-09-14
+
+### Changed
+
+- **Breaking (install layout):** `install-packs.sh` preserves `agents/`, `checklists/`, and `prompts/` under the destination so same-basename packs no longer overwrite each other. Update `AGENTS.md` links accordingly.
+
+### Added
+
+- ADR-007: v0.3 install layout and suite
+- Install UX from 0.2.31+: `--dry-run`, `--list-profiles`, `INSTALL_MANIFEST.txt`, exact profile catalogs
+- enterprise-github-template integration guide and cross-links
+- Validator: `support` check; CLI `--only` / `--skip`
+- Packs: cost/capacity agent + checklist (ops profile)
+
 ## [0.2.35] — 2026-09-14
 
 ### Added
