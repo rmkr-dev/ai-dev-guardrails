@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.29] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/resilience.md`
+- Checklist: `packs/checklists/resilience.md`
+- `ops` install profile includes resilience
+
 ## [0.2.28] — 2026-09-14
 
 ### Added
