@@ -24,6 +24,8 @@ Quick map of **ai-dev-guardrails** modules by audience and when to install them.
 | `agents/support.md` | Public support / triage replies |
 | `agents/threat-model.md` | Security-sensitive slice threat notes |
 | `agents/resilience.md` | Retries, timeouts, degradation |
+| `agents/cost.md` | Cloud spend, retention, always-on resources |
+| `checklists/cost.md` | Pre-merge cost / capacity self-review |
 | `checklists/resilience.md` | Pre-merge resilience self-review |
 | `prompts/threat-model.md` | Drafting threat notes |
 | `prompts/support-reply.md` | Drafting support replies |

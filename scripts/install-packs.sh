@@ -21,7 +21,7 @@ Writes INSTALL_MANIFEST.txt in the destination listing profile and copied files.
 Profiles:
   baseline  core, security, secrets, testing, docs, commits + DoD + pr-self-review
   api       baseline + api, deps, supply-chain + test-plan, change-impact
-  ops       baseline + observability, ci, incidents, performance, a11y, privacy, resilience + incident/runbook/privacy prompts
+  ops       baseline + observability, ci, incidents, performance, a11y, privacy, resilience, cost + incident/runbook/privacy prompts
   data      baseline + data, api + migration-review, change-impact
   security  baseline + security, secrets, privacy, threat-model + security/privacy/threat prompts
   full      all agents, checklists, and prompts under packs/
@@ -65,6 +65,7 @@ ops: (baseline +)
   agents/a11y.md
   agents/privacy.md
   agents/resilience.md
+  agents/cost.md
   prompts/incident-response.md
   prompts/runbook-draft.md
   prompts/privacy-review.md
@@ -184,12 +185,14 @@ ops_extra=(
   agents/a11y.md
   agents/privacy.md
   agents/resilience.md
+  agents/cost.md
   prompts/incident-response.md
   prompts/runbook-draft.md
   prompts/privacy-review.md
   checklists/observability.md
   checklists/accessibility.md
   checklists/resilience.md
+  checklists/cost.md
 )
 
 if [[ -n "${PACKS:-}" ]]; then
