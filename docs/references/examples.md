@@ -195,3 +195,14 @@ When a PR changes UI, docs sites, or CLI help:
 1. Follow [`packs/agents/a11y.md`](../../packs/agents/a11y.md).
 2. Run through [`packs/checklists/accessibility.md`](../../packs/checklists/accessibility.md).
 3. Ask the agent: “List keyboard and accessible-name gaps in this diff.”
+
+## Data / migration slices
+
+When a PR changes schemas or migrations:
+
+```bash
+bash scripts/install-packs.sh "$TARGET" --profile data
+```
+
+1. Follow [`packs/agents/data.md`](../../packs/agents/data.md).
+2. Paste [`packs/prompts/migration-review.md`](../../packs/prompts/migration-review.md) into the review chat.

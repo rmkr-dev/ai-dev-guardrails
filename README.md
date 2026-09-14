@@ -6,7 +6,7 @@ Complements [llm-eval-harness](https://github.com/rmkr-dev/llm-eval-harness) and
 
 ## Status
 
-**v0.2.12** — see [CHANGELOG.md](CHANGELOG.md).
+**v0.2.13** — see [CHANGELOG.md](CHANGELOG.md).
 
 - Packs: [packs/README.md](packs/README.md) · [pack matrix](docs/references/pack-matrix.md)
 - Install: [docs/references/install.md](docs/references/install.md) (`scripts/install-packs.sh`)

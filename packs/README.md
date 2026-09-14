@@ -17,6 +17,7 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [agents/api.md](agents/api.md) | Copilot / Claude / Codex | API / contracts expectations |
 | [agents/incidents.md](agents/incidents.md) | Copilot / Claude / Codex | Incident / runbook expectations |
 | [agents/a11y.md](agents/a11y.md) | Copilot / Claude / Codex | Accessibility expectations |
+| [agents/data.md](agents/data.md) | Copilot / Claude / Codex | Data / migrations expectations |
 | [checklists/definition-of-done.md](checklists/definition-of-done.md) | Humans + agents | Slice Definition of Done |
 | [checklists/pr-self-review.md](checklists/pr-self-review.md) | Humans + agents | Pre-review checklist |
 | [checklists/release.md](checklists/release.md) | Humans + agents | Release / tag checklist |
@@ -31,6 +32,7 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [prompts/release-notes.md](prompts/release-notes.md) | Copilot / Claude / Codex | Release notes drafting prompt |
 | [prompts/incident-response.md](prompts/incident-response.md) | Copilot / Claude / Codex | Incident response drafting prompt |
 | [prompts/runbook-draft.md](prompts/runbook-draft.md) | Copilot / Claude / Codex | Runbook drafting prompt |
+| [prompts/migration-review.md](prompts/migration-review.md) | Copilot / Claude / Codex | Migration / schema review prompt |
 | [prompts/pr-review.md](prompts/pr-review.md) | Copilot / Claude / Codex | Generic PR review prompt |
 | [prompts/pr-review-copilot.md](prompts/pr-review-copilot.md) | GitHub Copilot | Copilot-oriented PR review |
 | [prompts/pr-review-claude.md](prompts/pr-review-claude.md) | Claude | Claude-oriented PR review |
