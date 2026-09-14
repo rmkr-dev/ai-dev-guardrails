@@ -15,6 +15,8 @@ run_install() { bash "$SCRIPT" "$@"; }
 out="$(run_install --list-profiles)"
 echo "$out" | grep -q '^baseline:' || fail "list-profiles missing baseline"
 echo "$out" | grep -q '^ops:' || fail "list-profiles missing ops"
+echo "$out" | grep -q '^web:' || fail "list-profiles missing web"
+echo "$out" | grep -q 'agents/frontend.md' || fail "list-profiles web missing frontend"
 pass "list-profiles"
 
 help_out="$(run_install --help 2>&1 || true)"

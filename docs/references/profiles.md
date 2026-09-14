@@ -105,3 +105,9 @@ See [install.md](install.md) and [pack-matrix.md](pack-matrix.md).
 
 Installed files keep their `agents/`, `checklists/`, and `prompts/` prefixes under the destination directory (v0.3+).
 
+## See also
+
+- [install.md](install.md)
+- [migrate-nested-install.md](migrate-nested-install.md) — flat → nested path mapping
+- [pack-matrix.md](pack-matrix.md)
+- [sample-agents-md.md](sample-agents-md.md)
