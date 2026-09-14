@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.21] — 2026-09-14
+
+### Changed
+
+- Sample AGENTS.md: optional web profile nested links (a11y ↔ accessibility)
+- Makefile help: web profile note + `--no-strict` CLI hint
+
 ## [0.4.20] — 2026-09-14
 
 ### Added
