@@ -53,4 +53,13 @@ echo "$warn" | grep -q "flat leftover docs/guardrails/core.md" || fail "missing 
 [[ -f "$target3/docs/guardrails/core.md" ]] || fail "flat leftover should remain (no delete)"
 pass "flat leftover warning"
 
+# --- dry-run reports flat leftovers before nested write ---
+target4="$TMP/flatdry"
+mkdir -p "$target4/docs/guardrails"
+echo "# old flat core" > "$target4/docs/guardrails/core.md"
+dryw="$(run_install "$target4" --profile baseline --dry-run 2>&1)"
+echo "$dryw" | grep -q "flat leftover docs/guardrails/core.md" || fail "dry-run missing flat leftover warning"
+[[ ! -f "$target4/docs/guardrails/agents/core.md" ]] || fail "dry-run should not write nested"
+pass "dry-run flat leftover warning"
+
 echo "All install-packs shell tests passed."
