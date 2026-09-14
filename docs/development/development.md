@@ -32,3 +32,12 @@ CI runs the same pytest path via `rmkr-dev/gha-reusable-workflows` `python-ci@v0
 ## Commits and PRs
 
 See [AGENTS.md](../../AGENTS.md) and pack modules under `packs/agents/` / `packs/prompts/`. Prefer 2–4 conventional commits per PR. No Cursor/AI co-author trailers.
+
+## Lint / format helpers
+
+```bash
+make lint   # compileall + pytest collect-only
+make fmt    # placeholder until a formatter is chosen
+```
+
+These targets are optional; `make test` and `make check` remain the primary gates.
