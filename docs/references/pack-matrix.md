@@ -17,6 +17,8 @@ Quick map of **ai-dev-guardrails** modules by audience and when to install them.
 | `agents/api.md` | Public APIs, schemas, wire compatibility |
 | `agents/incidents.md` | Incident notes / on-call runbooks |
 | `agents/a11y.md` | UI, docs sites, CLI help, human-facing surfaces |
+| `agents/data.md` | Schema, migrations, ETL, persisted shapes |
+| `prompts/migration-review.md` | Reviewing migration diffs |
 | `checklists/accessibility.md` | Pre-merge a11y self-review |
 | `prompts/incident-response.md` | Active incident drafting |
 | `prompts/runbook-draft.md` | Writing or updating runbooks |
