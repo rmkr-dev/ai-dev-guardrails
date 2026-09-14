@@ -9,20 +9,22 @@ Distilled from personal engineering standards. Complements (does not duplicate):
 
 ## Status
 
-Early scaffold. Foundation docs and architecture stubs are in place. Pack modules, the validator CLI, and CI land in follow-up PRs.
+Foundation docs, `AGENTS.md`, and architecture stubs are in place. Pack modules (`packs/`), the validator CLI, and CI land in follow-up PRs.
 
-## Layout (planned / current)
+## Layout
 
 | Path | Role |
 | --- | --- |
 | `AGENTS.md` | Repo-level guardrails for humans and coding agents |
-| `packs/` | Copyable modules (agents, checklists, prompts) — *coming next* |
+| `CONTRIBUTING.md` | How to propose changes |
 | `docs/architecture/` | Current-state architecture for this pack repo |
+| `docs/decisions/` | ADR index (empty until first decisions) |
+| `packs/` | Copyable modules — *planned* |
 | `src/` + `tests/` | Optional Python `ai-guardrails` CLI — *planned* |
 
-## Quick start (once packs land)
+## Architecture
 
-Copy the modules you need into a target repo (typically `AGENTS.md` plus selected files under `packs/`), then keep them in the same PR as behavior changes they govern. See upcoming `docs/references/examples.md`.
+See [docs/architecture/architecture.md](docs/architecture/architecture.md) and the [diagram](docs/architecture/architecture-diagram.md).
 
 ## License
 
