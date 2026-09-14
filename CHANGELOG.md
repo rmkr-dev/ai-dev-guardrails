@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.18] — 2026-09-14
+
+### Added
+
+- Test: version metadata sync (`pyproject`, `__version__`, CITATION, README, CHANGELOG)
+- Test: `ai-guardrails check --no-strict` exits 0 when checks fail
+
 ## [0.4.17] — 2026-09-14
 
 ### Added
