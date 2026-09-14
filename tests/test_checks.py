@@ -10,6 +10,7 @@ from ai_guardrails.checks import (
     check_editorconfig,
     check_gitignore,
     check_makefile,
+    check_issue_templates,
     check_pr_template,
     run_checks,
 )
@@ -32,6 +33,7 @@ def _seed_all(tmp_path: Path) -> None:
     _touch(tmp_path / ".github" / "dependabot.yml", "version: 2\n")
     _touch(tmp_path / ".editorconfig", "root = true\n")
     _touch(tmp_path / "Makefile", "test:\n\tpytest -q\n")
+    _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
 
 
 def test_gitignore(tmp_path: Path) -> None:
@@ -62,6 +64,7 @@ def test_dependabot(tmp_path: Path) -> None:
     _touch(tmp_path / ".github" / "dependabot.yml", "version: 2\n")
     _touch(tmp_path / ".editorconfig", "root = true\n")
     _touch(tmp_path / "Makefile", "test:\n\tpytest -q\n")
+    _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
     assert check_dependabot(tmp_path).ok is True
 
 
@@ -69,13 +72,27 @@ def test_editorconfig(tmp_path: Path) -> None:
     assert check_editorconfig(tmp_path).ok is False
     _touch(tmp_path / ".editorconfig", "root = true\n")
     _touch(tmp_path / "Makefile", "test:\n\tpytest -q\n")
+    _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
     assert check_editorconfig(tmp_path).ok is True
 
 
 def test_makefile(tmp_path: Path) -> None:
     assert check_makefile(tmp_path).ok is False
     _touch(tmp_path / "Makefile", "test:\n\tpytest -q\n")
+    _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
     assert check_makefile(tmp_path).ok is True
+
+
+
+def test_issue_templates(tmp_path: Path) -> None:
+    assert check_issue_templates(tmp_path).ok is False
+    _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
+    assert check_issue_templates(tmp_path).ok is True
+
+
+def test_issue_templates_config_yml(tmp_path: Path) -> None:
+    _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "config.yml", "blank_issues_enabled: false\n")
+    assert check_issue_templates(tmp_path).ok is True
 
 
 def test_run_checks_all_pass(tmp_path: Path) -> None:
@@ -89,7 +106,8 @@ def test_run_checks_all_pass(tmp_path: Path) -> None:
     assert "dependabot" in names
     assert "editorconfig" in names
     assert "makefile" in names
-    assert len(results) == 14
+    assert "issue_templates" in names
+    assert len(results) == 15
 
 
 def test_run_checks_rejects_file(tmp_path: Path) -> None:
