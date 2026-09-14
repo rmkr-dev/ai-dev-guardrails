@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.1.7] — 2026-09-14
+
+### Added
+
+- PR review prompts: `packs/prompts/pr-review.md` plus Copilot / Claude / Codex variants
+- Examples section for installing PR review prompts
+
 ## [0.1.6] — 2026-09-14
 
 ### Added
@@ -63,6 +70,7 @@ All notable changes to **ai-dev-guardrails** are documented here.
 - Dependabot (Actions + pip), `CODEOWNERS`, `SECURITY.md`
 - `docs/references/examples.md` and ADR-001
 
+[0.1.7]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.7
 [0.1.6]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.6
 [0.1.5]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.5
 [0.1.4]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.4
