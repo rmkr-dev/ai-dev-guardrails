@@ -6,7 +6,7 @@ Complements [llm-eval-harness](https://github.com/rmkr-dev/llm-eval-harness) and
 
 ## Status
 
-**v0.3.4** — see [CHANGELOG.md](CHANGELOG.md).
+**v0.3.5** — see [CHANGELOG.md](CHANGELOG.md).
 
 - Packs: [packs/README.md](packs/README.md) · [pack matrix](docs/references/pack-matrix.md)
 - Install: [docs/references/install.md](docs/references/install.md) · [profiles](docs/references/profiles.md) (`scripts/install-packs.sh`, `--dry-run` / `--list-profiles`) · [0.3 migrate](docs/references/migrate-nested-install.md)
@@ -31,7 +31,7 @@ Default checks (20): `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, 
 
 ## CI
 
-`python-ci@v0.3.4` via `rmkr-dev/gha-reusable-workflows`.
+`python-ci@v0.3.5` via `rmkr-dev/gha-reusable-workflows`.
 
 ## License
 
