@@ -10,6 +10,7 @@ import click
 
 from ai_guardrails import __version__
 from ai_guardrails.checks import DEFAULT_CHECKS, run_checks
+from ai_guardrails.profiles import PROFILE_NAMES, describe_profiles, packs_for
 
 
 def _parse_name_list(value: str | None) -> set[str] | None:
@@ -118,6 +119,62 @@ def list_checks_cmd(fmt: str) -> None:
     else:
         for name in names:
             click.echo(name)
+
+
+
+
+@main.command("profiles")
+@click.option(
+    "--format",
+    "fmt",
+    type=click.Choice(["text", "json"], case_sensitive=False),
+    default="text",
+    show_default=True,
+    help="Output format.",
+)
+@click.option(
+    "--profile",
+    "profile_name",
+    default=None,
+    help="Show packs for one profile (baseline|api|ops|data|security|full).",
+)
+def profiles_cmd(fmt: str, profile_name: str | None) -> None:
+    """Print install profile catalog (mirrors scripts/install-packs.sh)."""
+    if profile_name is not None:
+        if profile_name not in PROFILE_NAMES:
+            raise click.ClickException(
+                f"unknown profile: {profile_name}; choose from {', '.join(PROFILE_NAMES)}"
+            )
+        if profile_name == "full":
+            packs: list[str] | str = "all packs/agents, packs/checklists, packs/prompts *.md"
+        else:
+            packs = packs_for(profile_name) or []
+        if fmt == "json":
+            click.echo(
+                json.dumps({"profile": profile_name, "packs": packs}, indent=2, sort_keys=True)
+            )
+        else:
+            click.echo(f"{profile_name}:")
+            if isinstance(packs, str):
+                click.echo(f"  {packs}")
+            else:
+                for p in packs:
+                    click.echo(f"  {p}")
+        return
+
+    catalog = describe_profiles()
+    if fmt == "json":
+        click.echo(json.dumps({"profiles": catalog}, indent=2, sort_keys=True))
+    else:
+        for name in PROFILE_NAMES:
+            click.echo(f"{name}:")
+            packs = catalog[name]
+            if isinstance(packs, str):
+                click.echo(f"  {packs}")
+            else:
+                for p in packs:
+                    click.echo(f"  {p}")
+            click.echo("")
 
 
 if __name__ == "__main__":
