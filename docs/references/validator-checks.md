@@ -32,7 +32,7 @@ See [ADR-002](../decisions/ADR-002-expanding-hygiene-checks.md) and [ADR-003](..
 - Default text: `[PASS|FAIL] name: detail` plus `N/M checks passed`
 - JSON: `ai-guardrails check PATH --format json`
 
-List names only: `ai-guardrails list-checks` or `ai-guardrails list-checks --format json`.
+List names: `ai-guardrails list-checks` (add `--describe` for short summaries; JSON supported).
 
 CLI flags: [cli.md](cli.md).
 

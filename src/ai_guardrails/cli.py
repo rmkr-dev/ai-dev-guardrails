@@ -9,7 +9,7 @@ from pathlib import Path
 import click
 
 from ai_guardrails import __version__
-from ai_guardrails.checks import DEFAULT_CHECKS, run_checks
+from ai_guardrails.checks import CHECK_SUMMARIES, DEFAULT_CHECKS, run_checks
 from ai_guardrails.profiles import PROFILE_NAMES, describe_profiles, packs_for
 
 
@@ -73,8 +73,19 @@ def main() -> None:
     default=None,
     help="Comma-separated check names to omit.",
 )
+@click.option(
+    "--fail-only",
+    is_flag=True,
+    default=False,
+    help="In text mode, print only failing checks (summary still shown).",
+)
 def check_cmd(
-    target: Path, strict: bool, fmt: str, only_names: str | None, skip_names: str | None
+    target: Path,
+    strict: bool,
+    fmt: str,
+    only_names: str | None,
+    skip_names: str | None,
+    fail_only: bool,
 ) -> None:
     """Check TARGET repo for required hygiene files and indicators."""
     results = run_checks(target)
@@ -95,6 +106,8 @@ def check_cmd(
         click.echo(json.dumps(payload, indent=2, sort_keys=True))
     else:
         for r in results:
+            if fail_only and r.ok:
+                continue
             mark = "PASS" if r.ok else "FAIL"
             click.echo(f"[{mark}] {r.name}: {r.detail}")
         click.echo(f"{len(results) - failed}/{len(results)} checks passed")
@@ -111,15 +124,33 @@ def check_cmd(
     show_default=True,
     help="Output format.",
 )
-def list_checks_cmd(fmt: str) -> None:
+@click.option(
+    "--describe/--no-describe",
+    default=False,
+    show_default=True,
+    help="Include short summaries (text: name — summary; json: checks as objects).",
+)
+def list_checks_cmd(fmt: str, describe: bool) -> None:
     """Print the default check names in run order."""
     names = [fn.__name__.removeprefix("check_") for fn in DEFAULT_CHECKS]
     if fmt == "json":
-        click.echo(json.dumps({"checks": names, "total": len(names)}, indent=2))
+        if describe:
+            payload = {
+                "checks": [
+                    {"name": n, "summary": CHECK_SUMMARIES.get(n, "")} for n in names
+                ],
+                "total": len(names),
+            }
+        else:
+            payload = {"checks": names, "total": len(names)}
+        click.echo(json.dumps(payload, indent=2))
     else:
         for name in names:
-            click.echo(name)
-
+            if describe:
+                summary = CHECK_SUMMARIES.get(name, "")
+                click.echo(f"{name} — {summary}" if summary else name)
+            else:
+                click.echo(name)
 
 
 
