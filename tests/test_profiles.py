@@ -80,3 +80,11 @@ def test_web_profile_includes_frontend() -> None:
     assert packs is not None
     assert "agents/frontend.md" in packs
     assert "checklists/frontend.md" in packs
+
+
+def test_cli_profiles_unknown_suggests() -> None:
+    runner = CliRunner()
+    result = runner.invoke(main, ["profiles", "--profile", "baselin"])
+    assert result.exit_code != 0
+    assert "did you mean" in result.output
+    assert "baseline" in result.output

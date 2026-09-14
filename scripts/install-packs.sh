@@ -30,7 +30,7 @@ Profiles:
 
 Flags:
   --profile NAME   Install profile (default: baseline)
-  --dest RELDIR    Destination under TARGET (default: docs/guardrails)
+  --dest RELDIR    Relative destination under TARGET (default: docs/guardrails; no ..)
   --dry-run        Print planned copies; do not write files (also warns on flat leftovers)
   --quiet          Suppress per-file copy lines; still print summary + warnings
   --list-profiles  Print profiles and exact pack lists; exit
@@ -146,6 +146,20 @@ while [[ $# -gt 0 ]]; do
 done
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# Reject absolute or parent-escaping --dest (must stay under TARGET)
+case "$DEST_REL" in
+  /*|~*)
+    echo "error: --dest must be a relative path under TARGET (got: $DEST_REL)" >&2
+    exit 2
+    ;;
+esac
+case "/$DEST_REL/" in
+  */../*)
+    echo "error: --dest must not contain .. segments (got: $DEST_REL)" >&2
+    exit 2
+    ;;
+esac
 PACKS_ROOT="$ROOT/packs"
 DEST="$TARGET/$DEST_REL"
 

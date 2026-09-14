@@ -155,4 +155,16 @@ echo "$qd" | grep -q 'DRY-RUN' || fail "quiet dry-run missing DRY-RUN header"
 echo "$qd" | grep -q 'source=' || fail "quiet dry-run missing source="
 pass "quiet dry-run"
 
+
+# --- --dest must be relative (no absolute / no ..) ---
+target13="$TMP/desterr"
+mkdir -p "$target13"
+if run_install "$target13" --profile baseline --dest /tmp/out >/dev/null 2>&1; then
+  fail "absolute --dest should fail"
+fi
+if run_install "$target13" --profile baseline --dest ../escape >/dev/null 2>&1; then
+  fail ".. --dest should fail"
+fi
+pass "dest absolute/parent rejected"
+
 echo "All install-packs shell tests passed."
