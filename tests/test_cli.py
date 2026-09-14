@@ -14,12 +14,14 @@ def _seed_good(root: Path) -> None:
         "LICENSE": "MIT\n",
         "SECURITY.md": "# security\n",
         "CONTRIBUTING.md": "# contrib\n",
+        "CHANGELOG.md": "# changelog\n",
         ".gitignore": "*.pyc\n",
     }.items():
         (root / name).write_text(content)
     github = root / ".github"
     github.mkdir()
     (github / "CODEOWNERS").write_text("* @rmkr-dev\n")
+    (github / "PULL_REQUEST_TEMPLATE.md").write_text("## Summary\n")
     arch = root / "docs" / "architecture"
     arch.mkdir(parents=True)
     (arch / "architecture.md").write_text("# arch\n")
@@ -33,7 +35,7 @@ def test_cli_check_pass(tmp_path: Path) -> None:
     runner = CliRunner()
     result = runner.invoke(main, ["check", str(tmp_path)])
     assert result.exit_code == 0
-    assert "9/9 checks passed" in result.output
+    assert "11/11 checks passed" in result.output
 
 
 def test_cli_check_fail_strict(tmp_path: Path) -> None:
@@ -58,4 +60,6 @@ def test_cli_list_checks() -> None:
         "codeowners",
         "contributing",
         "gitignore",
+        "changelog",
+        "pr_template",
     ]

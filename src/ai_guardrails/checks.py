@@ -110,7 +110,6 @@ def check_security_md(root: Path) -> CheckResult:
     )
 
 
-
 def check_codeowners(root: Path) -> CheckResult:
     for rel in (".github/CODEOWNERS", "CODEOWNERS", "docs/CODEOWNERS"):
         if _exists(root, rel):
@@ -120,7 +119,6 @@ def check_codeowners(root: Path) -> CheckResult:
         False,
         "missing CODEOWNERS (.github/CODEOWNERS preferred)",
     )
-
 
 
 def check_contributing(root: Path) -> CheckResult:
@@ -134,13 +132,48 @@ def check_contributing(root: Path) -> CheckResult:
     )
 
 
-
 def check_gitignore(root: Path) -> CheckResult:
     ok = _exists(root, ".gitignore")
     return CheckResult(
         "gitignore",
         ok,
         ".gitignore present" if ok else "missing .gitignore at repository root",
+    )
+
+
+def check_changelog(root: Path) -> CheckResult:
+    for name in ("CHANGELOG.md", "CHANGELOG", "HISTORY.md"):
+        if _exists(root, name):
+            return CheckResult("changelog", True, f"{name} present")
+    return CheckResult(
+        "changelog",
+        False,
+        "missing CHANGELOG.md (or CHANGELOG / HISTORY.md)",
+    )
+
+
+def check_pr_template(root: Path) -> CheckResult:
+    candidates = [
+        ".github/PULL_REQUEST_TEMPLATE.md",
+        ".github/pull_request_template.md",
+        "PULL_REQUEST_TEMPLATE.md",
+        "docs/pull_request_template.md",
+    ]
+    for rel in candidates:
+        if _exists(root, rel):
+            return CheckResult("pr_template", True, f"{rel} present")
+    # Directory form: .github/PULL_REQUEST_TEMPLATE/*.md
+    pr_dir = root / ".github" / "PULL_REQUEST_TEMPLATE"
+    if pr_dir.is_dir() and any(pr_dir.glob("*.md")):
+        return CheckResult(
+            "pr_template",
+            True,
+            ".github/PULL_REQUEST_TEMPLATE/*.md present",
+        )
+    return CheckResult(
+        "pr_template",
+        False,
+        "missing PR template (.github/PULL_REQUEST_TEMPLATE.md preferred)",
     )
 
 
@@ -154,6 +187,8 @@ DEFAULT_CHECKS = (
     check_codeowners,
     check_contributing,
     check_gitignore,
+    check_changelog,
+    check_pr_template,
 )
 
 
