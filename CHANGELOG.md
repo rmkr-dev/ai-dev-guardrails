@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.11] — 2026-09-14
+
+### Changed
+
+- Nested-install migration guide: fuller path map, flat leftover detection snippet
+- Sample consumer `AGENTS.md`: all links use nested `agents/` / `checklists/` / `prompts/` paths
+- Install Option B manual copy preserves category folders (no flatten)
+
 ## [0.3.10] — 2026-09-14
 
 ### Changed
