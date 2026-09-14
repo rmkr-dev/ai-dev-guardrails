@@ -29,6 +29,8 @@ make check
 # JSON: ai-guardrails check . --format json
 # Subset: ai-guardrails check . --only readme,license
 # Profiles: ai-guardrails profiles
+# Failures only: ai-guardrails check . --fail-only
+# Describe checks: ai-guardrails list-checks --describe
 ```
 
 Default checks (20): `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, `license`, `security_md`, `codeowners`, `contributing`, `gitignore`, `changelog`, `pr_template`, `dependabot`, `editorconfig`, `makefile`, `issue_templates`, `pre_commit`, `code_of_conduct`, `funding`, `citation`, `support`.

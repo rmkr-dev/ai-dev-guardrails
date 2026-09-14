@@ -4,6 +4,12 @@ All notable changes to **ai-dev-guardrails** are documented here.
 
 ## [Unreleased]
 
+### Added
+
+- CLI: `check --fail-only` (text mode prints only failures + summary)
+- CLI: `list-checks --describe` (short summaries; JSON objects with `summary`)
+- `CHECK_SUMMARIES` catalog aligned via `test_catalog_sync`
+
 ### Changed
 
 - Consolidated catalog sync tests into `tests/test_catalog_sync.py` (fewer one-off sync modules)
