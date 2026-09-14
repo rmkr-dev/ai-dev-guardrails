@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.1.4] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/checklists/release.md`
+- `.github/PULL_REQUEST_TEMPLATE.md`
+- Validator check: `gitignore`
+
 ## [0.1.3] — 2026-09-14
 
 ### Added
@@ -39,6 +47,7 @@ All notable changes to **ai-dev-guardrails** are documented here.
 - Dependabot (Actions + pip), `CODEOWNERS`, `SECURITY.md`
 - `docs/references/examples.md` and ADR-001
 
+[0.1.4]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.4
 [0.1.3]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.3
 [0.1.2]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.2
 [0.1.1]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.1
