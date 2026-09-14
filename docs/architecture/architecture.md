@@ -1,9 +1,7 @@
 # Architecture
 
-**ai-dev-guardrails** ships markdown packs for Copilot / Claude / Codex and an optional Python hygiene CLI (`ai-guardrails check` / `list-checks`).
+Pack distributor for Copilot / Claude / Codex plus optional `ai-guardrails` CLI.
 
-Default checks: `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, `license`, `security_md`, `codeowners`, `contributing`.
+Default checks (9): `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, `license`, `security_md`, `codeowners`, `contributing`, `gitignore`.
 
-CI: `python-ci.yml@v0.2.0` from `rmkr-dev/gha-reusable-workflows`.
-
-Out of scope: sample apps, Node/npm, remote policy servers, company branding.
+CI: `python-ci.yml@v0.2.0`. PR template under `.github/PULL_REQUEST_TEMPLATE.md`.

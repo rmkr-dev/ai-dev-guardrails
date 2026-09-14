@@ -134,6 +134,16 @@ def check_contributing(root: Path) -> CheckResult:
     )
 
 
+
+def check_gitignore(root: Path) -> CheckResult:
+    ok = _exists(root, ".gitignore")
+    return CheckResult(
+        "gitignore",
+        ok,
+        ".gitignore present" if ok else "missing .gitignore at repository root",
+    )
+
+
 DEFAULT_CHECKS = (
     check_agents_md,
     check_readme,
@@ -143,6 +153,7 @@ DEFAULT_CHECKS = (
     check_security_md,
     check_codeowners,
     check_contributing,
+    check_gitignore,
 )
 
 
