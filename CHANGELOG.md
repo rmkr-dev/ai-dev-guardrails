@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.5] — 2026-09-14
+
+### Added
+
+- `docs/references/migrate-nested-install.md` for 0.2.x → 0.3 nested layout consumers
+
 ## [0.3.4] — 2026-09-14
 
 ### Added

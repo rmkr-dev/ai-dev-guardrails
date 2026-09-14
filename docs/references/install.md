@@ -89,3 +89,7 @@ Exact pack lists: [profiles.md](profiles.md) or `bash scripts/install-packs.sh -
 If the consumer was created from [enterprise-github-template](https://github.com/rmkr-dev/enterprise-github-template), prefer `--profile baseline` (or `ops` / `security`) into `docs/guardrails/` and keep the template’s own `AGENTS.md` as the entry point. Pair with the template’s `docs/operations/` and `SUPPORT.md` rather than duplicating process docs.
 
 Full guide: [enterprise-github-template.md](enterprise-github-template.md).
+
+## Migrating from flat 0.2.x installs
+
+See [migrate-nested-install.md](migrate-nested-install.md).
