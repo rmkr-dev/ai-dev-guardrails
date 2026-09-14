@@ -10,15 +10,11 @@ Thanks for improving **ai-dev-guardrails**. This repo ships installable AI+human
 
 ## Local checks
 
-When Python packaging is present:
-
 ```bash
 python -m pip install -e ".[dev]"
 pytest -q
 ai-guardrails check .
 ```
-
-Until the validator lands, review docs for broken links and orphan files.
 
 ## Commit and PR style
 

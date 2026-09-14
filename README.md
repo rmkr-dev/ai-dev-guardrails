@@ -9,32 +9,44 @@ Distilled from personal engineering standards. Complements (does not duplicate):
 
 ## Status
 
-Foundation docs and first **packs/** modules are available. The optional Python validator CLI and CI land in follow-up PRs.
+Pack modules and the optional **`ai-guardrails`** CLI are available. GitHub Actions CI, Dependabot, CODEOWNERS, and SECURITY land in a follow-up PR.
 
-## Quick start
+## Packs (copy into a consumer repo)
 
-1. Copy [AGENTS.md](AGENTS.md) ideas into your repo’s own `AGENTS.md`, or start from [packs/agents/core.md](packs/agents/core.md).
-2. Add [packs/agents/security.md](packs/agents/security.md) when the work touches auth, secrets, or CI permissions.
-3. Use [packs/checklists/definition-of-done.md](packs/checklists/definition-of-done.md) in PR review.
-4. Use [packs/prompts/change-impact.md](packs/prompts/change-impact.md) before large edits.
+See [packs/README.md](packs/README.md).
 
-See [packs/README.md](packs/README.md) for the module index.
+| Module | Use |
+| --- | --- |
+| [packs/agents/core.md](packs/agents/core.md) | Core guardrails for Copilot / Claude / Codex |
+| [packs/agents/security.md](packs/agents/security.md) | Security-by-default expectations |
+| [packs/checklists/definition-of-done.md](packs/checklists/definition-of-done.md) | Slice Definition of Done |
+| [packs/prompts/change-impact.md](packs/prompts/change-impact.md) | Blast-radius prompt |
+
+## Validator CLI
+
+```bash
+python -m pip install -e ".[dev]"
+ai-guardrails check .
+pytest -q
+```
+
+`ai-guardrails check <path>` verifies that a target repo has:
+
+- `AGENTS.md`
+- `README.md`
+- architecture docs (`docs/architecture/` or `docs/architecture.md`)
+- tests **or** CI indicators (for example `tests/test_*.py` or `.github/workflows/*.yml`)
 
 ## Layout
 
 | Path | Role |
 | --- | --- |
 | `AGENTS.md` | Guardrails for changing *this* repository |
-| `packs/agents/` | Copyable agent modules for Copilot / Claude / Codex |
-| `packs/checklists/` | Definition of Done checklist |
-| `packs/prompts/` | Change-impact prompt |
-| `docs/architecture/` | Current-state architecture for this pack repo |
-| `docs/decisions/` | ADR index |
-| `src/` + `tests/` | Optional Python `ai-guardrails` CLI — *planned* |
-
-## Architecture
-
-See [docs/architecture/architecture.md](docs/architecture/architecture.md).
+| `packs/` | Copyable modules for Copilot / Claude / Codex |
+| `src/ai_guardrails/` | Optional hygiene CLI |
+| `tests/` | Unit tests for the CLI and checks |
+| `docs/architecture/` | Current-state architecture |
+| `.github/` | CI / Dependabot / CODEOWNERS — *planned* |
 
 ## License
 

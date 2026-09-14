@@ -2,7 +2,7 @@
 
 ## Current state
 
-**ai-dev-guardrails** is a **pack repository**: markdown modules and (soon) a small Python CLI that consumers copy or install into their own repos. There is no application runtime, datastore, or networked service in this tree.
+**ai-dev-guardrails** is a **pack repository**: markdown modules plus an optional Python CLI that consumers copy or install into their own repos. There is no application runtime, datastore, or networked service in this tree.
 
 | Surface | Role |
 | --- | --- |
@@ -11,29 +11,32 @@
 | `CONTRIBUTING.md` | How to propose changes |
 | `LICENSE` | MIT |
 | `packs/` | Copyable agent, checklist, and prompt modules |
+| `src/ai_guardrails/` | `ai-guardrails` hygiene CLI (`check`) |
+| `tests/` | Pytest coverage for checks and CLI |
 | `docs/architecture/` | Current-state narrative and diagrams |
 | `docs/decisions/` | ADR index |
-| `src/` + `tests/` | Optional `ai-guardrails` hygiene CLI — *planned* |
 | `.github/` | CI, Dependabot, CODEOWNERS, SECURITY — *planned* |
+
+## Validator behavior
+
+`ai-guardrails check <root>` runs four checks against `<root>`:
+
+1. `AGENTS.md` at repository root
+2. `README.md` at repository root
+3. Architecture docs under `docs/architecture/` (markdown files) or `docs/architecture.md` / `architecture.md`
+4. Tests **or** CI indicators (`tests/test_*.py`, `.github/workflows/*`, and a few other CI filenames)
+
+Exit code is non-zero in `--strict` mode (default) when any check fails.
 
 ## How consumers use it
 
-1. Copy selected files from `packs/` (and often patterns from root `AGENTS.md`) into a target repository.
-2. Optionally install the Python validator (when published) and run `ai-guardrails check <path>` in CI or locally.
+1. Copy selected files from `packs/` into a target repository.
+2. `pip install` this package (editable or from a future release) and run `ai-guardrails check <path>`.
 3. Keep pack content versioned in the consumer repo (copy-based).
-
-This complements:
-
-- **enterprise-github-template** — full template (issue forms, release, CodeQL, etc.)
-- **llm-eval-harness** — offline golden-fixture evaluation
 
 ## CI shape (planned)
 
-When CI lands, it will call `rmkr-dev/gha-reusable-workflows` `python-ci@v0.2.0` to lint/compile and run pytest for the validator. Until then, there is no CI badge and no required check.
-
-## Network posture
-
-No networked runtime. See [diagram-conventions.md](diagram-conventions.md).
+CI will call `rmkr-dev/gha-reusable-workflows` `python-ci@v0.2.0` to compile/lint and run pytest.
 
 ## What is intentionally out of scope
 

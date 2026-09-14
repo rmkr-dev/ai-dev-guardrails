@@ -1,26 +1,24 @@
 # Architecture diagram
 
-Mermaid view of **this** repository’s surfaces and how a consumer repo relates to them.
-
 ```mermaid
 flowchart LR
   subgraph packRepo["ai-dev-guardrails"]
     AG["AGENTS.md"]
     DOC["docs/architecture"]
-    PACKS["packs/ agents checklists prompts"]
-    CLI["ai-guardrails CLI planned"]
+    PACKS["packs/"]
+    CLI["ai-guardrails check"]
   end
 
   subgraph consumer["Consumer repository"]
-    CAG["AGENTS.md copy"]
+    CAG["AGENTS.md"]
     CMOD["Selected pack modules"]
-    CCI["Optional CI check"]
+    CCI["Optional CI invoking CLI"]
   end
 
   AG --> CAG
   PACKS --> CMOD
-  CLI -.-> CCI
+  CLI --> CCI
   DOC -. describes .-> packRepo
 ```
 
-Solid edges are current. The CLI edge remains planned until the Python package ships.
+All solid edges reflect files that exist in this repository today. Consumer CI wiring is optional and owned by the consumer.
