@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.6] — 2026-09-14
+
+### Changed
+
+- `AGENTS.md` maintainer notes: profile/list-profiles sync tests, ADR-008 pack discipline, docs checks sync
+
 ## [0.4.5] — 2026-09-14
 
 ### Changed
