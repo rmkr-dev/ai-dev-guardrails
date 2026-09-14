@@ -87,5 +87,5 @@ Pack installs preserve `agents/`, `checklists/`, and `prompts/` under the destin
 
 ## Validator docs sync
 
-`docs/architecture/architecture.md` and `docs/references/validator-checks.md` must list the same checks as `DEFAULT_CHECKS` (`tests/test_docs_checks_sync.py`).
+`README.md`, `docs/architecture/architecture.md`, and `docs/references/validator-checks.md` must list the same checks as `DEFAULT_CHECKS` (`tests/test_docs_checks_sync.py`).
 
