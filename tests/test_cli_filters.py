@@ -40,3 +40,12 @@ def test_check_only_unknown(tmp_path: Path) -> None:
     result = runner.invoke(main, ["check", str(tmp_path), "--only", "not_a_check"])
     assert result.exit_code != 0
     assert "unknown check name" in result.output
+
+
+def test_check_only_unknown_suggests(tmp_path: Path) -> None:
+    (tmp_path / "README.md").write_text("# r\n")
+    runner = CliRunner()
+    result = runner.invoke(main, ["check", str(tmp_path), "--only", "readm"])
+    assert result.exit_code != 0
+    assert "did you mean" in result.output
+    assert "readme" in result.output

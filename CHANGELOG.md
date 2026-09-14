@@ -17,6 +17,8 @@ All notable changes to **ai-dev-guardrails** are documented here.
 - CLI: `profiles` text shows `(N packs)`; JSON adds sibling `counts` map (compat)
 - CLI: `check --format json` includes `version`
 
+- CLI: `--only` / `--skip` unknown names include close-match suggestions
+
 ### Changed
 
 - Consolidated catalog sync tests into `tests/test_catalog_sync.py` (fewer one-off sync modules)

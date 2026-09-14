@@ -20,20 +20,43 @@ def _parse_name_list(value: str | None) -> set[str] | None:
     return names or None
 
 
+
+def _suggest_names(unknown: set[str], known: set[str]) -> str:
+    """Best-effort close matches for unknown check names."""
+    hints: list[str] = []
+    for name in sorted(unknown):
+        # Prefer prefix / containment matches; fall back to shared prefix length
+        cands = sorted(
+            known,
+            key=lambda k: (
+                0 if k.startswith(name) or name.startswith(k) else 1,
+                0 if name in k or k in name else 1,
+                -sum(1 for a, b in zip(name, k) if a == b),
+                k,
+            ),
+        )
+        top = [c for c in cands[:3] if c]
+        if top:
+            hints.append(f"{name} (did you mean {', '.join(top)}?)")
+        else:
+            hints.append(name)
+    return ", ".join(hints)
+
+
 def _filter_results(results, only: set[str] | None, skip: set[str] | None):
     known = {r.name for r in results}
     if only is not None:
         unknown = only - known
         if unknown:
             raise click.ClickException(
-                "unknown check name(s) for --only: " + ", ".join(sorted(unknown))
+                "unknown check name(s) for --only: " + _suggest_names(unknown, known)
             )
         results = [r for r in results if r.name in only]
     if skip is not None:
         unknown = skip - known
         if unknown:
             raise click.ClickException(
-                "unknown check name(s) for --skip: " + ", ".join(sorted(unknown))
+                "unknown check name(s) for --skip: " + _suggest_names(unknown, known)
             )
         results = [r for r in results if r.name not in skip]
     return results

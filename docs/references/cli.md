@@ -14,6 +14,8 @@ Run the default presence checks against `PATH`.
 | `--format text\|json` | `text` | Human lines or JSON document |
 | `--only name,name` | *(all)* | Run only these check names |
 | `--skip name,name` | *(none)* | Omit these check names |
+
+Unknown names in `--only` / `--skip` error with close-match suggestions.
 | `--fail-only` | off | Text mode: print only failing checks (summary still shown) |
 
 JSON shape: `version`, `root`, `passed`, `failed`, `total`, `checks[{name,ok,detail}]`.
