@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.8] — 2026-09-14
+
+### Added
+
+- README CI and release badges
+
 ## [0.3.7] — 2026-09-14
 
 ### Added

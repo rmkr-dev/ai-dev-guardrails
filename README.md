@@ -1,12 +1,15 @@
 # ai-dev-guardrails
 
+[![CI](https://github.com/rmkr-dev/ai-dev-guardrails/actions/workflows/ci.yml/badge.svg)](https://github.com/rmkr-dev/ai-dev-guardrails/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/rmkr-dev/ai-dev-guardrails)](https://github.com/rmkr-dev/ai-dev-guardrails/releases)
+
 Installable AI+human engineering guardrails for **GitHub Copilot**, **Claude**, and **Codex**.
 
 Complements [llm-eval-harness](https://github.com/rmkr-dev/llm-eval-harness) and [enterprise-github-template](https://github.com/rmkr-dev/enterprise-github-template).
 
 ## Status
 
-**v0.3.7** — see [CHANGELOG.md](CHANGELOG.md).
+**v0.3.8** — see [CHANGELOG.md](CHANGELOG.md).
 
 - Packs: [packs/README.md](packs/README.md) · [pack matrix](docs/references/pack-matrix.md)
 - Install: [docs/references/install.md](docs/references/install.md) · [profiles](docs/references/profiles.md) (`scripts/install-packs.sh`, `--dry-run` / `--list-profiles`) · [0.3 migrate](docs/references/migrate-nested-install.md)
