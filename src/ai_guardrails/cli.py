@@ -197,8 +197,9 @@ def profiles_cmd(fmt: str, profile_name: str | None) -> None:
     """Print install profile catalog (mirrors scripts/install-packs.sh)."""
     if profile_name is not None:
         if profile_name not in PROFILE_NAMES:
+            hint = _suggest_names({profile_name}, set(PROFILE_NAMES))
             raise click.ClickException(
-                f"unknown profile: {profile_name}; choose from {', '.join(PROFILE_NAMES)}"
+                f"unknown profile: {hint}; choose from {', '.join(PROFILE_NAMES)}"
             )
         if profile_name == "full":
             packs: list[str] | str = "all packs/agents, packs/checklists, packs/prompts *.md"

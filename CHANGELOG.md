@@ -19,6 +19,9 @@ All notable changes to **ai-dev-guardrails** are documented here.
 
 - CLI: `--only` / `--skip` unknown names include close-match suggestions
 
+- Installer: reject absolute or `..` `--dest` paths
+- CLI: unknown `--profile` values include close-match suggestions
+
 ### Changed
 
 - Examples: prefer nested install script over flat `cp`; document `--quiet` / validator tips
