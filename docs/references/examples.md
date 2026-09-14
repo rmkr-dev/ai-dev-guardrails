@@ -8,6 +8,7 @@ How to install **ai-dev-guardrails** modules into a consumer repository for Copi
 2. Copy useful sections from:
    - [`packs/agents/core.md`](../../packs/agents/core.md)
    - [`packs/agents/security.md`](../../packs/agents/security.md) (if auth/secrets/CI permissions apply)
+   - [`packs/agents/testing.md`](../../packs/agents/testing.md) and [`packs/agents/docs.md`](../../packs/agents/docs.md) as needed
 3. Optionally keep the full files under `docs/guardrails/` or `packs/` in the consumer tree and link them from `AGENTS.md`.
 
 ```bash

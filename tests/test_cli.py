@@ -10,6 +10,8 @@ from ai_guardrails.cli import main
 def _seed_good(root: Path) -> None:
     (root / "AGENTS.md").write_text("# agents\n")
     (root / "README.md").write_text("# readme\n")
+    (root / "LICENSE").write_text("MIT\n")
+    (root / "SECURITY.md").write_text("# security\n")
     arch = root / "docs" / "architecture"
     arch.mkdir(parents=True)
     (arch / "architecture.md").write_text("# arch\n")
@@ -24,7 +26,7 @@ def test_cli_check_pass(tmp_path: Path) -> None:
     result = runner.invoke(main, ["check", str(tmp_path)])
     assert result.exit_code == 0
     assert "PASS" in result.output
-    assert "4/4 checks passed" in result.output
+    assert "6/6 checks passed" in result.output
 
 
 def test_cli_check_fail_strict(tmp_path: Path) -> None:

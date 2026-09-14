@@ -17,13 +17,6 @@ def _exists(root: Path, rel: str) -> bool:
     return (root / rel).is_file()
 
 
-def _dir_nonempty(root: Path, rel: str) -> bool:
-    path = root / rel
-    if not path.is_dir():
-        return False
-    return any(path.iterdir())
-
-
 def check_agents_md(root: Path) -> CheckResult:
     ok = _exists(root, "AGENTS.md")
     return CheckResult(
@@ -101,11 +94,29 @@ def check_tests_or_ci(root: Path) -> CheckResult:
     return CheckResult("tests_or_ci", ok, detail)
 
 
+def check_license(root: Path) -> CheckResult:
+    for name in ("LICENSE", "LICENSE.md", "COPYING"):
+        if _exists(root, name):
+            return CheckResult("license", True, f"{name} present")
+    return CheckResult("license", False, "missing LICENSE (or LICENSE.md / COPYING)")
+
+
+def check_security_md(root: Path) -> CheckResult:
+    ok = _exists(root, "SECURITY.md")
+    return CheckResult(
+        "security_md",
+        ok,
+        "SECURITY.md present" if ok else "missing SECURITY.md at repository root",
+    )
+
+
 DEFAULT_CHECKS = (
     check_agents_md,
     check_readme,
     check_architecture_docs,
     check_tests_or_ci,
+    check_license,
+    check_security_md,
 )
 
 
