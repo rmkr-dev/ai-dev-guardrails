@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.5] — 2026-09-14
+
+### Added
+
+- `docs/references/validator-checks.md` catalog of default checks
+
 ## [0.2.4] — 2026-09-14
 
 ### Added
@@ -116,6 +122,7 @@ Default packs now cover core engineering, security/secrets, testing, observabili
 
 - Foundation docs, packs, optional CLI, CI
 
+[0.2.5]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.5
 [0.2.4]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.4
 [0.2.3]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.3
 [0.2.2]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.2
