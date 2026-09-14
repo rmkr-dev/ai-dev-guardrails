@@ -2,6 +2,17 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.23] — 2026-09-14
+
+### Added
+
+- Shell test: `--list-profiles` includes `web` / `agents/frontend.md`
+
+### Changed
+
+- profiles.md See also: migrate + pack-matrix + sample
+- migrate guide See also: profiles + ADR-008
+
 ## [0.4.22] — 2026-09-14
 
 ### Added
