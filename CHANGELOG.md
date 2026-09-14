@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.14] — 2026-09-14
+
+### Added
+
+- `--dry-run` also reports flat leftover packs that match selected basenames
+- Shared `warn_flat_leftovers` helper used by install and dry-run paths
+
 ## [0.3.13] — 2026-09-14
 
 ### Added
