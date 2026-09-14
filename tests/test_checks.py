@@ -6,6 +6,7 @@ import pytest
 
 from ai_guardrails.checks import (
     check_citation,
+    check_support,
     check_funding,
     check_code_of_conduct,
     check_pre_commit,
@@ -42,6 +43,7 @@ def _seed_all(tmp_path: Path) -> None:
     _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
     _touch(tmp_path / ".github" / "FUNDING.yml", "github: [rmkr-dev]\n")
     _touch(tmp_path / "CITATION.cff", "cff-version: 1.2.0\n")
+    _touch(tmp_path / "SUPPORT.md", "# Support\n")
 
 
 def test_gitignore(tmp_path: Path) -> None:
@@ -174,7 +176,8 @@ def test_run_checks_all_pass(tmp_path: Path) -> None:
     assert "code_of_conduct" in names
     assert "funding" in names
     assert "citation" in names
-    assert len(results) == 19
+    assert "support" in names
+    assert len(results) == 20
 
 
 def test_run_checks_rejects_file(tmp_path: Path) -> None:
@@ -182,3 +185,14 @@ def test_run_checks_rejects_file(tmp_path: Path) -> None:
     f.write_text("x")
     with pytest.raises(FileNotFoundError):
         run_checks(f)
+
+
+def test_support(tmp_path: Path) -> None:
+    assert check_support(tmp_path).ok is False
+    _touch(tmp_path / "SUPPORT.md", "# Support\n")
+    assert check_support(tmp_path).ok is True
+
+
+def test_support_docs(tmp_path: Path) -> None:
+    _touch(tmp_path / "docs" / "SUPPORT.md", "# Support\n")
+    assert check_support(tmp_path).ok is True

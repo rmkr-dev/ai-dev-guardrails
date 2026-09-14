@@ -23,6 +23,7 @@ Default `ai-guardrails check` rules (presence-oriented). Order matches `ai-guard
 | `code_of_conduct` | `CODE_OF_CONDUCT.md` (root, `.github/`, or `docs/`) |
 | `funding` | `.github/FUNDING.yml` (or `.yaml`) |
 | `citation` | `CITATION.cff` (or `CITATION.md`) |
+| `support` | `SUPPORT.md` (root, `.github/`, or `docs/`) |
 
 See [ADR-002](../decisions/ADR-002-expanding-hygiene-checks.md) and [ADR-003](../decisions/ADR-003-pr-template-and-changelog-checks.md).
 

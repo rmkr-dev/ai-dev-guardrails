@@ -25,7 +25,7 @@ make check
 # JSON: ai-guardrails check . --format json
 ```
 
-Default checks (19): `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, `license`, `security_md`, `codeowners`, `contributing`, `gitignore`, `changelog`, `pr_template`, `dependabot`, `editorconfig`, `makefile`, `issue_templates`, `pre_commit`, `code_of_conduct`, `funding`, `citation`.
+Default checks (20): `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, `license`, `security_md`, `codeowners`, `contributing`, `gitignore`, `changelog`, `pr_template`, `dependabot`, `editorconfig`, `makefile`, `issue_templates`, `pre_commit`, `code_of_conduct`, `funding`, `citation`, `support`.
 
 ## CI
 
