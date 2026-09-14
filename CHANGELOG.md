@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.8] — 2026-09-14
+
+### Changed
+
+- Pack matrix: profile inclusion note (full-only / PACKS= for niche modules; ADR-008)
+
 ## [0.4.7] — 2026-09-14
 
 ### Changed
