@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.5] — 2026-09-14
+
+### Changed
+
+- Development docs note validator docs sync test (`test_docs_checks_sync`)
+
 ## [0.4.4] — 2026-09-14
 
 ### Added
