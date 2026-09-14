@@ -9,7 +9,7 @@ set -euo pipefail
 
 usage() {
   cat <<'USAGE'
-Usage: bash scripts/install-packs.sh TARGET_REPO [--profile baseline|api|ops|data|full] [--dest RELDIR]
+Usage: bash scripts/install-packs.sh TARGET_REPO [--profile baseline|api|ops|data|security|full] [--dest RELDIR]
 
 Copies markdown packs from this repository into TARGET_REPO/RELDIR (default: docs/guardrails).
 
@@ -18,6 +18,7 @@ Profiles:
   api       baseline + api, deps, supply-chain + test-plan, change-impact
   ops       baseline + observability, ci, incidents, performance, a11y, privacy + incident/runbook/privacy prompts
   data      baseline + data, api + migration-review, change-impact
+  security  baseline + security, secrets, privacy, threat-model + security/privacy/threat prompts
   full      all agents, checklists, and prompts under packs/
 
 Environment:
@@ -84,6 +85,16 @@ data_extra=(
   prompts/change-impact.md
 )
 
+security_extra=(
+  agents/security.md
+  agents/secrets.md
+  agents/privacy.md
+  agents/threat-model.md
+  prompts/security-review.md
+  prompts/privacy-review.md
+  prompts/threat-model.md
+)
+
 ops_extra=(
   agents/observability.md
   agents/ci.md
@@ -109,6 +120,9 @@ else
       ;;
     data)
       selected=("${baseline_packs[@]}" "${data_extra[@]}")
+      ;;
+    security)
+      selected=("${baseline_packs[@]}" "${security_extra[@]}")
       ;;
     ops)
       selected=("${baseline_packs[@]}" "${ops_extra[@]}")
