@@ -2,44 +2,22 @@
 
 ## Current state
 
-**ai-dev-guardrails** is a **pack repository**: markdown modules plus an optional Python CLI that consumers copy or install into their own repos. There is no application runtime, datastore, or networked service in this tree.
+**ai-dev-guardrails** distributes markdown guardrail packs for Copilot / Claude / Codex plus an optional Python hygiene CLI. No application runtime or networked service lives in this tree.
 
 | Surface | Role |
 | --- | --- |
-| `README.md` | Entry point and status |
-| `AGENTS.md` | Guardrails for changing *this* repo |
-| `CONTRIBUTING.md` | How to propose changes |
-| `LICENSE` | MIT |
-| `SECURITY.md` | Vulnerability reporting |
-| `CHANGELOG.md` | Release notes |
 | `packs/` | Copyable agent, checklist, and prompt modules |
-| `src/ai_guardrails/` | `ai-guardrails` hygiene CLI (`check`) |
-| `tests/` | Pytest coverage for checks and CLI |
-| `docs/architecture/` | Current-state narrative and diagrams |
-| `docs/decisions/` | ADRs (ADR-001) |
-| `docs/references/examples.md` | How to copy packs into a consumer repo |
-| `.github/workflows/ci.yml` | Calls `python-ci@v0.2.0` |
-| `.github/dependabot.yml` | Weekly Actions + pip updates |
-| `.github/CODEOWNERS` | Default owner `@rmkr-dev` |
+| `src/ai_guardrails/` | `ai-guardrails` CLI (`check`, `list-checks`) |
+| `tests/` | Pytest coverage |
+| `docs/` | Architecture, ADRs, examples |
+| `.github/` | CI (`python-ci@v0.2.0`), Dependabot, CODEOWNERS |
 
 ## Validator behavior
 
-`ai-guardrails check <root>` runs these checks against `<root>`:
+`ai-guardrails check <root>` runs: `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, `license`, `security_md`, `codeowners`.
 
-1. `AGENTS.md` at repository root
-2. `README.md` at repository root
-3. Architecture docs under `docs/architecture/` (markdown files) or `docs/architecture.md` / `architecture.md`
-4. Tests **or** CI indicators (`tests/test_*.py`, `.github/workflows/*`, and a few other CI filenames)
-5. `LICENSE` (or `LICENSE.md` / `COPYING`)
-6. `SECURITY.md`
+`ai-guardrails list-checks` prints those names in order.
 
-## CI shape
+## Out of scope
 
-CI uses `rmkr-dev/gha-reusable-workflows/.github/workflows/python-ci.yml@v0.2.0`.
-
-## What is intentionally out of scope
-
-- Sample applications or “hello world” stacks
-- Node/npm tooling
-- Live remote policy servers or SaaS dashboards
-- Company-specific standards or branding
+Sample apps, Node/npm, remote policy servers, company-specific branding.

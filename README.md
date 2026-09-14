@@ -9,7 +9,7 @@ Distilled from personal engineering standards. Complements (does not duplicate):
 
 ## Status
 
-**v0.1.1** — expanded packs and validator rules on top of the v0.1.0 foundation. See [CHANGELOG.md](CHANGELOG.md).
+**v0.1.2** — see [CHANGELOG.md](CHANGELOG.md).
 
 ## Packs (copy into a consumer repo)
 
@@ -17,34 +17,35 @@ See [packs/README.md](packs/README.md) and [docs/references/examples.md](docs/re
 
 | Module | Use |
 | --- | --- |
-| [packs/agents/core.md](packs/agents/core.md) | Core guardrails for Copilot / Claude / Codex |
-| [packs/agents/security.md](packs/agents/security.md) | Security-by-default expectations |
-| [packs/agents/testing.md](packs/agents/testing.md) | Testing expectations |
+| [packs/agents/core.md](packs/agents/core.md) | Core guardrails |
+| [packs/agents/security.md](packs/agents/security.md) | Security defaults |
+| [packs/agents/testing.md](packs/agents/testing.md) | Testing |
 | [packs/agents/docs.md](packs/agents/docs.md) | Docs / ADR honesty |
-| [packs/checklists/definition-of-done.md](packs/checklists/definition-of-done.md) | Slice Definition of Done |
+| [packs/agents/ci.md](packs/agents/ci.md) | CI / Actions |
+| [packs/checklists/definition-of-done.md](packs/checklists/definition-of-done.md) | Definition of Done |
 | [packs/checklists/pr-self-review.md](packs/checklists/pr-self-review.md) | Pre-review checklist |
 | [packs/prompts/change-impact.md](packs/prompts/change-impact.md) | Blast-radius prompt |
+| [packs/prompts/adr-draft.md](packs/prompts/adr-draft.md) | ADR drafting prompt |
 
 ## Validator CLI
 
 ```bash
 python -m pip install -e ".[dev]"
+ai-guardrails list-checks
 ai-guardrails check .
 pytest -q
 ```
 
-Checks: `AGENTS.md`, `README.md`, architecture docs, tests **or** CI indicators, `LICENSE`, and `SECURITY.md`.
+Default checks: `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, `license`, `security_md`, `codeowners`.
 
 ## CI and hygiene
 
-- `.github/workflows/ci.yml` calls [`python-ci.yml@v0.2.0`](https://github.com/rmkr-dev/gha-reusable-workflows)
-- Dependabot for GitHub Actions and pip
-- [CODEOWNERS](.github/CODEOWNERS) → `@rmkr-dev`
-- [SECURITY.md](SECURITY.md) for private vulnerability reports
+- `.github/workflows/ci.yml` → [`python-ci.yml@v0.2.0`](https://github.com/rmkr-dev/gha-reusable-workflows)
+- Dependabot (Actions + pip), [CODEOWNERS](.github/CODEOWNERS), [SECURITY.md](SECURITY.md)
 
 ## Decisions
 
-- [ADR-001: Pack modules plus an optional Python validator](docs/decisions/ADR-001-pack-plus-optional-validator.md)
+- [ADR-001](docs/decisions/ADR-001-pack-plus-optional-validator.md)
 
 ## License
 
