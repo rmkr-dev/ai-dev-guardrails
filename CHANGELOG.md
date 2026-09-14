@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.9] — 2026-09-14
+
+### Added
+
+- `scripts/install-packs.sh` with baseline/api/ops/full profiles
+- `docs/references/install.md` copy/install workflow
+- Makefile target: `install-packs`
+
 ## [0.2.8] — 2026-09-14
 
 ### Added
