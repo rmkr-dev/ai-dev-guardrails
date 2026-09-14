@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.33] — 2026-09-14
+
+### Added
+
+- Shell test: `api` profile nested install (api/supply-chain/change-impact)
+
 ## [0.4.32] — 2026-09-14
 
 ### Added
