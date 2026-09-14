@@ -48,7 +48,7 @@ These targets are optional; `make test` and `make check` remain the primary gate
 ai-guardrails check . --format json
 ```
 
-Emits passed/failed/total plus per-check `name` / `ok` / `detail`. Exit code still respects `--strict`.
+Emits `version`, passed/failed/total plus per-check `name` / `ok` / `detail`. Exit code still respects `--strict`. Text mode: `--fail-only` prints failures only.
 
 ```bash
 ai-guardrails list-checks --format json
@@ -71,6 +71,7 @@ Covered automatically via `tests/test_install_packs_sh.py` in the default pytest
 make profiles
 make install-packs TARGET=/path/to/repo PROFILE=ops
 make install-packs TARGET=/path/to/repo PROFILE=api DRY_RUN=1
+make install-packs TARGET=/path/to/repo QUIET=1
 make install-packs TARGET=/path/to/repo DEST=vendor/guardrails
 ```
 

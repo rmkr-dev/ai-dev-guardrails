@@ -9,32 +9,22 @@ Preferred path for new consumers:
 
 ```bash
 bash scripts/install-packs.sh /path/to/consumer-repo --profile baseline
-# or: api | ops | full
+# or: api | ops | data | security | web | full
 ```
 
 Full options and AGENTS.md wiring: [install.md](install.md).
 
 ## Minimal install
 
-1. Create or open the consumer repo’s root `AGENTS.md`.
-2. Copy useful sections from:
-   - [`packs/agents/core.md`](../../packs/agents/core.md)
-   - [`packs/agents/security.md`](../../packs/agents/security.md) (if auth/secrets/CI permissions apply)
-   - [`packs/agents/testing.md`](../../packs/agents/testing.md) and [`packs/agents/docs.md`](../../packs/agents/docs.md) as needed
-   - [`packs/agents/observability.md`](../../packs/agents/observability.md) when adding logs, metrics, or health probes
-   - [`packs/agents/ci.md`](../../packs/agents/ci.md) when editing workflows
-3. Optionally keep the full files under `docs/guardrails/` or `packs/` in the consumer tree and link them from `AGENTS.md`.
+Prefer the install script (nested layout, manifest, flat-leftover warnings):
 
 ```bash
 # from a clone of ai-dev-guardrails
-mkdir -p "$TARGET/docs/guardrails"
-cp packs/agents/core.md packs/agents/security.md "$TARGET/docs/guardrails/"
-cp packs/agents/testing.md packs/agents/observability.md "$TARGET/docs/guardrails/"
-cp packs/checklists/definition-of-done.md "$TARGET/docs/guardrails/"
-cp packs/prompts/change-impact.md "$TARGET/docs/guardrails/"
+bash scripts/install-packs.sh "$TARGET" --profile baseline --quiet
+# dry-run first: add --dry-run
 ```
 
-Then add a short pointer in the consumer `AGENTS.md`:
+Then link nested paths from the consumer `AGENTS.md` (see [sample-agents-md.md](sample-agents-md.md)):
 
 ```markdown
 ## Guardrail packs
@@ -42,10 +32,10 @@ Then add a short pointer in the consumer `AGENTS.md`:
 - [Core](docs/guardrails/agents/core.md)
 - [Security](docs/guardrails/agents/security.md)
 - [Testing](docs/guardrails/agents/testing.md)
-- [Observability](docs/guardrails/agents/observability.md)
 - [Definition of Done](docs/guardrails/checklists/definition-of-done.md)
-- [Change impact prompt](docs/guardrails/prompts/change-impact.md)
 ```
+
+Manual `cp` is fine for one-off edits; keep `agents/` / `checklists/` / `prompts/` prefixes so basenames do not collide.
 
 ## Definition of Done in PRs
 
@@ -70,6 +60,7 @@ After installing this package (editable path, vendored wheel, or a future PyPI r
 ```bash
 python -m pip install -e /path/to/ai-dev-guardrails"[dev]"
 ai-guardrails check .
+# failures only: ai-guardrails check . --fail-only
 ```
 
 Example job fragment using the reusable Python CI workflow from `rmkr-dev/gha-reusable-workflows` (consumer-owned):
