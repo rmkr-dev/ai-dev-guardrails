@@ -2,6 +2,16 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.32] — 2026-09-14
+
+### Added
+
+- Shell test: `--dry-run` with custom `--dest`
+
+### Changed
+
+- Architecture docs README: pointer to maintainer sync tests
+
 ## [0.4.31] — 2026-09-14
 
 ### Changed
