@@ -5,6 +5,7 @@ from pathlib import Path
 import pytest
 
 from ai_guardrails.checks import (
+    check_pre_commit,
     check_changelog,
     check_dependabot,
     check_editorconfig,
@@ -34,6 +35,7 @@ def _seed_all(tmp_path: Path) -> None:
     _touch(tmp_path / ".editorconfig", "root = true\n")
     _touch(tmp_path / "Makefile", "test:\n\tpytest -q\n")
     _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
+    _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
 
 
 def test_gitignore(tmp_path: Path) -> None:
@@ -65,6 +67,7 @@ def test_dependabot(tmp_path: Path) -> None:
     _touch(tmp_path / ".editorconfig", "root = true\n")
     _touch(tmp_path / "Makefile", "test:\n\tpytest -q\n")
     _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
+    _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
     assert check_dependabot(tmp_path).ok is True
 
 
@@ -73,6 +76,7 @@ def test_editorconfig(tmp_path: Path) -> None:
     _touch(tmp_path / ".editorconfig", "root = true\n")
     _touch(tmp_path / "Makefile", "test:\n\tpytest -q\n")
     _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
+    _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
     assert check_editorconfig(tmp_path).ok is True
 
 
@@ -80,6 +84,7 @@ def test_makefile(tmp_path: Path) -> None:
     assert check_makefile(tmp_path).ok is False
     _touch(tmp_path / "Makefile", "test:\n\tpytest -q\n")
     _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
+    _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
     assert check_makefile(tmp_path).ok is True
 
 
@@ -87,12 +92,20 @@ def test_makefile(tmp_path: Path) -> None:
 def test_issue_templates(tmp_path: Path) -> None:
     assert check_issue_templates(tmp_path).ok is False
     _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
+    _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
     assert check_issue_templates(tmp_path).ok is True
 
 
 def test_issue_templates_config_yml(tmp_path: Path) -> None:
     _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "config.yml", "blank_issues_enabled: false\n")
     assert check_issue_templates(tmp_path).ok is True
+
+
+
+def test_pre_commit(tmp_path: Path) -> None:
+    assert check_pre_commit(tmp_path).ok is False
+    _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
+    assert check_pre_commit(tmp_path).ok is True
 
 
 def test_run_checks_all_pass(tmp_path: Path) -> None:
@@ -107,7 +120,8 @@ def test_run_checks_all_pass(tmp_path: Path) -> None:
     assert "editorconfig" in names
     assert "makefile" in names
     assert "issue_templates" in names
-    assert len(results) == 15
+    assert "pre_commit" in names
+    assert len(results) == 16
 
 
 def test_run_checks_rejects_file(tmp_path: Path) -> None:
