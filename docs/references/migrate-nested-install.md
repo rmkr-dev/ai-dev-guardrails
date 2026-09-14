@@ -24,33 +24,80 @@ bash scripts/install-packs.sh /path/to/consumer-repo --profile ops
 # Makefile: make install-packs TARGET=/path/to/consumer-repo PROFILE=ops DRY_RUN=1
 ```
 
-2. Update `AGENTS.md` (and PR templates) to the nested paths. Common mappings:
+2. Update `AGENTS.md` (and PR templates) to the nested paths.
+
+### Unambiguous agents (flat basename → `agents/`)
 
 | Old (flat) | New (nested) |
 | --- | --- |
 | `docs/guardrails/core.md` | `docs/guardrails/agents/core.md` |
 | `docs/guardrails/security.md` | `docs/guardrails/agents/security.md` |
 | `docs/guardrails/secrets.md` | `docs/guardrails/agents/secrets.md` |
-| `docs/guardrails/testing.md` | `docs/guardrails/agents/testing.md` |
+| `docs/guardrails/testing.md` | `docs/guardrails/agents/testing.md` **or** `checklists/testing.md` (pick by content) |
 | `docs/guardrails/docs.md` | `docs/guardrails/agents/docs.md` |
 | `docs/guardrails/commits.md` | `docs/guardrails/agents/commits.md` |
 | `docs/guardrails/api.md` | `docs/guardrails/agents/api.md` |
 | `docs/guardrails/deps.md` | `docs/guardrails/agents/deps.md` |
-| `docs/guardrails/observability.md` | `docs/guardrails/agents/observability.md` |
+| `docs/guardrails/observability.md` | `docs/guardrails/agents/observability.md` **or** `checklists/observability.md` |
 | `docs/guardrails/incidents.md` | `docs/guardrails/agents/incidents.md` |
-| `docs/guardrails/cost.md` | `docs/guardrails/agents/cost.md` **or** `checklists/cost.md` (pick by content) |
-| `docs/guardrails/resilience.md` | `docs/guardrails/agents/resilience.md` **or** `checklists/resilience.md` |
+| `docs/guardrails/ci.md` | `docs/guardrails/agents/ci.md` |
+| `docs/guardrails/performance.md` | `docs/guardrails/agents/performance.md` |
+| `docs/guardrails/privacy.md` | `docs/guardrails/agents/privacy.md` |
+| `docs/guardrails/data.md` | `docs/guardrails/agents/data.md` |
+| `docs/guardrails/frontend.md` | `docs/guardrails/agents/frontend.md` **or** `checklists/frontend.md` |
+| `docs/guardrails/i18n.md` | `docs/guardrails/agents/i18n.md` **or** `checklists/i18n.md` |
+| `docs/guardrails/supply-chain.md` | `docs/guardrails/agents/supply-chain.md` **or** `checklists/supply-chain.md` |
+| `docs/guardrails/threat-model.md` | `docs/guardrails/agents/threat-model.md` **or** `prompts/threat-model.md` |
+| `docs/guardrails/support.md` | `docs/guardrails/agents/support.md` |
+| `docs/guardrails/governance.md` | `docs/guardrails/agents/governance.md` |
+| `docs/guardrails/a11y.md` | `docs/guardrails/agents/a11y.md` (checklist twin is `accessibility.md`, see below) |
+
+### Checklists without matching agent basename
+
+| Old (flat) | New (nested) |
+| --- | --- |
 | `docs/guardrails/definition-of-done.md` | `docs/guardrails/checklists/definition-of-done.md` |
 | `docs/guardrails/pr-self-review.md` | `docs/guardrails/checklists/pr-self-review.md` |
+| `docs/guardrails/release.md` | `docs/guardrails/checklists/release.md` |
+| `docs/guardrails/accessibility.md` | `docs/guardrails/checklists/accessibility.md` (agent twin is `a11y.md`) |
+
+### Ambiguous same-basename pairs (agents + checklists)
+
+Prefer reinstalling the profile; link **both** nested paths when the profile installs both.
+
+| Flat leftover | Nested agents | Nested checklists |
+| --- | --- | --- |
+| `cost.md` | `agents/cost.md` | `checklists/cost.md` |
+| `resilience.md` | `agents/resilience.md` | `checklists/resilience.md` |
+| `testing.md` | `agents/testing.md` | `checklists/testing.md` |
+| `observability.md` | `agents/observability.md` | `checklists/observability.md` |
+| `frontend.md` | `agents/frontend.md` | `checklists/frontend.md` |
+| `i18n.md` | `agents/i18n.md` | `checklists/i18n.md` |
+| `supply-chain.md` | `agents/supply-chain.md` | `checklists/supply-chain.md` |
+
+### Prompts
+
+| Old (flat) | New (nested) |
+| --- | --- |
 | `docs/guardrails/change-impact.md` | `docs/guardrails/prompts/change-impact.md` |
 | `docs/guardrails/pr-body.md` | `docs/guardrails/prompts/pr-body.md` |
 | `docs/guardrails/pr-review.md` | `docs/guardrails/prompts/pr-review.md` |
+| `docs/guardrails/pr-review-copilot.md` | `docs/guardrails/prompts/pr-review-copilot.md` |
+| `docs/guardrails/pr-review-claude.md` | `docs/guardrails/prompts/pr-review-claude.md` |
+| `docs/guardrails/pr-review-codex.md` | `docs/guardrails/prompts/pr-review-codex.md` |
 | `docs/guardrails/test-plan.md` | `docs/guardrails/prompts/test-plan.md` |
 | `docs/guardrails/security-review.md` | `docs/guardrails/prompts/security-review.md` |
 | `docs/guardrails/incident-response.md` | `docs/guardrails/prompts/incident-response.md` |
 | `docs/guardrails/runbook-draft.md` | `docs/guardrails/prompts/runbook-draft.md` |
+| `docs/guardrails/privacy-review.md` | `docs/guardrails/prompts/privacy-review.md` |
+| `docs/guardrails/migration-review.md` | `docs/guardrails/prompts/migration-review.md` |
+| `docs/guardrails/adr-draft.md` | `docs/guardrails/prompts/adr-draft.md` |
+| `docs/guardrails/refactor-plan.md` | `docs/guardrails/prompts/refactor-plan.md` |
+| `docs/guardrails/release-notes.md` | `docs/guardrails/prompts/release-notes.md` |
+| `docs/guardrails/support-reply.md` | `docs/guardrails/prompts/support-reply.md` |
+| `docs/guardrails/threat-model.md` | `docs/guardrails/prompts/threat-model.md` **or** `agents/threat-model.md` |
 
-Ambiguous flat names that existed in both `agents/` and `checklists/` (for example `cost`, `resilience`, `accessibility`/`a11y`) may have been whichever file won last. Prefer reinstalling the profile and linking the nested paths from [sample-agents-md.md](sample-agents-md.md).
+Ambiguous flat names that existed in both `agents/` and `checklists/` (or `agents/` and `prompts/`) may have been whichever file won last. Prefer reinstalling the profile and linking the nested paths from [sample-agents-md.md](sample-agents-md.md).
 
 3. Remove leftover flat copies if both exist (optional cleanup after verifying links):
 

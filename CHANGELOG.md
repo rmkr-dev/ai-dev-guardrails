@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.15] — 2026-09-14
+
+### Changed
+
+- Migrate guide: complete flat→nested mapping (agents/checklists/prompts, a11y↔accessibility, ambiguous pairs)
+
 ## [0.4.14] — 2026-09-14
 
 ### Changed
