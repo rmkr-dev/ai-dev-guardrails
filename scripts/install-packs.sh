@@ -31,8 +31,12 @@ Profiles:
 Flags:
   --profile NAME   Install profile (default: baseline)
   --dest RELDIR    Destination under TARGET (default: docs/guardrails)
-  --dry-run        Print planned copies; do not write files
+  --dry-run        Print planned copies; do not write files (also warns on flat leftovers)
   --list-profiles  Print profiles and exact pack lists; exit
+
+Notes:
+  Nested agents|checklists|prompts paths. Flat 0.2.x leftover *.md at dest root are
+  warned on stderr (install and --dry-run); never deleted. See docs/references/migrate-nested-install.md.
 
 Environment:
   PACKS   space-separated paths relative to packs/ (overrides --profile)
