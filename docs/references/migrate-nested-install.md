@@ -127,6 +127,8 @@ ai-guardrails check .
 ## See also
 
 - [install.md](install.md)
+- [profiles.md](profiles.md)
 - [sample-agents-md.md](sample-agents-md.md)
 - [ADR-007](../decisions/ADR-007-v0.3-install-layout-and-suite.md)
+- [ADR-008](../decisions/ADR-008-v0.4-nested-install-maturity.md)
 - [enterprise-github-template.md](enterprise-github-template.md)
