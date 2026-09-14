@@ -2,6 +2,18 @@
 
 How to install **ai-dev-guardrails** modules into a consumer repository for Copilot, Claude, or Codex. Copy-based; no required submodule.
 
+
+## Install script
+
+Preferred path for new consumers:
+
+```bash
+bash scripts/install-packs.sh /path/to/consumer-repo --profile baseline
+# or: api | ops | full
+```
+
+Full options and AGENTS.md wiring: [install.md](install.md).
+
 ## Minimal install
 
 1. Create or open the consumer repo’s root `AGENTS.md`.
