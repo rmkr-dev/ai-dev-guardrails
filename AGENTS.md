@@ -6,7 +6,7 @@ This repository distributes **installable** guardrail packs. Keep the packs usef
 
 ## Before you write code
 
-1. Read `README.md`, this file, and any docs that touch your change (`docs/architecture/`, `docs/decisions/`, `docs/references/`, `packs/`).
+1. Read `README.md`, this file, and any docs that touch your change (`docs/architecture/`, `docs/decisions/`, `docs/references/` including pack-matrix and validator-checks, `packs/`).
 2. State the slice you are completing. Prefer one reviewable PR with 2–4 commits.
 3. Prefer the smallest change that is **correct and complete** for that slice. Do not drive-by refactor.
 

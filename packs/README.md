@@ -24,6 +24,7 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [prompts/pr-body.md](prompts/pr-body.md) | Copilot / Claude / Codex | PR description prompt |
 | [prompts/test-plan.md](prompts/test-plan.md) | Copilot / Claude / Codex | Test plan drafting prompt |
 | [prompts/security-review.md](prompts/security-review.md) | Copilot / Claude / Codex | Security-focused PR review prompt |
+| [prompts/release-notes.md](prompts/release-notes.md) | Copilot / Claude / Codex | Release notes drafting prompt |
 | [prompts/pr-review.md](prompts/pr-review.md) | Copilot / Claude / Codex | Generic PR review prompt |
 | [prompts/pr-review-copilot.md](prompts/pr-review-copilot.md) | GitHub Copilot | Copilot-oriented PR review |
 | [prompts/pr-review-claude.md](prompts/pr-review-claude.md) | Claude | Claude-oriented PR review |

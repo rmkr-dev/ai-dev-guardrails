@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.6] — 2026-09-14
+
+### Added
+
+- Pack prompt: `packs/prompts/release-notes.md`
+
 ## [0.2.5] — 2026-09-14
 
 ### Added
@@ -122,6 +128,7 @@ Default packs now cover core engineering, security/secrets, testing, observabili
 
 - Foundation docs, packs, optional CLI, CI
 
+[0.2.6]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.6
 [0.2.5]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.5
 [0.2.4]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.4
 [0.2.3]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.3
