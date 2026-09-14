@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [Unreleased]
+
+### Changed
+
+- Consolidated catalog sync tests into `tests/test_catalog_sync.py` (fewer one-off sync modules)
+- Folded tiny CLI/profile smoke tests into `test_cli.py` / `test_profiles.py`
+- Docs point maintainers at the single catalog-sync module
+
 ## [0.4.33] — 2026-09-14
 
 ### Added

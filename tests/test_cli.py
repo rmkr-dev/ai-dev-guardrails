@@ -108,3 +108,11 @@ def test_cli_list_checks_json() -> None:
     assert data["total"] == len(data["checks"])
     assert "readme" in data["checks"]
     assert "citation" in data["checks"]
+
+
+def test_check_no_strict_allows_failures(tmp_path: Path) -> None:
+    (tmp_path / "README.md").write_text("# only readme\n")
+    runner = CliRunner()
+    result = runner.invoke(main, ["check", str(tmp_path), "--no-strict"])
+    assert result.exit_code == 0
+    assert "FAIL" in result.output

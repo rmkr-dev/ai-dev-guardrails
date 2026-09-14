@@ -66,3 +66,13 @@ def test_cli_profiles_web_text() -> None:
     assert "agents/frontend.md" in result.output
     assert "agents/a11y.md" in result.output
     assert "checklists/accessibility.md" in result.output
+
+
+def test_web_profile_includes_frontend() -> None:
+    from ai_guardrails.profiles import PROFILE_NAMES
+
+    assert "web" in PROFILE_NAMES
+    packs = packs_for("web")
+    assert packs is not None
+    assert "agents/frontend.md" in packs
+    assert "checklists/frontend.md" in packs
