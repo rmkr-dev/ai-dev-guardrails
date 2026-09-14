@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.8] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/incidents.md`
+- Pack prompts: `packs/prompts/incident-response.md`, `packs/prompts/runbook-draft.md`
+
 ## [0.2.7] — 2026-09-14
 
 ### Added

@@ -15,6 +15,9 @@ Quick map of **ai-dev-guardrails** modules by audience and when to install them.
 | `agents/deps.md` | New or upgraded dependencies |
 | `agents/performance.md` | Hot paths / explicit perf work |
 | `agents/api.md` | Public APIs, schemas, wire compatibility |
+| `agents/incidents.md` | Incident notes / on-call runbooks |
+| `prompts/incident-response.md` | Active incident drafting |
+| `prompts/runbook-draft.md` | Writing or updating runbooks |
 | `checklists/*` | PR templates and self-review |
 | `prompts/pr-review*.md` | Reviewing with Copilot / Claude / Codex |
 | `prompts/test-plan.md` | Writing PR test plans |

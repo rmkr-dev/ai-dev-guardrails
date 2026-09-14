@@ -17,6 +17,7 @@ Read this before changing this repository. Rules apply to people and coding agen
 - [Observability](docs/guardrails/observability.md)
 - [Deps](docs/guardrails/deps.md)
 - [API / contracts](docs/guardrails/api.md)
+- [Incidents](docs/guardrails/incidents.md)
 - [Definition of Done](docs/guardrails/definition-of-done.md)
 
 ## Prompts
@@ -26,6 +27,8 @@ Read this before changing this repository. Rules apply to people and coding agen
 - PR review: `docs/guardrails/pr-review.md` (or tool-specific variants)
 - Test plan: `docs/guardrails/test-plan.md`
 - Security review: `docs/guardrails/security-review.md`
+- Incident response: `docs/guardrails/incident-response.md`
+- Runbook draft: `docs/guardrails/runbook-draft.md`
 
 ## Local checks
 
