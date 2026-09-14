@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.31] — 2026-09-14
+
+### Changed
+
+- ADR-008 consequences: post-0.4 sync-test inventory (migrate/version/docs/Makefile)
+
 ## [0.4.30] — 2026-09-14
 
 ### Added
