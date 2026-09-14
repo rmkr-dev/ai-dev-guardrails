@@ -26,6 +26,7 @@ Quick map of **ai-dev-guardrails** modules by audience and when to install them.
 | `agents/resilience.md` | Retries, timeouts, degradation |
 | `agents/cost.md` | Cloud spend, retention, always-on resources |
 | `agents/frontend.md` | Web UI, docs chrome, rich human-facing surfaces |
+| `agents/governance.md` | CODEOWNERS, policy, release ownership |
 | `checklists/frontend.md` | Pre-merge frontend / UI self-review |
 | `checklists/cost.md` | Pre-merge cost / capacity self-review |
 | `checklists/resilience.md` | Pre-merge resilience self-review |

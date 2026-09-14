@@ -26,6 +26,7 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [agents/resilience.md](agents/resilience.md) | Copilot / Claude / Codex | Resilience / failure-mode expectations |
 | [agents/cost.md](agents/cost.md) | Copilot / Claude / Codex | Cost / capacity expectations |
 | [agents/frontend.md](agents/frontend.md) | Copilot / Claude / Codex | Frontend / UI surface expectations |
+| [agents/governance.md](agents/governance.md) | Copilot / Claude / Codex | Repo governance / ownership expectations |
 | [checklists/definition-of-done.md](checklists/definition-of-done.md) | Humans + agents | Slice Definition of Done |
 | [checklists/pr-self-review.md](checklists/pr-self-review.md) | Humans + agents | Pre-review checklist |
 | [checklists/release.md](checklists/release.md) | Humans + agents | Release / tag checklist |
