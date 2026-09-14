@@ -48,6 +48,8 @@ Print install profile pack lists (mirrors `scripts/install-packs.sh --list-profi
 | `--format text\|json` | `text` | Human catalog or JSON |
 | `--profile NAME` | *(all)* | Restrict to one profile |
 
+Unknown `--profile` values error with close-match suggestions.
+
 Text mode prints `(N packs)` per named profile. JSON adds a sibling `counts` map (`null` for `full`); `profiles` values stay list-or-string for compatibility.
 
 ```bash
