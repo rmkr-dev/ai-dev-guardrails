@@ -238,3 +238,10 @@ When a PR changes user-visible copy or locales:
 
 1. Follow [`packs/agents/i18n.md`](../../packs/agents/i18n.md).
 2. Run through [`packs/checklists/i18n.md`](../../packs/checklists/i18n.md).
+
+## Threat modeling slices
+
+When a PR touches auth, crypto, CI permissions, or sensitive data paths:
+
+1. Follow [`packs/agents/threat-model.md`](../../packs/agents/threat-model.md).
+2. Paste [`packs/prompts/threat-model.md`](../../packs/prompts/threat-model.md) into the drafting chat.

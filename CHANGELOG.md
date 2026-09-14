@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.25] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/threat-model.md`
+- Pack prompt: `packs/prompts/threat-model.md`
+
 ## [0.2.24] — 2026-09-14
 
 ### Added
