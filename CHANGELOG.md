@@ -2,6 +2,16 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.26] — 2026-09-14
+
+### Added
+
+- Examples: web profile install recipe (a11y↔accessibility nested links)
+
+### Changed
+
+- CONTRIBUTING: pointer to maintainer sync tests / docs index
+
 ## [0.4.25] — 2026-09-14
 
 ### Changed
