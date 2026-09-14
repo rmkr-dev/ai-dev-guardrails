@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.13] — 2026-09-14
+
+### Changed
+
+- Architecture docs README: ADR-007/008 + docs index pointers
+- Development docs: validator sync note includes README
+
 ## [0.4.12] — 2026-09-14
 
 ### Added
