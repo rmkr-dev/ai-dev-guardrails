@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.3] — 2026-09-14
+
+### Added
+
+- Makefile: `profiles` target; `install-packs` supports `DEST=` and `DRY_RUN=1`
+
 ## [0.3.2] — 2026-09-14
 
 ### Added
