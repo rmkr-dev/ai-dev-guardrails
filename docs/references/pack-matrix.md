@@ -52,3 +52,6 @@ Install profiles: `baseline`, `api`, `ops`, `data`, `security`, `web`, `full` â€
 
 Pairing with [enterprise-github-template](https://github.com/rmkr-dev/enterprise-github-template): [enterprise-github-template.md](enterprise-github-template.md).
 
+## Profile inclusion
+
+Named profiles stay focused. Some modules (for example `agents/governance.md`) are available via `--profile full` or an explicit `PACKS=` list until a clear named-profile need appears ([ADR-008](../decisions/ADR-008-v0.4-nested-install-maturity.md)).
