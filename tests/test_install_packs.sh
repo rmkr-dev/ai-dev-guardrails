@@ -130,4 +130,29 @@ run_install "$target10" --profile api >/dev/null
 [[ -f "$target10/docs/guardrails/prompts/change-impact.md" ]] || fail "api missing prompts/change-impact.md"
 pass "api profile nested"
 
+
+# --- quiet install + manifest source/categories ---
+target11="$TMP/quiet"
+mkdir -p "$target11"
+qout="$(run_install "$target11" --profile baseline --quiet)"
+echo "$qout" | grep -q 'copied ' && fail "quiet should suppress per-file copied lines"
+echo "$qout" | grep -q 'Installed ' || fail "quiet still prints summary"
+echo "$qout" | grep -q 'source=' || fail "summary missing source="
+echo "$qout" | grep -q 'agents=' || fail "summary missing category counts"
+grep -q '^source: ' "$target11/docs/guardrails/INSTALL_MANIFEST.txt" || fail "manifest missing source"
+grep -q '^categories: ' "$target11/docs/guardrails/INSTALL_MANIFEST.txt" || fail "manifest missing categories"
+# source should match pyproject version
+ver="$(sed -n 's/^version *= *"\([^"]*\)".*/\1/p' "$ROOT/pyproject.toml" | head -n1)"
+grep -q "source: $ver" "$target11/docs/guardrails/INSTALL_MANIFEST.txt" || fail "manifest source != pyproject ($ver)"
+pass "quiet install + manifest source/categories"
+
+# --- quiet dry-run suppresses would-copy lines ---
+target12="$TMP/quietdry"
+mkdir -p "$target12"
+qd="$(run_install "$target12" --profile baseline --dry-run --quiet)"
+echo "$qd" | grep -q 'would copy ' && fail "quiet dry-run should suppress would-copy"
+echo "$qd" | grep -q 'DRY-RUN' || fail "quiet dry-run missing DRY-RUN header"
+echo "$qd" | grep -q 'source=' || fail "quiet dry-run missing source="
+pass "quiet dry-run"
+
 echo "All install-packs shell tests passed."
