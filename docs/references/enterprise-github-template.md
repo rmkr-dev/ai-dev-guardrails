@@ -11,7 +11,7 @@
 
 ```bash
 bash scripts/install-packs.sh /path/to/new-repo --profile baseline
-# or: ops | security | api | data
+# or: ops | security | api | data | web
 ```
 
 3. Link copied files from the consumer `AGENTS.md` (keep the template’s guardrail section as the entry point):

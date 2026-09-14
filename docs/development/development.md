@@ -87,6 +87,8 @@ Pack installs preserve `agents/`, `checklists/`, and `prompts/` under the destin
 
 The Profiles table in [install.md](../references/install.md) must list every `PROFILE_NAMES` entry in order (`tests/test_install_docs_profiles_sync.py`).
 
+[profiles.md](../references/profiles.md) must mention every profile name (`tests/test_profiles_docs_sync.py`).
+
 ## Validator docs sync
 
 `README.md`, `docs/architecture/architecture.md`, and `docs/references/validator-checks.md` must list the same checks as `DEFAULT_CHECKS` (`tests/test_docs_checks_sync.py`).

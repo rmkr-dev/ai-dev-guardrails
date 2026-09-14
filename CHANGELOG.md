@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.28] — 2026-09-14
+
+### Changed
+
+- EGT integration: install example comment includes `web`
+- Development docs: `test_profiles_docs_sync` note
+
 ## [0.4.27] — 2026-09-14
 
 ### Added
