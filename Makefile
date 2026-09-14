@@ -37,7 +37,7 @@ fmt:
 
 help:
 	@echo "Targets: install test check list-checks profiles lint fmt install-packs install-packs-test"
-	@echo "install-packs requires TARGET=/path/to/repo [PROFILE=baseline|api|ops|data|security|full]"
+	@echo "install-packs requires TARGET=/path/to/repo [PROFILE=baseline|api|ops|data|security|web|full]"
 	@echo "  optional: DEST=rel/path DRY_RUN=1"
 	@echo "Script extras: --dry-run, --list-profiles (see docs/references/install.md)"
 	@echo "CLI: ai-guardrails profiles | check --only/--skip | list-checks"

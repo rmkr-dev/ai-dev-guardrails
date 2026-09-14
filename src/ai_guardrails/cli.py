@@ -136,7 +136,7 @@ def list_checks_cmd(fmt: str) -> None:
     "--profile",
     "profile_name",
     default=None,
-    help="Show packs for one profile (baseline|api|ops|data|security|full).",
+    help="Show packs for one profile (baseline|api|ops|data|security|web|full).",
 )
 def profiles_cmd(fmt: str, profile_name: str | None) -> None:
     """Print install profile catalog (mirrors scripts/install-packs.sh)."""
