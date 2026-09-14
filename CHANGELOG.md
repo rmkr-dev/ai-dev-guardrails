@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.4] — 2026-09-14
+
+### Added
+
+- Test: `tests/test_docs_checks_sync.py` keeps architecture + validator-checks catalogs aligned with `DEFAULT_CHECKS`
+
 ## [0.4.3] — 2026-09-14
 
 ### Changed
