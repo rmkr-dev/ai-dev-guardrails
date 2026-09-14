@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.12] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/a11y.md`
+- Checklist: `packs/checklists/accessibility.md`
+- `ops` install profile includes a11y agent + checklist
+
 ## [0.2.11] — 2026-09-14
 
 ### Added
