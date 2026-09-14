@@ -2,7 +2,7 @@
 
 Pack distributor for Copilot / Claude / Codex plus optional `ai-guardrails` CLI.
 
-See [development.md](../development/development.md) for local workflow and [ADR-002](../decisions/ADR-002-expanding-hygiene-checks.md) for how hygiene checks grow. Milestone notes: [ADR-004](../decisions/ADR-004-v0.2-pack-and-check-suite.md), [ADR-005](../decisions/ADR-005-a11y-data-and-issue-templates.md), [ADR-006](../decisions/ADR-006-0.2x-expansion-checks-and-packs.md).
+See [development.md](../development/development.md) for local workflow and [ADR-002](../decisions/ADR-002-expanding-hygiene-checks.md) for how hygiene checks grow. Milestone notes: [ADR-004](../decisions/ADR-004-v0.2-pack-and-check-suite.md), [ADR-005](../decisions/ADR-005-a11y-data-and-issue-templates.md), [ADR-006](../decisions/ADR-006-0.2x-expansion-checks-and-packs.md), [ADR-007](../decisions/ADR-007-v0.3-install-layout-and-suite.md), [ADR-008](../decisions/ADR-008-v0.4-nested-install-maturity.md).
 
 ## Packs
 
@@ -12,7 +12,9 @@ Markdown modules under `packs/` (agents, checklists, prompts) are copied into co
 
 Presence-oriented checks in `src/ai_guardrails/checks.py`, exposed as `ai-guardrails check` / `list-checks`.
 
-Default checks (19 as of 0.2.24): `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, `license`, `security_md`, `codeowners`, `contributing`, `gitignore`, `changelog`, `pr_template`, `dependabot`, `editorconfig`, `makefile`, `issue_templates`, `pre_commit`, `code_of_conduct`, `funding`, `citation`.
+Default checks (20): `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, `license`, `security_md`, `codeowners`, `contributing`, `gitignore`, `changelog`, `pr_template`, `dependabot`, `editorconfig`, `makefile`, `issue_templates`, `pre_commit`, `code_of_conduct`, `funding`, `citation`, `support`.
+
+Install layout preserves `agents/` / `checklists/` / `prompts/` under the destination (ADR-007 / ADR-008).
 
 ## CI
 
