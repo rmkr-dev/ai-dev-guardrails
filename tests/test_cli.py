@@ -1,0 +1,42 @@
+from __future__ import annotations
+
+from pathlib import Path
+
+from click.testing import CliRunner
+
+from ai_guardrails.cli import main
+
+
+def _seed_good(root: Path) -> None:
+    (root / "AGENTS.md").write_text("# agents\n")
+    (root / "README.md").write_text("# readme\n")
+    arch = root / "docs" / "architecture"
+    arch.mkdir(parents=True)
+    (arch / "architecture.md").write_text("# arch\n")
+    tests = root / "tests"
+    tests.mkdir()
+    (tests / "test_ok.py").write_text("def test_ok():\n    assert True\n")
+
+
+def test_cli_check_pass(tmp_path: Path) -> None:
+    _seed_good(tmp_path)
+    runner = CliRunner()
+    result = runner.invoke(main, ["check", str(tmp_path)])
+    assert result.exit_code == 0
+    assert "PASS" in result.output
+    assert "4/4 checks passed" in result.output
+
+
+def test_cli_check_fail_strict(tmp_path: Path) -> None:
+    (tmp_path / "README.md").write_text("# only readme\n")
+    runner = CliRunner()
+    result = runner.invoke(main, ["check", str(tmp_path)])
+    assert result.exit_code == 1
+    assert "FAIL" in result.output
+
+
+def test_cli_check_no_strict(tmp_path: Path) -> None:
+    runner = CliRunner()
+    result = runner.invoke(main, ["check", "--no-strict", str(tmp_path)])
+    assert result.exit_code == 0
+    assert "FAIL" in result.output
