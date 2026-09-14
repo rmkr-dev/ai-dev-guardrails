@@ -9,7 +9,7 @@ Distilled from personal engineering standards. Complements (does not duplicate):
 
 ## Status
 
-**v0.1.0** — packs, validator CLI, and CI are available. See [CHANGELOG.md](CHANGELOG.md).
+**v0.1.1** — expanded packs and validator rules on top of the v0.1.0 foundation. See [CHANGELOG.md](CHANGELOG.md).
 
 ## Packs (copy into a consumer repo)
 
@@ -19,7 +19,10 @@ See [packs/README.md](packs/README.md) and [docs/references/examples.md](docs/re
 | --- | --- |
 | [packs/agents/core.md](packs/agents/core.md) | Core guardrails for Copilot / Claude / Codex |
 | [packs/agents/security.md](packs/agents/security.md) | Security-by-default expectations |
+| [packs/agents/testing.md](packs/agents/testing.md) | Testing expectations |
+| [packs/agents/docs.md](packs/agents/docs.md) | Docs / ADR honesty |
 | [packs/checklists/definition-of-done.md](packs/checklists/definition-of-done.md) | Slice Definition of Done |
+| [packs/checklists/pr-self-review.md](packs/checklists/pr-self-review.md) | Pre-review checklist |
 | [packs/prompts/change-impact.md](packs/prompts/change-impact.md) | Blast-radius prompt |
 
 ## Validator CLI
@@ -30,7 +33,7 @@ ai-guardrails check .
 pytest -q
 ```
 
-Checks: `AGENTS.md`, `README.md`, architecture docs, and tests **or** CI indicators.
+Checks: `AGENTS.md`, `README.md`, architecture docs, tests **or** CI indicators, `LICENSE`, and `SECURITY.md`.
 
 ## CI and hygiene
 
@@ -42,19 +45,6 @@ Checks: `AGENTS.md`, `README.md`, architecture docs, and tests **or** CI indicat
 ## Decisions
 
 - [ADR-001: Pack modules plus an optional Python validator](docs/decisions/ADR-001-pack-plus-optional-validator.md)
-
-## Layout
-
-| Path | Role |
-| --- | --- |
-| `AGENTS.md` | Guardrails for changing *this* repository |
-| `packs/` | Copyable modules for Copilot / Claude / Codex |
-| `src/ai_guardrails/` | Hygiene CLI |
-| `tests/` | Pytest coverage |
-| `docs/architecture/` | Current-state architecture |
-| `docs/references/examples.md` | How to copy packs into a repo |
-| `docs/decisions/` | ADRs |
-| `.github/` | CI, Dependabot, CODEOWNERS |
 
 ## License
 

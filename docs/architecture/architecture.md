@@ -11,31 +11,31 @@
 | `CONTRIBUTING.md` | How to propose changes |
 | `LICENSE` | MIT |
 | `SECURITY.md` | Vulnerability reporting |
+| `CHANGELOG.md` | Release notes |
 | `packs/` | Copyable agent, checklist, and prompt modules |
 | `src/ai_guardrails/` | `ai-guardrails` hygiene CLI (`check`) |
 | `tests/` | Pytest coverage for checks and CLI |
 | `docs/architecture/` | Current-state narrative and diagrams |
-| `docs/decisions/` | ADR index |
+| `docs/decisions/` | ADRs (ADR-001) |
+| `docs/references/examples.md` | How to copy packs into a consumer repo |
 | `.github/workflows/ci.yml` | Calls `python-ci@v0.2.0` |
 | `.github/dependabot.yml` | Weekly Actions + pip updates |
 | `.github/CODEOWNERS` | Default owner `@rmkr-dev` |
 
 ## Validator behavior
 
-`ai-guardrails check <root>` runs four checks against `<root>`:
+`ai-guardrails check <root>` runs these checks against `<root>`:
 
 1. `AGENTS.md` at repository root
 2. `README.md` at repository root
 3. Architecture docs under `docs/architecture/` (markdown files) or `docs/architecture.md` / `architecture.md`
 4. Tests **or** CI indicators (`tests/test_*.py`, `.github/workflows/*`, and a few other CI filenames)
+5. `LICENSE` (or `LICENSE.md` / `COPYING`)
+6. `SECURITY.md`
 
 ## CI shape
 
-CI uses the reusable workflow:
-
-`rmkr-dev/gha-reusable-workflows/.github/workflows/python-ci.yml@v0.2.0`
-
-It sets up Python, compiles/lints, and runs pytest when tests are present.
+CI uses `rmkr-dev/gha-reusable-workflows/.github/workflows/python-ci.yml@v0.2.0`.
 
 ## What is intentionally out of scope
 

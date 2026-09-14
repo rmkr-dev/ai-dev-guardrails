@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.1.1] — 2026-09-14
+
+### Added
+
+- Pack modules: `packs/agents/testing.md`, `packs/agents/docs.md`, `packs/checklists/pr-self-review.md`
+- Validator checks: `license`, `security_md`
+
 ## [0.1.0] — 2026-09-14
 
 ### Added
@@ -17,4 +24,5 @@ All notable changes to **ai-dev-guardrails** are documented here.
 - Dependabot (Actions + pip), `CODEOWNERS`, `SECURITY.md`
 - `docs/references/examples.md` and ADR-001
 
+[0.1.1]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.1
 [0.1.0]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.0
