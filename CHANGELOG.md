@@ -2,6 +2,16 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.22] — 2026-09-14
+
+### Added
+
+- Test: Makefile help mentions web profile, nested install, `--no-strict`
+
+### Changed
+
+- Development docs: install.md Profiles table sync test note
+
 ## [0.4.21] — 2026-09-14
 
 ### Changed
