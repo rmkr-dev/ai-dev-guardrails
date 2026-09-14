@@ -266,5 +266,5 @@ Keep the template `AGENTS.md` and link packs under `docs/guardrails/`. Full pair
 
 ## Nested install layout (v0.3+)
 
-`install-packs.sh` preserves `agents/`, `checklists/`, and `prompts/` under the destination so same-basename modules do not collide. Link the nested paths from `AGENTS.md` (see [install.md](install.md)).
+`install-packs.sh` preserves `agents/`, `checklists/`, and `prompts/` under the destination so same-basename modules do not collide. Link the nested paths from `AGENTS.md` (see [install.md](install.md)). Flat 0.2.x leftover `*.md` at the destination root are warned on install and `--dry-run` (not deleted); see [migrate-nested-install.md](migrate-nested-install.md).
 

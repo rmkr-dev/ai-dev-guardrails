@@ -2,6 +2,16 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.9] — 2026-09-14
+
+### Added
+
+- Shell test: `--help` mentions nested layout and flat leftover warnings
+
+### Changed
+
+- Examples: nested install section points at flat leftover warnings / migrate guide
+
 ## [0.4.8] — 2026-09-14
 
 ### Changed

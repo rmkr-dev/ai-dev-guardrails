@@ -17,6 +17,14 @@ echo "$out" | grep -q '^baseline:' || fail "list-profiles missing baseline"
 echo "$out" | grep -q '^ops:' || fail "list-profiles missing ops"
 pass "list-profiles"
 
+help_out="$(run_install --help 2>&1 || true)"
+# --help exits 0 via usage
+help_out="$(bash "$SCRIPT" --help)"
+echo "$help_out" | grep -qi 'flat leftover' || fail "help missing flat leftover note"
+echo "$help_out" | grep -q 'agents|checklists|prompts' || fail "help missing nested path note"
+pass "help nested/flat notes"
+
+
 target="$TMP/consumer"
 mkdir -p "$target"
 dry="$(run_install "$target" --profile baseline --dry-run)"
