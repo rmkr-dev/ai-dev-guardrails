@@ -87,7 +87,7 @@ permissions:
 
 jobs:
   python:
-    uses: rmkr-dev/gha-reusable-workflows/.github/workflows/python-ci.yml@v0.2.0
+    uses: rmkr-dev/gha-reusable-workflows/.github/workflows/python-ci.yml@v0.3.0
     with:
       working-directory: .
       python-version: "3.12"

@@ -21,7 +21,7 @@ ai-guardrails list-checks
 ai-guardrails check .
 ```
 
-CI runs the same pytest path via `rmkr-dev/gha-reusable-workflows` `python-ci@v0.2.0`.
+CI runs the same pytest path via `rmkr-dev/gha-reusable-workflows` `python-ci@v0.3.0`.
 
 ## Packs vs CLI
 
