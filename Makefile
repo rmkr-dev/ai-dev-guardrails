@@ -1,4 +1,4 @@
-.PHONY: test check list-checks install install-packs lint fmt
+.PHONY: test check list-checks install install-packs lint fmt help
 
 install:
 	python -m pip install -e ".[dev]"
@@ -24,3 +24,7 @@ lint:
 
 fmt:
 	@echo "No autoformatter configured yet; run your editor format-on-save or add ruff/black later."
+
+help:
+	@echo "Targets: install test check list-checks lint fmt install-packs"
+	@echo "install-packs requires TARGET=/path/to/repo [PROFILE=baseline|api|ops|data|security|full]"

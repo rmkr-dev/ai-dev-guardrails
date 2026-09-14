@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.28] — 2026-09-14
+
+### Added
+
+- `docs/references/profiles.md` install profile catalog
+- Makefile `help` target
+
 ## [0.2.27] — 2026-09-14
 
 ### Added
