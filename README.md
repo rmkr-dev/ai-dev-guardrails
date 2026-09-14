@@ -9,7 +9,7 @@ Distilled from personal engineering standards. Complements (does not duplicate):
 
 ## Status
 
-Pack modules and the optional **`ai-guardrails`** CLI are available. GitHub Actions CI, Dependabot, CODEOWNERS, and SECURITY land in a follow-up PR.
+Pack modules, the **`ai-guardrails`** CLI, and GitHub Actions CI (via `gha-reusable-workflows` `python-ci@v0.2.0`) are in place. Examples, ADR-001, CHANGELOG, and the `v0.1.0` tag follow next.
 
 ## Packs (copy into a consumer repo)
 
@@ -30,12 +30,14 @@ ai-guardrails check .
 pytest -q
 ```
 
-`ai-guardrails check <path>` verifies that a target repo has:
+Checks: `AGENTS.md`, `README.md`, architecture docs, and tests **or** CI indicators.
 
-- `AGENTS.md`
-- `README.md`
-- architecture docs (`docs/architecture/` or `docs/architecture.md`)
-- tests **or** CI indicators (for example `tests/test_*.py` or `.github/workflows/*.yml`)
+## CI and hygiene
+
+- `.github/workflows/ci.yml` calls [`python-ci.yml@v0.2.0`](https://github.com/rmkr-dev/gha-reusable-workflows)
+- Dependabot for GitHub Actions and pip
+- [CODEOWNERS](.github/CODEOWNERS) → `@rmkr-dev`
+- [SECURITY.md](SECURITY.md) for private vulnerability reports
 
 ## Layout
 
@@ -43,10 +45,10 @@ pytest -q
 | --- | --- |
 | `AGENTS.md` | Guardrails for changing *this* repository |
 | `packs/` | Copyable modules for Copilot / Claude / Codex |
-| `src/ai_guardrails/` | Optional hygiene CLI |
-| `tests/` | Unit tests for the CLI and checks |
+| `src/ai_guardrails/` | Hygiene CLI |
+| `tests/` | Pytest coverage |
 | `docs/architecture/` | Current-state architecture |
-| `.github/` | CI / Dependabot / CODEOWNERS — *planned* |
+| `.github/` | CI, Dependabot, CODEOWNERS |
 
 ## License
 
