@@ -53,3 +53,5 @@ Emits passed/failed/total plus per-check `name` / `ok` / `detail`. Exit code sti
 ```bash
 ai-guardrails list-checks --format json
 ```
+
+Full CLI flag reference: [cli.md](../references/cli.md).
