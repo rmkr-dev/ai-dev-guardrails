@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.2] — 2026-09-14
+
+### Changed
+
+- Architecture docs: 20 default checks (incl. `support`), ADR-007/008 links, nested install note
+- EGT integration guide: `web` profile hint + migrate-nested-install link
+
 ## [0.4.1] — 2026-09-14
 
 ### Changed

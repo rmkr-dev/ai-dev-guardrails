@@ -52,9 +52,11 @@ Do not copy template process docs into guardrails packs, and do not replace the 
 | On-call / SRE-heavy | `ops` |
 | Schema / ETL | `data` |
 | Auth, PII, threat notes | `security` |
+| Web UI / a11y / i18n | `web` |
 | Everything | `full` |
 
 Exact lists: [profiles.md](profiles.md). Install flags: [install.md](install.md).
+Upgrading from a flat 0.2.x guardrails copy: [migrate-nested-install.md](migrate-nested-install.md).
 
 ## Cross-links (template → guardrails)
 
