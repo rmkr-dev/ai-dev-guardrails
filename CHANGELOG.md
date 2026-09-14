@@ -2,6 +2,16 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.12] — 2026-09-14
+
+### Fixed
+
+- `--list-profiles` ops section now includes `checklists/cost.md` (matches `ops_extra`)
+
+### Added
+
+- Test: `tests/test_list_profiles_sync.py` keeps `--list-profiles` text aligned with pack arrays
+
 ## [0.3.11] — 2026-09-14
 
 ### Changed
