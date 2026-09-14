@@ -8,6 +8,7 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [agents/security.md](agents/security.md) | Copilot / Claude / Codex | Security-by-default expectations |
 | [agents/secrets.md](agents/secrets.md) | Copilot / Claude / Codex | Secrets never-commit rules |
 | [agents/testing.md](agents/testing.md) | Copilot / Claude / Codex | Testing expectations |
+| [agents/observability.md](agents/observability.md) | Copilot / Claude / Codex | Logs / metrics / traces expectations |
 | [agents/docs.md](agents/docs.md) | Copilot / Claude / Codex | Docs / ADR / diagram honesty |
 | [agents/ci.md](agents/ci.md) | Copilot / Claude / Codex | CI / Actions expectations |
 | [agents/commits.md](agents/commits.md) | Copilot / Claude / Codex | Conventional commit expectations |
