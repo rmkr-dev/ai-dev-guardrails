@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.16] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/supply-chain.md`
+- Checklist: `packs/checklists/supply-chain.md`
+- `api` install profile includes supply-chain agent + checklist
+
 ## [0.2.15] — 2026-09-14
 
 ### Added

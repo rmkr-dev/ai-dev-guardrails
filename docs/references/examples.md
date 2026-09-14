@@ -206,3 +206,10 @@ bash scripts/install-packs.sh "$TARGET" --profile data
 
 1. Follow [`packs/agents/data.md`](../../packs/agents/data.md).
 2. Paste [`packs/prompts/migration-review.md`](../../packs/prompts/migration-review.md) into the review chat.
+
+## Supply-chain slices
+
+When a PR changes dependencies, CI permissions, or publish steps:
+
+1. Follow [`packs/agents/supply-chain.md`](../../packs/agents/supply-chain.md) and [`packs/agents/deps.md`](../../packs/agents/deps.md).
+2. Run through [`packs/checklists/supply-chain.md`](../../packs/checklists/supply-chain.md).
