@@ -60,3 +60,5 @@ Quick start:
 ```bash
 bash scripts/install-packs.sh /path/to/consumer-repo --profile baseline
 ```
+
+Install profiles: [docs/references/profiles.md](../docs/references/profiles.md).

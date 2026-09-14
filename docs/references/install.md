@@ -66,3 +66,5 @@ ai-guardrails check /path/to/consumer-repo
 | `api` | Baseline + API/contracts + deps prompts |
 | `ops` | Baseline + observability/CI/incidents/runbooks |
 | `full` | Every file under `packs/agents`, `packs/checklists`, `packs/prompts` |
+
+Profile catalog: [profiles.md](profiles.md).
