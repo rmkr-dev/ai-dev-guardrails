@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.35] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/cost.md`
+- Checklist: `packs/checklists/cost.md`
+- `ops` install profile includes cost agent + checklist
+
 ## [0.2.34] — 2026-09-14
 
 ### Added

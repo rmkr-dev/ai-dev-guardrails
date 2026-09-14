@@ -15,7 +15,7 @@ bash scripts/install-packs.sh /path/to/repo --profile api --dry-run
 | --- | --- |
 | `baseline` | core, security, secrets, testing, docs, commits + DoD + pr-self-review |
 | `api` | baseline + api, deps, supply-chain + test-plan, change-impact + supply-chain checklist |
-| `ops` | baseline + observability, ci, incidents, performance, a11y, privacy, resilience + incident/runbook/privacy prompts + observability/a11y/resilience checklists |
+| `ops` | baseline + observability, ci, incidents, performance, a11y, privacy, resilience, cost + incident/runbook/privacy prompts + observability/a11y/resilience/cost checklists |
 | `data` | baseline + data, api + migration-review, change-impact |
 | `security` | baseline + security, secrets, privacy, threat-model + security/privacy/threat-model prompts |
 | `full` | all `packs/agents`, `packs/checklists`, `packs/prompts` |
@@ -53,12 +53,14 @@ Override with `PACKS="agents/core.md ..."` to install an explicit list.
 - `agents/a11y.md`
 - `agents/privacy.md`
 - `agents/resilience.md`
+- `agents/cost.md`
 - `prompts/incident-response.md`
 - `prompts/runbook-draft.md`
 - `prompts/privacy-review.md`
 - `checklists/observability.md`
 - `checklists/accessibility.md`
 - `checklists/resilience.md`
+- `checklists/cost.md`
 
 ### `data` (= baseline +)
 
