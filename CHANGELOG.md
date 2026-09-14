@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.29] — 2026-09-14
+
+### Added
+
+- Tests: `profiles --format json` full catalog; `--profile web` nested pack paths
+
 ## [0.4.28] — 2026-09-14
 
 ### Changed
