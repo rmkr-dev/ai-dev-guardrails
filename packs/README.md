@@ -18,5 +18,9 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [prompts/change-impact.md](prompts/change-impact.md) | Copilot / Claude / Codex | Blast-radius prompt |
 | [prompts/adr-draft.md](prompts/adr-draft.md) | Copilot / Claude / Codex | ADR drafting prompt |
 | [prompts/pr-body.md](prompts/pr-body.md) | Copilot / Claude / Codex | PR description prompt |
+| [prompts/pr-review.md](prompts/pr-review.md) | Copilot / Claude / Codex | Generic PR review prompt |
+| [prompts/pr-review-copilot.md](prompts/pr-review-copilot.md) | GitHub Copilot | Copilot-oriented PR review |
+| [prompts/pr-review-claude.md](prompts/pr-review-claude.md) | Claude | Claude-oriented PR review |
+| [prompts/pr-review-codex.md](prompts/pr-review-codex.md) | Codex | Codex-oriented PR review |
 
 See [docs/references/examples.md](../docs/references/examples.md) for copy instructions.

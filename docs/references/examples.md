@@ -83,6 +83,26 @@ jobs:
 
 Add a step in a custom workflow if you need `ai-guardrails check` explicitly beyond pytest.
 
+## PR review prompts (Copilot / Claude / Codex)
+
+Copy or `@`-mention the tool-specific prompt when reviewing a PR:
+
+| Tool | Prompt |
+| --- | --- |
+| Any | [`packs/prompts/pr-review.md`](../../packs/prompts/pr-review.md) |
+| GitHub Copilot | [`packs/prompts/pr-review-copilot.md`](../../packs/prompts/pr-review-copilot.md) |
+| Claude | [`packs/prompts/pr-review-claude.md`](../../packs/prompts/pr-review-claude.md) |
+| Codex | [`packs/prompts/pr-review-codex.md`](../../packs/prompts/pr-review-codex.md) |
+
+```bash
+mkdir -p "$TARGET/docs/guardrails"
+cp packs/prompts/pr-review.md \
+   packs/prompts/pr-review-copilot.md \
+   packs/prompts/pr-review-claude.md \
+   packs/prompts/pr-review-codex.md \
+   "$TARGET/docs/guardrails/"
+```
+
 ## Complements, not duplicates
 
 | Repo | Use instead when you need |
