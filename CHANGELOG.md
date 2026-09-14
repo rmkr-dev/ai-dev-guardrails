@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.20] — 2026-09-14
+
+### Added
+
+- Test: install.md Profiles table lists every `PROFILE_NAMES` entry (incl. `web`)
+
 ## [0.4.19] — 2026-09-14
 
 ### Changed
