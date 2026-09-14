@@ -39,3 +39,13 @@ def test_validator_checks_table_lists_all_default_checks() -> None:
     # table row count for check names
     rows = re.findall(r"^\| `([a-z_]+)` \|", text, flags=re.M)
     assert rows == names
+
+def test_readme_lists_all_default_checks() -> None:
+    text = (ROOT / "README.md").read_text()
+    m = re.search(r"Default checks \((\d+)\): ([^\n]+)", text)
+    assert m, "README.md missing Default checks line"
+    names = _check_names()
+    assert int(m.group(1)) == len(names)
+    listed = [p.strip(" `.") for p in m.group(2).split(",")]
+    assert listed == names
+

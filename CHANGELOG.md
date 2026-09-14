@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.11] — 2026-09-14
+
+### Added
+
+- `test_docs_checks_sync` also asserts README default-checks list matches `DEFAULT_CHECKS`
+
 ## [0.4.10] — 2026-09-14
 
 ### Changed
