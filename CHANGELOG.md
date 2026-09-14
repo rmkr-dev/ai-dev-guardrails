@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.31] — 2026-09-14
+
+### Added
+
+- Install script: `--dry-run`, `--list-profiles`, destination `INSTALL_MANIFEST.txt`
+- Profile docs: exact pack lists per profile in `docs/references/profiles.md`
+
 ## [0.2.30] — 2026-09-14
 
 ### Added

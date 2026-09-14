@@ -10,7 +10,15 @@ From a checkout of **ai-dev-guardrails**:
 bash scripts/install-packs.sh /path/to/consumer-repo
 bash scripts/install-packs.sh /path/to/consumer-repo --profile api
 bash scripts/install-packs.sh /path/to/consumer-repo --profile ops
+bash scripts/install-packs.sh /path/to/consumer-repo --profile security
 bash scripts/install-packs.sh /path/to/consumer-repo --profile full
+```
+
+Preview without writing files:
+
+```bash
+bash scripts/install-packs.sh /path/to/consumer-repo --profile api --dry-run
+bash scripts/install-packs.sh --list-profiles
 ```
 
 Custom set:
@@ -21,6 +29,8 @@ PACKS="agents/core.md agents/api.md prompts/pr-review.md" \
 ```
 
 Default destination: `docs/guardrails/` (override with `--dest RELDIR`).
+
+On success the script writes `docs/guardrails/INSTALL_MANIFEST.txt` listing the profile and copied pack paths (useful for audits and reinstalls).
 
 No Node/npm. Requires `bash` and `cp`.
 
@@ -65,6 +75,12 @@ ai-guardrails check /path/to/consumer-repo
 | `baseline` | Day-to-day engineering + DoD |
 | `api` | Baseline + API/contracts + deps prompts |
 | `ops` | Baseline + observability/CI/incidents/runbooks |
+| `data` | Baseline + data/migrations |
+| `security` | Baseline + privacy/threat-model reviews |
 | `full` | Every file under `packs/agents`, `packs/checklists`, `packs/prompts` |
 
-Profile catalog: [profiles.md](profiles.md).
+Exact pack lists: [profiles.md](profiles.md) or `bash scripts/install-packs.sh --list-profiles`.
+
+## With enterprise-github-template
+
+If the consumer was created from [enterprise-github-template](https://github.com/rmkr-dev/enterprise-github-template), prefer `--profile baseline` (or `ops` / `security`) into `docs/guardrails/` and keep the template’s own `AGENTS.md` as the entry point. Pair with the template’s `docs/operations/` and `SUPPORT.md` rather than duplicating process docs.

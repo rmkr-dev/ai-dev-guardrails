@@ -6,10 +6,10 @@ Complements [llm-eval-harness](https://github.com/rmkr-dev/llm-eval-harness) and
 
 ## Status
 
-**v0.2.30** — see [CHANGELOG.md](CHANGELOG.md).
+**v0.2.31** — see [CHANGELOG.md](CHANGELOG.md).
 
 - Packs: [packs/README.md](packs/README.md) · [pack matrix](docs/references/pack-matrix.md)
-- Install: [docs/references/install.md](docs/references/install.md) · [profiles](docs/references/profiles.md) (`scripts/install-packs.sh`)
+- Install: [docs/references/install.md](docs/references/install.md) · [profiles](docs/references/profiles.md) (`scripts/install-packs.sh`, `--dry-run` / `--list-profiles`)
 - Examples: [docs/references/examples.md](docs/references/examples.md), [sample AGENTS.md](docs/references/sample-agents-md.md), [validator checks](docs/references/validator-checks.md), [CLI](docs/references/cli.md)
 - Development: [docs/development/development.md](docs/development/development.md)
 - Decisions: [ADR-001](docs/decisions/ADR-001-pack-plus-optional-validator.md) … [ADR-004](docs/decisions/ADR-004-v0.2-pack-and-check-suite.md) · [ADR-005](docs/decisions/ADR-005-a11y-data-and-issue-templates.md) · [ADR-006](docs/decisions/ADR-006-0.2x-expansion-checks-and-packs.md)
