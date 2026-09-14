@@ -289,6 +289,19 @@ def check_funding(root: Path) -> CheckResult:
     )
 
 
+
+def check_citation(root: Path) -> CheckResult:
+    """Pass if a CITATION.cff or CITATION.md file exists."""
+    for name in ("CITATION.cff", "CITATION.md", "CITATION"):
+        if _exists(root, name):
+            return CheckResult("citation", True, f"{name} present")
+    return CheckResult(
+        "citation",
+        False,
+        "missing CITATION.cff (or CITATION.md)",
+    )
+
+
 DEFAULT_CHECKS = (
     check_agents_md,
     check_readme,
@@ -308,6 +321,7 @@ DEFAULT_CHECKS = (
     check_pre_commit,
     check_code_of_conduct,
     check_funding,
+    check_citation,
 )
 
 
