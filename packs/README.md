@@ -8,10 +8,10 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [agents/security.md](agents/security.md) | Copilot / Claude / Codex | Security-by-default expectations |
 | [agents/testing.md](agents/testing.md) | Copilot / Claude / Codex | Testing expectations |
 | [agents/docs.md](agents/docs.md) | Copilot / Claude / Codex | Docs / ADR / diagram honesty |
+| [agents/ci.md](agents/ci.md) | Copilot / Claude / Codex | CI / Actions expectations |
 | [checklists/definition-of-done.md](checklists/definition-of-done.md) | Humans + agents | Slice Definition of Done |
 | [checklists/pr-self-review.md](checklists/pr-self-review.md) | Humans + agents | Pre-review checklist |
-| [prompts/change-impact.md](prompts/change-impact.md) | Copilot / Claude / Codex | Prompt to reason about blast radius |
+| [prompts/change-impact.md](prompts/change-impact.md) | Copilot / Claude / Codex | Blast-radius prompt |
+| [prompts/adr-draft.md](prompts/adr-draft.md) | Copilot / Claude / Codex | ADR drafting prompt |
 
 See [docs/references/examples.md](../docs/references/examples.md) for copy instructions.
-
-These packs complement a full repo template; they do not replace CI, CODEOWNERS, or security policy files.
