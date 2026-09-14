@@ -43,19 +43,12 @@ def check_cmd(target: Path, strict: bool) -> None:
 def list_checks_cmd() -> None:
     """Print the default check names in run order."""
     for fn in DEFAULT_CHECKS:
-        # function names are check_*; strip prefix for display consistency with result.name
-        name = fn.__name__.removeprefix("check_")
-        # Map to CheckResult.name conventions
-        mapping = {
-            "agents_md": "agents_md",
-            "readme": "readme",
-            "architecture_docs": "architecture_docs",
-            "tests_or_ci": "tests_or_ci",
-            "license": "license",
-            "security_md": "security_md",
-            "codeowners": "codeowners",
-        }
-        click.echo(mapping.get(name, name))
+        # Derive stable names from CheckResult by invoking against a throwaway? 
+        # Prefer explicit order matching DEFAULT_CHECKS implementation names.
+        raw = fn.__name__.removeprefix("check_")
+        click.echo(raw)
+
+
 
 
 if __name__ == "__main__":

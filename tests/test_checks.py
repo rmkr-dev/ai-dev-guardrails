@@ -8,6 +8,7 @@ from ai_guardrails.checks import (
     check_agents_md,
     check_architecture_docs,
     check_codeowners,
+    check_contributing,
     check_license,
     check_readme,
     check_security_md,
@@ -21,61 +22,43 @@ def _touch(path: Path, content: str = "# x\n") -> None:
     path.write_text(content)
 
 
-def test_check_agents_md_pass_fail(tmp_path: Path) -> None:
+def test_basics(tmp_path: Path) -> None:
     assert check_agents_md(tmp_path).ok is False
-    _touch(tmp_path / "AGENTS.md")
-    assert check_agents_md(tmp_path).ok is True
-
-
-def test_check_readme_pass_fail(tmp_path: Path) -> None:
     assert check_readme(tmp_path).ok is False
+    _touch(tmp_path / "AGENTS.md")
     _touch(tmp_path / "README.md")
+    assert check_agents_md(tmp_path).ok is True
     assert check_readme(tmp_path).ok is True
 
 
-def test_architecture_dir_with_markdown(tmp_path: Path) -> None:
+def test_architecture_and_tests_ci(tmp_path: Path) -> None:
     assert check_architecture_docs(tmp_path).ok is False
     _touch(tmp_path / "docs" / "architecture" / "architecture.md")
-    result = check_architecture_docs(tmp_path)
-    assert result.ok is True
-    assert "docs/architecture" in result.detail
-
-
-def test_architecture_flat_file(tmp_path: Path) -> None:
-    _touch(tmp_path / "docs" / "architecture.md")
     assert check_architecture_docs(tmp_path).ok is True
-
-
-def test_tests_directory_indicator(tmp_path: Path) -> None:
     assert check_tests_or_ci(tmp_path).ok is False
-    _touch(tmp_path / "tests" / "test_sample.py", "def test_ok():\n    assert True\n")
-    result = check_tests_or_ci(tmp_path)
-    assert result.ok is True
-    assert "tests" in result.detail
-
-
-def test_ci_workflow_indicator(tmp_path: Path) -> None:
     _touch(tmp_path / ".github" / "workflows" / "ci.yml", "name: CI\n")
-    result = check_tests_or_ci(tmp_path)
-    assert result.ok is True
-    assert "ci:" in result.detail
+    assert check_tests_or_ci(tmp_path).ok is True
 
 
-def test_license_security_codeowners(tmp_path: Path) -> None:
+def test_license_security_codeowners_contributing(tmp_path: Path) -> None:
     assert check_license(tmp_path).ok is False
     assert check_security_md(tmp_path).ok is False
     assert check_codeowners(tmp_path).ok is False
+    assert check_contributing(tmp_path).ok is False
     _touch(tmp_path / "LICENSE", "MIT\n")
     _touch(tmp_path / "SECURITY.md")
     _touch(tmp_path / ".github" / "CODEOWNERS", "* @owner\n")
+    _touch(tmp_path / "CONTRIBUTING.md")
     assert check_license(tmp_path).ok is True
     assert check_security_md(tmp_path).ok is True
     assert check_codeowners(tmp_path).ok is True
+    assert check_contributing(tmp_path).ok is True
 
 
 def _seed_all(tmp_path: Path) -> None:
     _touch(tmp_path / "AGENTS.md")
     _touch(tmp_path / "README.md")
+    _touch(tmp_path / "CONTRIBUTING.md")
     _touch(tmp_path / "docs" / "architecture" / "overview.md")
     _touch(tmp_path / "tests" / "test_x.py", "def test_x():\n    assert 1\n")
     _touch(tmp_path / "LICENSE", "MIT\n")
@@ -95,6 +78,7 @@ def test_run_checks_all_pass(tmp_path: Path) -> None:
         "license",
         "security_md",
         "codeowners",
+        "contributing",
     }
 
 

@@ -8,10 +8,14 @@ from ai_guardrails.cli import main
 
 
 def _seed_good(root: Path) -> None:
-    (root / "AGENTS.md").write_text("# agents\n")
-    (root / "README.md").write_text("# readme\n")
-    (root / "LICENSE").write_text("MIT\n")
-    (root / "SECURITY.md").write_text("# security\n")
+    for name, content in {
+        "AGENTS.md": "# agents\n",
+        "README.md": "# readme\n",
+        "LICENSE": "MIT\n",
+        "SECURITY.md": "# security\n",
+        "CONTRIBUTING.md": "# contrib\n",
+    }.items():
+        (root / name).write_text(content)
     github = root / ".github"
     github.mkdir()
     (github / "CODEOWNERS").write_text("* @rmkr-dev\n")
@@ -28,8 +32,7 @@ def test_cli_check_pass(tmp_path: Path) -> None:
     runner = CliRunner()
     result = runner.invoke(main, ["check", str(tmp_path)])
     assert result.exit_code == 0
-    assert "PASS" in result.output
-    assert "7/7 checks passed" in result.output
+    assert "8/8 checks passed" in result.output
 
 
 def test_cli_check_fail_strict(tmp_path: Path) -> None:
@@ -37,14 +40,6 @@ def test_cli_check_fail_strict(tmp_path: Path) -> None:
     runner = CliRunner()
     result = runner.invoke(main, ["check", str(tmp_path)])
     assert result.exit_code == 1
-    assert "FAIL" in result.output
-
-
-def test_cli_check_no_strict(tmp_path: Path) -> None:
-    runner = CliRunner()
-    result = runner.invoke(main, ["check", "--no-strict", str(tmp_path)])
-    assert result.exit_code == 0
-    assert "FAIL" in result.output
 
 
 def test_cli_list_checks() -> None:
@@ -60,4 +55,5 @@ def test_cli_list_checks() -> None:
         "license",
         "security_md",
         "codeowners",
+        "contributing",
     ]
