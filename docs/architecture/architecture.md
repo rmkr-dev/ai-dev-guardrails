@@ -12,7 +12,7 @@ Markdown modules under `packs/` (agents, checklists, prompts) are copied into co
 
 Presence-oriented checks in `src/ai_guardrails/checks.py`, exposed as `ai-guardrails check` / `list-checks`.
 
-Default checks (18 as of 0.2.22): `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, `license`, `security_md`, `codeowners`, `contributing`, `gitignore`, `changelog`, `pr_template`, `dependabot`, `editorconfig`, `makefile`, `issue_templates`, `pre_commit`, `code_of_conduct`, `funding`.
+Default checks (19 as of 0.2.24): `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, `license`, `security_md`, `codeowners`, `contributing`, `gitignore`, `changelog`, `pr_template`, `dependabot`, `editorconfig`, `makefile`, `issue_templates`, `pre_commit`, `code_of_conduct`, `funding`, `citation`.
 
 ## CI
 

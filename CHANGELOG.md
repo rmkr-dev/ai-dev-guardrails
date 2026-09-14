@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.24] — 2026-09-14
+
+### Added
+
+- Validator check: `citation` (`CITATION.cff`)
+- Root `CITATION.cff` for software citation metadata
+
 ## [0.2.23] — 2026-09-14
 
 ### Added

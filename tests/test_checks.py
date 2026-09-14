@@ -5,6 +5,7 @@ from pathlib import Path
 import pytest
 
 from ai_guardrails.checks import (
+    check_citation,
     check_funding,
     check_code_of_conduct,
     check_pre_commit,
@@ -40,6 +41,7 @@ def _seed_all(tmp_path: Path) -> None:
     _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
     _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
     _touch(tmp_path / ".github" / "FUNDING.yml", "github: [rmkr-dev]\n")
+    _touch(tmp_path / "CITATION.cff", "cff-version: 1.2.0\n")
 
 
 def test_gitignore(tmp_path: Path) -> None:
@@ -74,6 +76,7 @@ def test_dependabot(tmp_path: Path) -> None:
     _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
     _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
     _touch(tmp_path / ".github" / "FUNDING.yml", "github: [rmkr-dev]\n")
+    _touch(tmp_path / "CITATION.cff", "cff-version: 1.2.0\n")
     assert check_dependabot(tmp_path).ok is True
 
 
@@ -85,6 +88,7 @@ def test_editorconfig(tmp_path: Path) -> None:
     _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
     _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
     _touch(tmp_path / ".github" / "FUNDING.yml", "github: [rmkr-dev]\n")
+    _touch(tmp_path / "CITATION.cff", "cff-version: 1.2.0\n")
     assert check_editorconfig(tmp_path).ok is True
 
 
@@ -95,6 +99,7 @@ def test_makefile(tmp_path: Path) -> None:
     _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
     _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
     _touch(tmp_path / ".github" / "FUNDING.yml", "github: [rmkr-dev]\n")
+    _touch(tmp_path / "CITATION.cff", "cff-version: 1.2.0\n")
     assert check_makefile(tmp_path).ok is True
 
 
@@ -105,6 +110,7 @@ def test_issue_templates(tmp_path: Path) -> None:
     _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
     _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
     _touch(tmp_path / ".github" / "FUNDING.yml", "github: [rmkr-dev]\n")
+    _touch(tmp_path / "CITATION.cff", "cff-version: 1.2.0\n")
     assert check_issue_templates(tmp_path).ok is True
 
 
@@ -119,6 +125,7 @@ def test_pre_commit(tmp_path: Path) -> None:
     _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
     _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
     _touch(tmp_path / ".github" / "FUNDING.yml", "github: [rmkr-dev]\n")
+    _touch(tmp_path / "CITATION.cff", "cff-version: 1.2.0\n")
     assert check_pre_commit(tmp_path).ok is True
 
 
@@ -127,6 +134,7 @@ def test_code_of_conduct(tmp_path: Path) -> None:
     assert check_code_of_conduct(tmp_path).ok is False
     _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
     _touch(tmp_path / ".github" / "FUNDING.yml", "github: [rmkr-dev]\n")
+    _touch(tmp_path / "CITATION.cff", "cff-version: 1.2.0\n")
     assert check_code_of_conduct(tmp_path).ok is True
 
 
@@ -139,7 +147,15 @@ def test_code_of_conduct_github(tmp_path: Path) -> None:
 def test_funding(tmp_path: Path) -> None:
     assert check_funding(tmp_path).ok is False
     _touch(tmp_path / ".github" / "FUNDING.yml", "github: [rmkr-dev]\n")
+    _touch(tmp_path / "CITATION.cff", "cff-version: 1.2.0\n")
     assert check_funding(tmp_path).ok is True
+
+
+
+def test_citation(tmp_path: Path) -> None:
+    assert check_citation(tmp_path).ok is False
+    _touch(tmp_path / "CITATION.cff", "cff-version: 1.2.0\n")
+    assert check_citation(tmp_path).ok is True
 
 
 def test_run_checks_all_pass(tmp_path: Path) -> None:
@@ -157,7 +173,8 @@ def test_run_checks_all_pass(tmp_path: Path) -> None:
     assert "pre_commit" in names
     assert "code_of_conduct" in names
     assert "funding" in names
-    assert len(results) == 18
+    assert "citation" in names
+    assert len(results) == 19
 
 
 def test_run_checks_rejects_file(tmp_path: Path) -> None:

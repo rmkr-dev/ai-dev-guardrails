@@ -31,6 +31,7 @@ def _seed_good(root: Path) -> None:
     (root / ".pre-commit-config.yaml").write_text("repos: []\n")
     (root / "CODE_OF_CONDUCT.md").write_text("# CoC\n")
     (github / "FUNDING.yml").write_text("github: [rmkr-dev]\n")
+    (root / "CITATION.cff").write_text("cff-version: 1.2.0\n")
     arch = root / "docs" / "architecture"
     arch.mkdir(parents=True)
     (arch / "architecture.md").write_text("# arch\n")
@@ -44,7 +45,7 @@ def test_cli_check_pass(tmp_path: Path) -> None:
     runner = CliRunner()
     result = runner.invoke(main, ["check", str(tmp_path)])
     assert result.exit_code == 0
-    assert "18/18 checks passed" in result.output
+    assert "19/19 checks passed" in result.output
 
 
 def test_cli_check_fail_strict(tmp_path: Path) -> None:
@@ -78,6 +79,7 @@ def test_cli_list_checks() -> None:
         "pre_commit",
         "code_of_conduct",
         "funding",
+        "citation",
     ]
 
 
