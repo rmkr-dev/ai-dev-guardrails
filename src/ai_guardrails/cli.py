@@ -95,6 +95,7 @@ def check_cmd(
     failed = sum(1 for r in results if not r.ok)
     if fmt == "json":
         payload = {
+            "version": __version__,
             "root": str(target.resolve()),
             "passed": len(results) - failed,
             "failed": failed,
@@ -185,24 +186,34 @@ def profiles_cmd(fmt: str, profile_name: str | None) -> None:
                 json.dumps({"profile": profile_name, "packs": packs}, indent=2, sort_keys=True)
             )
         else:
-            click.echo(f"{profile_name}:")
             if isinstance(packs, str):
-                click.echo(f"  {packs}")
+                click.echo(f"{profile_name}: {packs}")
             else:
+                click.echo(f"{profile_name}: ({len(packs)} packs)")
                 for p in packs:
                     click.echo(f"  {p}")
         return
 
     catalog = describe_profiles()
     if fmt == "json":
-        click.echo(json.dumps({"profiles": catalog}, indent=2, sort_keys=True))
+        counts = {
+            name: (len(packs) if isinstance(packs, list) else None)
+            for name, packs in catalog.items()
+        }
+        click.echo(
+            json.dumps(
+                {"profiles": catalog, "counts": counts},
+                indent=2,
+                sort_keys=True,
+            )
+        )
     else:
         for name in PROFILE_NAMES:
-            click.echo(f"{name}:")
             packs = catalog[name]
             if isinstance(packs, str):
-                click.echo(f"  {packs}")
+                click.echo(f"{name}: {packs}")
             else:
+                click.echo(f"{name}: ({len(packs)} packs)")
                 for p in packs:
                     click.echo(f"  {p}")
             click.echo("")

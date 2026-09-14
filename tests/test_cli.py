@@ -95,6 +95,8 @@ def test_cli_check_json(tmp_path: Path) -> None:
     data = json.loads(result.output)
     assert data["failed"] == 0
     assert data["total"] == data["passed"]
+    from ai_guardrails import __version__
+    assert data["version"] == __version__
     assert any(c["name"] == "readme" for c in data["checks"])
 
 

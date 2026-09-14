@@ -27,6 +27,7 @@ def test_cli_profiles_text() -> None:
     result = runner.invoke(main, ["profiles"])
     assert result.exit_code == 0
     assert "baseline:" in result.output
+    assert "packs)" in result.output
     assert "agents/core.md" in result.output
     assert "ops:" in result.output
 
@@ -57,6 +58,9 @@ def test_cli_profiles_json_catalog() -> None:
     assert "agents/core.md" in data["profiles"]["baseline"]
     assert "agents/frontend.md" in data["profiles"]["web"]
     assert isinstance(data["profiles"]["full"], str)
+    assert data["counts"]["baseline"] == len(data["profiles"]["baseline"])
+    assert data["counts"]["web"] == len(data["profiles"]["web"])
+    assert data["counts"]["full"] is None
 
 
 def test_cli_profiles_web_text() -> None:
