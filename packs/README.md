@@ -23,6 +23,7 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [agents/i18n.md](agents/i18n.md) | Copilot / Claude / Codex | Internationalization expectations |
 | [agents/support.md](agents/support.md) | Copilot / Claude / Codex | Support / triage expectations |
 | [agents/threat-model.md](agents/threat-model.md) | Copilot / Claude / Codex | Lightweight threat modeling |
+| [agents/resilience.md](agents/resilience.md) | Copilot / Claude / Codex | Resilience / failure-mode expectations |
 | [checklists/definition-of-done.md](checklists/definition-of-done.md) | Humans + agents | Slice Definition of Done |
 | [checklists/pr-self-review.md](checklists/pr-self-review.md) | Humans + agents | Pre-review checklist |
 | [checklists/release.md](checklists/release.md) | Humans + agents | Release / tag checklist |
@@ -31,6 +32,7 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [checklists/accessibility.md](checklists/accessibility.md) | Humans + agents | Accessibility readiness checklist |
 | [checklists/supply-chain.md](checklists/supply-chain.md) | Humans + agents | Supply-chain readiness checklist |
 | [checklists/i18n.md](checklists/i18n.md) | Humans + agents | i18n readiness checklist |
+| [checklists/resilience.md](checklists/resilience.md) | Humans + agents | Resilience readiness checklist |
 | [prompts/change-impact.md](prompts/change-impact.md) | Copilot / Claude / Codex | Blast-radius prompt |
 | [prompts/adr-draft.md](prompts/adr-draft.md) | Copilot / Claude / Codex | ADR drafting prompt |
 | [prompts/pr-body.md](prompts/pr-body.md) | Copilot / Claude / Codex | PR description prompt |
