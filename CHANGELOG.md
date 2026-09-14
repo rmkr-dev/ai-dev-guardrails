@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.16] — 2026-09-14
+
+### Added
+
+- Test: `test_migrate_mapping_sync` keeps migrate guide nested paths aligned with `packs/`
+
 ## [0.4.15] — 2026-09-14
 
 ### Changed
