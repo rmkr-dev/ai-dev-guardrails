@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.10] — 2026-09-14
+
+### Changed
+
+- CLI reference See also: profiles/install/migrate + docs checks sync pointer
+
 ## [0.4.9] — 2026-09-14
 
 ### Added
