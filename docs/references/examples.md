@@ -120,6 +120,10 @@ cp packs/prompts/pr-review.md \
    "$TARGET/docs/guardrails/"
 ```
 
+## Dependencies pack
+
+When adding libraries or Actions, copy [`packs/agents/deps.md`](../../packs/agents/deps.md) beside other agent modules and link it from `AGENTS.md`. Prefer Dependabot for routine bumps; keep the consumer on a single package manager.
+
 ## Complements, not duplicates
 
 | Repo | Use instead when you need |

@@ -2,6 +2,18 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.0] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/deps.md`
+- Validator check: `dependabot`
+- ADR-004: v0.2 pack and check suite milestone
+
+### Milestone
+
+Default packs now cover core engineering, security/secrets, testing, observability, docs, CI, commits, and dependencies, plus PR-review prompts (Copilot/Claude/Codex) and readiness checklists. Default CLI checks: 12 presence rules including changelog, PR template, and Dependabot.
+
 ## [0.1.9] — 2026-09-14
 
 ### Added
@@ -74,16 +86,11 @@ All notable changes to **ai-dev-guardrails** are documented here.
 ### Added
 
 - Foundation docs: `README.md`, `LICENSE` (MIT), `CONTRIBUTING.md`, `AGENTS.md`, architecture stubs
-- Pack modules for Copilot / Claude / Codex:
-  - `packs/agents/core.md`
-  - `packs/agents/security.md`
-  - `packs/checklists/definition-of-done.md`
-  - `packs/prompts/change-impact.md`
+- Pack modules for Copilot / Claude / Codex
 - Optional Python CLI `ai-guardrails check` with pytest coverage
 - CI via `gha-reusable-workflows` `python-ci@v0.2.0`
-- Dependabot (Actions + pip), `CODEOWNERS`, `SECURITY.md`
-- `docs/references/examples.md` and ADR-001
 
+[0.2.0]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.0
 [0.1.9]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.9
 [0.1.8]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.8
 [0.1.7]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.7
