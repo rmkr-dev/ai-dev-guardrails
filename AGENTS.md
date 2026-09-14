@@ -78,3 +78,4 @@ Prefer linking rather than inlining:
 - Data/migrations: `packs/agents/data.md`
 - Supply-chain: `packs/agents/supply-chain.md`
 - Privacy: `packs/agents/privacy.md`
+- Internationalization: `packs/agents/i18n.md`
