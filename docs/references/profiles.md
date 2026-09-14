@@ -88,3 +88,8 @@ Every `*.md` under `packs/agents`, `packs/checklists`, and `packs/prompts` (sort
 Successful installs write `INSTALL_MANIFEST.txt` in the destination directory with profile name and copied paths.
 
 See [install.md](install.md) and [pack-matrix.md](pack-matrix.md).
+
+## Destination layout
+
+Installed files keep their `agents/`, `checklists/`, and `prompts/` prefixes under the destination directory (v0.3+).
+

@@ -30,6 +30,8 @@ PACKS="agents/core.md agents/api.md prompts/pr-review.md" \
 
 Default destination: `docs/guardrails/` (override with `--dest RELDIR`).
 
+Packs are installed under `agents/`, `checklists/`, and `prompts/` subfolders so modules with the same basename (for example `agents/cost.md` and `checklists/cost.md`) do not overwrite each other.
+
 On success the script writes `docs/guardrails/INSTALL_MANIFEST.txt` listing the profile and copied pack paths (useful for audits and reinstalls).
 
 No Node/npm. Requires `bash` and `cp`.
@@ -54,9 +56,9 @@ Add a short pointer section (adapt paths if you used a different `--dest`):
 ```markdown
 ## Guardrail packs
 
-- [Core](docs/guardrails/core.md)
-- [Security](docs/guardrails/security.md)
-- [Definition of Done](docs/guardrails/definition-of-done.md)
+- [Core](docs/guardrails/agents/core.md)
+- [Security](docs/guardrails/agents/security.md)
+- [Definition of Done](docs/guardrails/checklists/definition-of-done.md)
 ```
 
 A fuller template lives in [sample-agents-md.md](sample-agents-md.md).
