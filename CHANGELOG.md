@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.6] — 2026-09-14
+
+### Added
+
+- Test: `tests/test_profiles_sync.py` keeps CLI profile catalog aligned with `install-packs.sh`
+
 ## [0.3.5] — 2026-09-14
 
 ### Added
