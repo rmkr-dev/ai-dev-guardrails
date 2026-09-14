@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.22] — 2026-09-14
+
+### Added
+
+- Validator check: `funding` (`.github/FUNDING.yml`)
+- Root `.github/FUNDING.yml` pointing at `rmkr-dev`
+
 ## [0.2.21] — 2026-09-14
 
 ### Added
