@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.4] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/frontend.md`
+- Checklist: `packs/checklists/frontend.md`
+- Install profile: `web` (frontend + a11y + i18n)
+
 ## [0.3.3] — 2026-09-14
 
 ### Added
