@@ -14,6 +14,7 @@ Quick map of **ai-dev-guardrails** modules by audience and when to install them.
 | `agents/commits.md` | Commit message conventions |
 | `agents/deps.md` | New or upgraded dependencies |
 | `agents/performance.md` | Hot paths / explicit perf work |
+| `agents/api.md` | Public APIs, schemas, wire compatibility |
 | `checklists/*` | PR templates and self-review |
 | `prompts/pr-review*.md` | Reviewing with Copilot / Claude / Codex |
 | `prompts/test-plan.md` | Writing PR test plans |
