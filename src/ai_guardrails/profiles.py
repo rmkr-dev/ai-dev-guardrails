@@ -54,9 +54,17 @@ EXTRAS: dict[str, tuple[str, ...]] = {
         "prompts/privacy-review.md",
         "prompts/threat-model.md",
     ),
+    "web": (
+        "agents/frontend.md",
+        "agents/a11y.md",
+        "agents/i18n.md",
+        "checklists/frontend.md",
+        "checklists/accessibility.md",
+        "checklists/i18n.md",
+    ),
 }
 
-PROFILE_NAMES = ("baseline", "api", "ops", "data", "security", "full")
+PROFILE_NAMES = ("baseline", "api", "ops", "data", "security", "web", "full")
 
 
 def packs_for(profile: str) -> list[str] | None:
@@ -85,7 +93,7 @@ def packs_for(profile: str) -> list[str] | None:
 def describe_profiles() -> dict[str, list[str] | str]:
     """Human/machine catalog for ``ai-guardrails profiles``."""
     catalog: dict[str, list[str] | str] = {"baseline": list(BASELINE)}
-    for name in ("api", "ops", "data", "security"):
+    for name in ("api", "ops", "data", "security", "web"):
         catalog[name] = packs_for(name) or []
     catalog["full"] = "all packs/agents, packs/checklists, packs/prompts *.md"
     return catalog

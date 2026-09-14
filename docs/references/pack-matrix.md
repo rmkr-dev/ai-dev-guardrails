@@ -25,6 +25,8 @@ Quick map of **ai-dev-guardrails** modules by audience and when to install them.
 | `agents/threat-model.md` | Security-sensitive slice threat notes |
 | `agents/resilience.md` | Retries, timeouts, degradation |
 | `agents/cost.md` | Cloud spend, retention, always-on resources |
+| `agents/frontend.md` | Web UI, docs chrome, rich human-facing surfaces |
+| `checklists/frontend.md` | Pre-merge frontend / UI self-review |
 | `checklists/cost.md` | Pre-merge cost / capacity self-review |
 | `checklists/resilience.md` | Pre-merge resilience self-review |
 | `prompts/threat-model.md` | Drafting threat notes |
@@ -45,7 +47,7 @@ Quick map of **ai-dev-guardrails** modules by audience and when to install them.
 
 See [examples.md](examples.md) and [sample-agents-md.md](sample-agents-md.md).
 
-Install profiles: `baseline`, `api`, `ops`, `data`, `security`, `full` — see [install.md](install.md).
+Install profiles: `baseline`, `api`, `ops`, `data`, `security`, `web`, `full` — see [install.md](install.md).
 
 Pairing with [enterprise-github-template](https://github.com/rmkr-dev/enterprise-github-template): [enterprise-github-template.md](enterprise-github-template.md).
 

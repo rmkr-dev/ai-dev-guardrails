@@ -25,6 +25,7 @@ Profiles:
   ops       baseline + observability, ci, incidents, performance, a11y, privacy, resilience, cost + incident/runbook/privacy prompts
   data      baseline + data, api + migration-review, change-impact
   security  baseline + security, secrets, privacy, threat-model + security/privacy/threat prompts
+  web       baseline + frontend, a11y, i18n + a11y/i18n/frontend checklists
   full      all agents, checklists, and prompts under packs/
 
 Flags:
@@ -88,6 +89,14 @@ security: (baseline +)
   prompts/security-review.md
   prompts/privacy-review.md
   prompts/threat-model.md
+
+web: (baseline +)
+  agents/frontend.md
+  agents/a11y.md
+  agents/i18n.md
+  checklists/frontend.md
+  checklists/accessibility.md
+  checklists/i18n.md
 
 full:
   all *.md under packs/agents, packs/checklists, packs/prompts
@@ -196,6 +205,16 @@ ops_extra=(
   checklists/cost.md
 )
 
+
+web_extra=(
+  agents/frontend.md
+  agents/a11y.md
+  agents/i18n.md
+  checklists/frontend.md
+  checklists/accessibility.md
+  checklists/i18n.md
+)
+
 if [[ -n "${PACKS:-}" ]]; then
   # shellcheck disable=SC2206
   selected=($PACKS)
@@ -212,6 +231,9 @@ else
       ;;
     security)
       selected=("${baseline_packs[@]}" "${security_extra[@]}")
+      ;;
+    web)
+      selected=("${baseline_packs[@]}" "${web_extra[@]}")
       ;;
     ops)
       selected=("${baseline_packs[@]}" "${ops_extra[@]}")
