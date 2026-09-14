@@ -16,6 +16,7 @@ Read this before changing this repository. Rules apply to people and coding agen
 - [Testing](docs/guardrails/testing.md)
 - [Observability](docs/guardrails/observability.md)
 - [Deps](docs/guardrails/deps.md)
+- [API / contracts](docs/guardrails/api.md)
 - [Definition of Done](docs/guardrails/definition-of-done.md)
 
 ## Prompts

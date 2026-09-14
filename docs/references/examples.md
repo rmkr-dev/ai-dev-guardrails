@@ -148,6 +148,15 @@ Full list of default presence checks: [`validator-checks.md`](validator-checks.m
 
 Paste [`packs/prompts/release-notes.md`](../../packs/prompts/release-notes.md) when drafting a GitHub Release from CHANGELOG.
 
+
+## API / contracts pack
+
+When changing public HTTP/RPC surfaces, schemas, or library APIs, copy [`packs/agents/api.md`](../../packs/agents/api.md) beside other agent modules and link it from `AGENTS.md`. Keep handlers, docs, and contract tests in the same PR.
+
+```bash
+cp packs/agents/api.md "$TARGET/docs/guardrails/"
+```
+
 ## Complements, not duplicates
 
 | Repo | Use instead when you need |

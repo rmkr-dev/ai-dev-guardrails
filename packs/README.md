@@ -14,6 +14,7 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [agents/commits.md](agents/commits.md) | Copilot / Claude / Codex | Conventional commit expectations |
 | [agents/deps.md](agents/deps.md) | Copilot / Claude / Codex | Dependency / supply-chain expectations |
 | [agents/performance.md](agents/performance.md) | Copilot / Claude / Codex | Performance expectations |
+| [agents/api.md](agents/api.md) | Copilot / Claude / Codex | API / contracts expectations |
 | [checklists/definition-of-done.md](checklists/definition-of-done.md) | Humans + agents | Slice Definition of Done |
 | [checklists/pr-self-review.md](checklists/pr-self-review.md) | Humans + agents | Pre-review checklist |
 | [checklists/release.md](checklists/release.md) | Humans + agents | Release / tag checklist |
