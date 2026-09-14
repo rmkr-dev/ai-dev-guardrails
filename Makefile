@@ -41,4 +41,5 @@ help:
 	@echo "  optional: DEST=rel/path DRY_RUN=1"
 	@echo "Script extras: --dry-run, --list-profiles (see docs/references/install.md)"
 	@echo "  Nested install; flat 0.2.x leftovers are warned (not deleted) on install/--dry-run"
-	@echo "CLI: ai-guardrails profiles | check --only/--skip | list-checks"
+	@echo "  Profiles include web (frontend/a11y/i18n); see docs/references/install.md"
+	@echo "CLI: ai-guardrails profiles | check --only/--skip | list-checks | check --no-strict"

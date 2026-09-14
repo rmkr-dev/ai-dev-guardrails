@@ -45,3 +45,14 @@ Do not add Node/npm unless this repo already depends on it. Do not commit secret
 ## Optional: privacy
 
 When handling personal data, also install [`packs/agents/privacy.md`](../../packs/agents/privacy.md) to `docs/guardrails/agents/privacy.md`.
+
+
+## Optional: web profile modules
+
+After `bash scripts/install-packs.sh … --profile web`, also link:
+
+- [Frontend](docs/guardrails/agents/frontend.md) · [checklist](docs/guardrails/checklists/frontend.md)
+- [Accessibility (a11y)](docs/guardrails/agents/a11y.md) · [checklist](docs/guardrails/checklists/accessibility.md)
+- [i18n](docs/guardrails/agents/i18n.md) · [checklist](docs/guardrails/checklists/i18n.md)
+
+Note the agent basename `a11y.md` vs checklist `accessibility.md` — see [migrate-nested-install.md](migrate-nested-install.md).
