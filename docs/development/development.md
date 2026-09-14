@@ -89,3 +89,11 @@ Pack installs preserve `agents/`, `checklists/`, and `prompts/` under the destin
 
 `README.md`, `docs/architecture/architecture.md`, and `docs/references/validator-checks.md` must list the same checks as `DEFAULT_CHECKS` (`tests/test_docs_checks_sync.py`).
 
+## Migrate mapping sync
+
+Every `packs/{agents,checklists,prompts}/*.md` nested path must appear in [migrate-nested-install.md](../references/migrate-nested-install.md) (`tests/test_migrate_mapping_sync.py`).
+
+## Version metadata sync
+
+`pyproject.toml` `version`, `ai_guardrails.__version__`, `CITATION.cff`, README `**vX.Y.Z**` status, and the latest `CHANGELOG.md` `## [X.Y.Z]` heading must match (`tests/test_version_sync.py`).
+

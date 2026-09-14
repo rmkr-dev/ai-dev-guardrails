@@ -23,6 +23,7 @@ Examples:
 ai-guardrails check . --only readme,license,agents_md
 ai-guardrails check . --skip funding,citation
 ai-guardrails check . --format json --only readme
+ai-guardrails check . --no-strict   # report failures, still exit 0
 ```
 
 ### `ai-guardrails list-checks`
