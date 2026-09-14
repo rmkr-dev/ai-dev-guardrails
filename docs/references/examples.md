@@ -128,6 +128,14 @@ When adding libraries or Actions, copy [`packs/agents/deps.md`](../../packs/agen
 
 Paste [`packs/prompts/test-plan.md`](../../packs/prompts/test-plan.md) when filling the PR Test plan section (works with Copilot, Claude, or Codex).
 
+## Sample AGENTS.md
+
+See [`sample-agents-md.md`](sample-agents-md.md) for a copy-paste consumer template that links core packs and prompts (including security review).
+
+## Security review prompt
+
+When a PR touches auth, secrets, or CI permissions, paste [`packs/prompts/security-review.md`](../../packs/prompts/security-review.md) into Copilot / Claude / Codex.
+
 ## Complements, not duplicates
 
 | Repo | Use instead when you need |
