@@ -48,5 +48,7 @@ Print install profile pack lists (mirrors `scripts/install-packs.sh --list-profi
 
 ## See also
 
-- [validator-checks.md](validator-checks.md)
+- [validator-checks.md](validator-checks.md) — check catalog (kept in sync via `test_docs_checks_sync`)
+- [profiles.md](profiles.md) / [install.md](install.md) — pack install profiles (`scripts/install-packs.sh`)
+- [migrate-nested-install.md](migrate-nested-install.md) — flat 0.2.x → nested layout
 - [development.md](../development/development.md)
