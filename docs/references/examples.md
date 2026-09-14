@@ -253,3 +253,14 @@ bash scripts/install-packs.sh "$TARGET" --profile security
 ```
 
 Installs security/secrets/privacy/threat-model agents plus matching review prompts on top of baseline.
+
+## Using with enterprise-github-template
+
+When the consumer repo came from [enterprise-github-template](https://github.com/rmkr-dev/enterprise-github-template):
+
+```bash
+bash scripts/install-packs.sh /path/to/template-derived-repo --profile baseline
+```
+
+Keep the template `AGENTS.md` and link packs under `docs/guardrails/`. Full pairing notes: [enterprise-github-template.md](enterprise-github-template.md).
+

@@ -44,3 +44,6 @@ Quick map of **ai-dev-guardrails** modules by audience and when to install them.
 See [examples.md](examples.md) and [sample-agents-md.md](sample-agents-md.md).
 
 Install profiles: `baseline`, `api`, `ops`, `data`, `security`, `full` — see [install.md](install.md).
+
+Pairing with [enterprise-github-template](https://github.com/rmkr-dev/enterprise-github-template): [enterprise-github-template.md](enterprise-github-template.md).
+
