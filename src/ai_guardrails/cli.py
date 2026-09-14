@@ -12,6 +12,32 @@ from ai_guardrails import __version__
 from ai_guardrails.checks import DEFAULT_CHECKS, run_checks
 
 
+def _parse_name_list(value: str | None) -> set[str] | None:
+    if value is None or value.strip() == "":
+        return None
+    names = {part.strip() for part in value.split(",") if part.strip()}
+    return names or None
+
+
+def _filter_results(results, only: set[str] | None, skip: set[str] | None):
+    known = {r.name for r in results}
+    if only is not None:
+        unknown = only - known
+        if unknown:
+            raise click.ClickException(
+                "unknown check name(s) for --only: " + ", ".join(sorted(unknown))
+            )
+        results = [r for r in results if r.name in only]
+    if skip is not None:
+        unknown = skip - known
+        if unknown:
+            raise click.ClickException(
+                "unknown check name(s) for --skip: " + ", ".join(sorted(unknown))
+            )
+        results = [r for r in results if r.name not in skip]
+    return results
+
+
 @click.group()
 @click.version_option(__version__, prog_name="ai-guardrails")
 def main() -> None:
@@ -34,9 +60,26 @@ def main() -> None:
     show_default=True,
     help="Output format.",
 )
-def check_cmd(target: Path, strict: bool, fmt: str) -> None:
+@click.option(
+    "--only",
+    "only_names",
+    default=None,
+    help="Comma-separated check names to run (default: all).",
+)
+@click.option(
+    "--skip",
+    "skip_names",
+    default=None,
+    help="Comma-separated check names to omit.",
+)
+def check_cmd(
+    target: Path, strict: bool, fmt: str, only_names: str | None, skip_names: str | None
+) -> None:
     """Check TARGET repo for required hygiene files and indicators."""
     results = run_checks(target)
+    only = _parse_name_list(only_names)
+    skip = _parse_name_list(skip_names)
+    results = _filter_results(results, only, skip)
     failed = sum(1 for r in results if not r.ok)
     if fmt == "json":
         payload = {
