@@ -34,7 +34,7 @@ Default checks (20): `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, 
 
 ## CI
 
-`python-ci@v0.3.7` via `rmkr-dev/gha-reusable-workflows`.
+`python-ci@v0.4.0` via `rmkr-dev/gha-reusable-workflows`.
 
 ## License
 
