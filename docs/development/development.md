@@ -49,3 +49,7 @@ ai-guardrails check . --format json
 ```
 
 Emits passed/failed/total plus per-check `name` / `ok` / `detail`. Exit code still respects `--strict`.
+
+```bash
+ai-guardrails list-checks --format json
+```
