@@ -27,3 +27,7 @@ ai-guardrails check .
 
 - Not a duplicate of [llm-eval-harness](https://github.com/rmkr-dev/llm-eval-harness) (offline eval) or [enterprise-github-template](https://github.com/rmkr-dev/enterprise-github-template) (full repo template).
 - No Node/npm. No secrets. No company names in docs or examples.
+
+## Code of Conduct
+
+Please follow [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
