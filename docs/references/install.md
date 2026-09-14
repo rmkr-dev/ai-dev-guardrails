@@ -22,6 +22,8 @@ bash scripts/install-packs.sh /path/to/consumer-repo --profile api --dry-run
 bash scripts/install-packs.sh --list-profiles
 ```
 
+`--dry-run` (and a successful install) also warn on stderr if flat 0.2.x leftover `*.md` files sit at the destination root beside nested paths — see [migrate-nested-install.md](migrate-nested-install.md).
+
 Custom set:
 
 ```bash

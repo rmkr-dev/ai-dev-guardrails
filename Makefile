@@ -40,4 +40,5 @@ help:
 	@echo "install-packs requires TARGET=/path/to/repo [PROFILE=baseline|api|ops|data|security|web|full]"
 	@echo "  optional: DEST=rel/path DRY_RUN=1"
 	@echo "Script extras: --dry-run, --list-profiles (see docs/references/install.md)"
+	@echo "  Nested install; flat 0.2.x leftovers are warned (not deleted) on install/--dry-run"
 	@echo "CLI: ai-guardrails profiles | check --only/--skip | list-checks"

@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.1] — 2026-09-14
+
+### Changed
+
+- Makefile help mentions nested install flat leftover warnings
+- Install docs note that `--dry-run` / install warn on flat leftovers
+
 ## [0.4.0] — 2026-09-14
 
 ### Changed
