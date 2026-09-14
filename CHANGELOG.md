@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.18] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/privacy.md`
+- Pack prompt: `packs/prompts/privacy-review.md`
+- `ops` install profile includes privacy agent + prompt
+
 ## [0.2.17] — 2026-09-14
 
 ### Added
