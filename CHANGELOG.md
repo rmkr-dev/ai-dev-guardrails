@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.23] — 2026-09-14
+
+### Added
+
+- ADR-006: 0.2.x expansion — checks and domain packs
+- Pack module: `packs/agents/support.md`
+- Pack prompt: `packs/prompts/support-reply.md`
+
 ## [0.2.22] — 2026-09-14
 
 ### Added
