@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.10] — 2026-09-14
+
+### Changed
+
+- CI pin: `python-ci@v0.4.0` (`rmkr-dev/gha-reusable-workflows`); docs/README aligned
+
 ## [0.3.9] — 2026-09-14
 
 ### Added
