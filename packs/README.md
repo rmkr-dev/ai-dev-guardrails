@@ -20,6 +20,7 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [agents/data.md](agents/data.md) | Copilot / Claude / Codex | Data / migrations expectations |
 | [agents/supply-chain.md](agents/supply-chain.md) | Copilot / Claude / Codex | Supply-chain / release artifact expectations |
 | [agents/privacy.md](agents/privacy.md) | Copilot / Claude / Codex | Privacy / PII expectations |
+| [agents/i18n.md](agents/i18n.md) | Copilot / Claude / Codex | Internationalization expectations |
 | [checklists/definition-of-done.md](checklists/definition-of-done.md) | Humans + agents | Slice Definition of Done |
 | [checklists/pr-self-review.md](checklists/pr-self-review.md) | Humans + agents | Pre-review checklist |
 | [checklists/release.md](checklists/release.md) | Humans + agents | Release / tag checklist |
@@ -27,6 +28,7 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [checklists/observability.md](checklists/observability.md) | Humans + agents | Observability readiness checklist |
 | [checklists/accessibility.md](checklists/accessibility.md) | Humans + agents | Accessibility readiness checklist |
 | [checklists/supply-chain.md](checklists/supply-chain.md) | Humans + agents | Supply-chain readiness checklist |
+| [checklists/i18n.md](checklists/i18n.md) | Humans + agents | i18n readiness checklist |
 | [prompts/change-impact.md](prompts/change-impact.md) | Copilot / Claude / Codex | Blast-radius prompt |
 | [prompts/adr-draft.md](prompts/adr-draft.md) | Copilot / Claude / Codex | ADR drafting prompt |
 | [prompts/pr-body.md](prompts/pr-body.md) | Copilot / Claude / Codex | PR description prompt |

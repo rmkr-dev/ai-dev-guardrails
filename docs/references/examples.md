@@ -231,3 +231,10 @@ make fmt
 ```
 
 `lint` runs `compileall` plus pytest collection; `fmt` is a placeholder until a formatter is adopted.
+
+## Internationalization slices
+
+When a PR changes user-visible copy or locales:
+
+1. Follow [`packs/agents/i18n.md`](../../packs/agents/i18n.md).
+2. Run through [`packs/checklists/i18n.md`](../../packs/checklists/i18n.md).
