@@ -9,7 +9,7 @@ Complements [llm-eval-harness](https://github.com/rmkr-dev/llm-eval-harness) and
 
 ## Status
 
-**v0.4.10** — nested-install maturity (ADR-008); see [CHANGELOG.md](CHANGELOG.md).
+**v0.4.11** — nested-install maturity (ADR-008); see [CHANGELOG.md](CHANGELOG.md).
 
 - Packs: [packs/README.md](packs/README.md) · [pack matrix](docs/references/pack-matrix.md)
 - Install: [docs/references/install.md](docs/references/install.md) · [profiles](docs/references/profiles.md) (`scripts/install-packs.sh`, `--dry-run` / `--list-profiles`) · [nested migrate](docs/references/migrate-nested-install.md)
