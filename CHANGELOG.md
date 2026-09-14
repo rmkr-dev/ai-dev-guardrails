@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.9] — 2026-09-14
+
+### Added
+
+- Root `AGENTS.md` maintainer notes for pack modules (cost/frontend/governance) and nested install
+
 ## [0.3.8] — 2026-09-14
 
 ### Added
