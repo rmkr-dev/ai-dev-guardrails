@@ -65,3 +65,6 @@ In a template-derived repo you may point maintainers at:
 - CLI: https://github.com/rmkr-dev/ai-dev-guardrails/blob/main/docs/references/cli.md
 
 Template docs worth reading first: `docs/development/first-week.md`, `docs/operations/release-process.md`, `docs/operations/incident-response.md`.
+
+Optional pack when editing ownership/policy: `agents/governance.md` (install via `PACKS=agents/governance.md` or `--profile full`).
+
