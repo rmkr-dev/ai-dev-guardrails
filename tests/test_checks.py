@@ -5,6 +5,7 @@ from pathlib import Path
 import pytest
 
 from ai_guardrails.checks import (
+    check_code_of_conduct,
     check_pre_commit,
     check_changelog,
     check_dependabot,
@@ -36,6 +37,7 @@ def _seed_all(tmp_path: Path) -> None:
     _touch(tmp_path / "Makefile", "test:\n\tpytest -q\n")
     _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
     _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
+    _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
 
 
 def test_gitignore(tmp_path: Path) -> None:
@@ -68,6 +70,7 @@ def test_dependabot(tmp_path: Path) -> None:
     _touch(tmp_path / "Makefile", "test:\n\tpytest -q\n")
     _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
     _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
+    _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
     assert check_dependabot(tmp_path).ok is True
 
 
@@ -77,6 +80,7 @@ def test_editorconfig(tmp_path: Path) -> None:
     _touch(tmp_path / "Makefile", "test:\n\tpytest -q\n")
     _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
     _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
+    _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
     assert check_editorconfig(tmp_path).ok is True
 
 
@@ -85,6 +89,7 @@ def test_makefile(tmp_path: Path) -> None:
     _touch(tmp_path / "Makefile", "test:\n\tpytest -q\n")
     _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
     _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
+    _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
     assert check_makefile(tmp_path).ok is True
 
 
@@ -93,6 +98,7 @@ def test_issue_templates(tmp_path: Path) -> None:
     assert check_issue_templates(tmp_path).ok is False
     _touch(tmp_path / ".github" / "ISSUE_TEMPLATE" / "bug_report.md", "## Bug\n")
     _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
+    _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
     assert check_issue_templates(tmp_path).ok is True
 
 
@@ -105,7 +111,20 @@ def test_issue_templates_config_yml(tmp_path: Path) -> None:
 def test_pre_commit(tmp_path: Path) -> None:
     assert check_pre_commit(tmp_path).ok is False
     _touch(tmp_path / ".pre-commit-config.yaml", "repos: []\n")
+    _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
     assert check_pre_commit(tmp_path).ok is True
+
+
+
+def test_code_of_conduct(tmp_path: Path) -> None:
+    assert check_code_of_conduct(tmp_path).ok is False
+    _touch(tmp_path / "CODE_OF_CONDUCT.md", "# CoC\n")
+    assert check_code_of_conduct(tmp_path).ok is True
+
+
+def test_code_of_conduct_github(tmp_path: Path) -> None:
+    _touch(tmp_path / ".github" / "CODE_OF_CONDUCT.md", "# CoC\n")
+    assert check_code_of_conduct(tmp_path).ok is True
 
 
 def test_run_checks_all_pass(tmp_path: Path) -> None:
@@ -121,7 +140,8 @@ def test_run_checks_all_pass(tmp_path: Path) -> None:
     assert "makefile" in names
     assert "issue_templates" in names
     assert "pre_commit" in names
-    assert len(results) == 16
+    assert "code_of_conduct" in names
+    assert len(results) == 17
 
 
 def test_run_checks_rejects_file(tmp_path: Path) -> None:

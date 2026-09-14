@@ -257,6 +257,25 @@ def check_pre_commit(root: Path) -> CheckResult:
     )
 
 
+
+def check_code_of_conduct(root: Path) -> CheckResult:
+    """Pass if a Code of Conduct file exists."""
+    candidates = [
+        "CODE_OF_CONDUCT.md",
+        "CODE_OF_CONDUCT",
+        ".github/CODE_OF_CONDUCT.md",
+        "docs/CODE_OF_CONDUCT.md",
+    ]
+    for rel in candidates:
+        if _exists(root, rel):
+            return CheckResult("code_of_conduct", True, f"{rel} present")
+    return CheckResult(
+        "code_of_conduct",
+        False,
+        "missing CODE_OF_CONDUCT.md (root or .github/ preferred)",
+    )
+
+
 DEFAULT_CHECKS = (
     check_agents_md,
     check_readme,
@@ -274,6 +293,7 @@ DEFAULT_CHECKS = (
     check_makefile,
     check_issue_templates,
     check_pre_commit,
+    check_code_of_conduct,
 )
 
 

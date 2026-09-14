@@ -29,6 +29,7 @@ def _seed_good(root: Path) -> None:
     issue.mkdir()
     (issue / "bug_report.md").write_text("## Bug\n")
     (root / ".pre-commit-config.yaml").write_text("repos: []\n")
+    (root / "CODE_OF_CONDUCT.md").write_text("# CoC\n")
     arch = root / "docs" / "architecture"
     arch.mkdir(parents=True)
     (arch / "architecture.md").write_text("# arch\n")
@@ -42,7 +43,7 @@ def test_cli_check_pass(tmp_path: Path) -> None:
     runner = CliRunner()
     result = runner.invoke(main, ["check", str(tmp_path)])
     assert result.exit_code == 0
-    assert "16/16 checks passed" in result.output
+    assert "17/17 checks passed" in result.output
 
 
 def test_cli_check_fail_strict(tmp_path: Path) -> None:
@@ -74,4 +75,5 @@ def test_cli_list_checks() -> None:
         "makefile",
         "issue_templates",
         "pre_commit",
+        "code_of_conduct",
     ]
