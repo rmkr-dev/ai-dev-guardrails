@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.13] — 2026-09-14
+
+### Added
+
+- `install-packs.sh` warns on flat 0.2.x leftover `*.md` beside nested installs (no delete)
+- Shell test coverage for flat leftover warning
+- Migration guide notes the installer warning
+
 ## [0.3.12] — 2026-09-14
 
 ### Fixed
