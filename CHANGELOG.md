@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.14] — 2026-09-14
+
+### Added
+
+- ADR-005: accessibility, data packs, and issue-template checks
+- Pack prompt: `packs/prompts/refactor-plan.md`
+
 ## [0.2.13] — 2026-09-14
 
 ### Added
