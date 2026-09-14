@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.21] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/i18n.md`
+- Checklist: `packs/checklists/i18n.md`
+
 ## [0.2.20] — 2026-09-14
 
 ### Added
