@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.26] — 2026-09-14
+
+### Added
+
+- Install profile: `security` (security/secrets/privacy/threat-model + review prompts)
+
 ## [0.2.25] — 2026-09-14
 
 ### Added

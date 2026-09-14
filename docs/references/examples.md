@@ -245,3 +245,11 @@ When a PR touches auth, crypto, CI permissions, or sensitive data paths:
 
 1. Follow [`packs/agents/threat-model.md`](../../packs/agents/threat-model.md).
 2. Paste [`packs/prompts/threat-model.md`](../../packs/prompts/threat-model.md) into the drafting chat.
+
+## Security profile install
+
+```bash
+bash scripts/install-packs.sh "$TARGET" --profile security
+```
+
+Installs security/secrets/privacy/threat-model agents plus matching review prompts on top of baseline.

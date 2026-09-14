@@ -40,3 +40,5 @@ Quick map of **ai-dev-guardrails** modules by audience and when to install them.
 | `prompts/refactor-plan.md` | Multi-step structural cleanup planning |
 
 See [examples.md](examples.md) and [sample-agents-md.md](sample-agents-md.md).
+
+Install profiles: `baseline`, `api`, `ops`, `data`, `security`, `full` — see [install.md](install.md).
