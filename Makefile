@@ -1,4 +1,4 @@
-.PHONY: test check list-checks install install-packs install-packs-test lint fmt help
+.PHONY: test check list-checks profiles install install-packs install-packs-test lint fmt help
 
 install:
 	python -m pip install -e ".[dev]"
@@ -12,10 +12,17 @@ check:
 list-checks:
 	ai-guardrails list-checks
 
+profiles:
+	ai-guardrails profiles
+
 # Example: make install-packs TARGET=/path/to/repo PROFILE=baseline
+# Optional: DEST=docs/guardrails DRY_RUN=1
 install-packs:
 	@test -n "$(TARGET)" || (echo "Set TARGET=/path/to/consumer-repo" >&2; exit 2)
-	bash scripts/install-packs.sh "$(TARGET)" --profile "$(or $(PROFILE),baseline)"
+	@args="--profile $(or $(PROFILE),baseline)"; \
+	 if [ -n "$(DEST)" ]; then args="$$args --dest $(DEST)"; fi; \
+	 if [ "$(DRY_RUN)" = "1" ]; then args="$$args --dry-run"; fi; \
+	 bash scripts/install-packs.sh "$(TARGET)" $$args
 
 install-packs-test:
 	bash tests/test_install_packs.sh
@@ -29,6 +36,8 @@ fmt:
 	@echo "No autoformatter configured yet; run your editor format-on-save or add ruff/black later."
 
 help:
-	@echo "Targets: install test check list-checks lint fmt install-packs install-packs-test"
+	@echo "Targets: install test check list-checks profiles lint fmt install-packs install-packs-test"
 	@echo "install-packs requires TARGET=/path/to/repo [PROFILE=baseline|api|ops|data|security|full]"
+	@echo "  optional: DEST=rel/path DRY_RUN=1"
 	@echo "Script extras: --dry-run, --list-profiles (see docs/references/install.md)"
+	@echo "CLI: ai-guardrails profiles | check --only/--skip | list-checks"
