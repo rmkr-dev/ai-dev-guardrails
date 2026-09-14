@@ -10,6 +10,10 @@ All notable changes to **ai-dev-guardrails** are documented here.
 - CLI: `list-checks --describe` (short summaries; JSON objects with `summary`)
 - `CHECK_SUMMARIES` catalog aligned via `test_catalog_sync`
 
+- Installer: `--quiet` suppresses per-file copy lines; summary remains
+- Install manifest: `source:` (pyproject version) and `categories:` counts
+- Makefile: `QUIET=1` for `install-packs`
+
 ### Changed
 
 - Consolidated catalog sync tests into `tests/test_catalog_sync.py` (fewer one-off sync modules)
