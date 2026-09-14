@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.19] — 2026-09-14
+
+### Changed
+
+- CLI docs: `--no-strict` example
+- Development docs: migrate mapping + version metadata sync tests
+
 ## [0.4.18] — 2026-09-14
 
 ### Added
