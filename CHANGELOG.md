@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.3] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/performance.md`
+- `docs/references/pack-matrix.md`
+
 ## [0.2.2] — 2026-09-14
 
 ### Added
@@ -102,6 +109,7 @@ Default packs now cover core engineering, security/secrets, testing, observabili
 
 - Foundation docs, packs, optional CLI, CI
 
+[0.2.3]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.3
 [0.2.2]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.2
 [0.2.1]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.1
 [0.2.0]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.0
