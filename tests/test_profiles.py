@@ -44,3 +44,25 @@ def test_cli_profiles_unknown() -> None:
     runner = CliRunner()
     result = runner.invoke(main, ["profiles", "--profile", "nope"])
     assert result.exit_code != 0
+
+
+def test_cli_profiles_json_catalog() -> None:
+    runner = CliRunner()
+    result = runner.invoke(main, ["profiles", "--format", "json"])
+    assert result.exit_code == 0
+    data = json.loads(result.output)
+    assert "profiles" in data
+    for name in ("baseline", "api", "ops", "data", "security", "web", "full"):
+        assert name in data["profiles"]
+    assert "agents/core.md" in data["profiles"]["baseline"]
+    assert "agents/frontend.md" in data["profiles"]["web"]
+    assert isinstance(data["profiles"]["full"], str)
+
+
+def test_cli_profiles_web_text() -> None:
+    runner = CliRunner()
+    result = runner.invoke(main, ["profiles", "--profile", "web"])
+    assert result.exit_code == 0
+    assert "agents/frontend.md" in result.output
+    assert "agents/a11y.md" in result.output
+    assert "checklists/accessibility.md" in result.output
