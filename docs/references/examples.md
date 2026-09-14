@@ -254,6 +254,15 @@ bash scripts/install-packs.sh "$TARGET" --profile security
 
 Installs security/secrets/privacy/threat-model agents plus matching review prompts on top of baseline.
 
+
+## Web profile install
+
+```bash
+bash scripts/install-packs.sh "$TARGET" --profile web
+```
+
+Installs frontend/a11y/i18n agents plus matching checklists on top of baseline. Link nested paths (`agents/a11y.md` vs `checklists/accessibility.md`) — see [sample-agents-md.md](sample-agents-md.md) and [migrate-nested-install.md](migrate-nested-install.md).
+
 ## Using with enterprise-github-template
 
 When the consumer repo came from [enterprise-github-template](https://github.com/rmkr-dev/enterprise-github-template):

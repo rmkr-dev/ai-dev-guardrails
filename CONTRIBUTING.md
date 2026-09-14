@@ -7,7 +7,7 @@ Thanks for improving **ai-dev-guardrails**. This repo ships installable AI+human
 1. Read [README.md](README.md) and [AGENTS.md](AGENTS.md).
 2. Pick one slice (installer/docs, validator rule, CI, or examples). Prefer a PR with 2–4 focused commits.
 3. Do not invent features that are not in the tree. Docs must match reality.
-4. Nested install layout (`agents/` / `checklists/` / `prompts/`): see [migrate-nested-install.md](docs/references/migrate-nested-install.md) and [ADR-008](docs/decisions/ADR-008-v0.4-nested-install-maturity.md). Prefer high-signal installer/docs/CI work over new pack modules unless a profile need is clear.
+4. Nested install layout (`agents/` / `checklists/` / `prompts/`): see [migrate-nested-install.md](docs/references/migrate-nested-install.md) and [ADR-008](docs/decisions/ADR-008-v0.4-nested-install-maturity.md). Prefer high-signal installer/docs/CI work over new pack modules unless a profile need is clear. Sync tests (`test_migrate_mapping_sync`, `test_version_sync`, `test_install_docs_profiles_sync`, …) are documented in [development.md](docs/development/development.md) and [docs/README.md](docs/README.md).
 
 ## Local checks
 
