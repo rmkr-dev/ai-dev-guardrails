@@ -157,6 +157,17 @@ When changing public HTTP/RPC surfaces, schemas, or library APIs, copy [`packs/a
 cp packs/agents/api.md "$TARGET/docs/guardrails/"
 ```
 
+
+## Incident / runbook packs
+
+For on-call notes and operational playbooks:
+
+```bash
+cp packs/agents/incidents.md    packs/prompts/incident-response.md    packs/prompts/runbook-draft.md    "$TARGET/docs/guardrails/"
+```
+
+Paste [`packs/prompts/incident-response.md`](../../packs/prompts/incident-response.md) during an active incident; use [`packs/prompts/runbook-draft.md`](../../packs/prompts/runbook-draft.md) when writing durable runbooks. Follow [`packs/agents/incidents.md`](../../packs/agents/incidents.md) for structure and no-secrets rules.
+
 ## Complements, not duplicates
 
 | Repo | Use instead when you need |
