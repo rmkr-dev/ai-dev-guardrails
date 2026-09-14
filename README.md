@@ -6,7 +6,7 @@ Complements [llm-eval-harness](https://github.com/rmkr-dev/llm-eval-harness) and
 
 ## Status
 
-**v0.2.3** — see [CHANGELOG.md](CHANGELOG.md).
+**v0.2.4** — see [CHANGELOG.md](CHANGELOG.md).
 
 - Packs: [packs/README.md](packs/README.md) · [pack matrix](docs/references/pack-matrix.md)
 - Examples: [docs/references/examples.md](docs/references/examples.md), [sample AGENTS.md](docs/references/sample-agents-md.md)
@@ -17,12 +17,12 @@ Complements [llm-eval-harness](https://github.com/rmkr-dev/llm-eval-harness) and
 
 ```bash
 python -m pip install -e ".[dev]"
-ai-guardrails list-checks
-ai-guardrails check .
-pytest -q
+make test
+make check
+# or: pytest -q && ai-guardrails check .
 ```
 
-Default checks (13): `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, `license`, `security_md`, `codeowners`, `contributing`, `gitignore`, `changelog`, `pr_template`, `dependabot`, `editorconfig`.
+Default checks (14): `agents_md`, `readme`, `architecture_docs`, `tests_or_ci`, `license`, `security_md`, `codeowners`, `contributing`, `gitignore`, `changelog`, `pr_template`, `dependabot`, `editorconfig`, `makefile`.
 
 ## CI
 
