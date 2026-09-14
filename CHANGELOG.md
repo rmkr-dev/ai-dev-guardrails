@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.13] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/data.md`
+- Pack prompt: `packs/prompts/migration-review.md`
+- Install profile: `data`
+
 ## [0.2.12] — 2026-09-14
 
 ### Added
