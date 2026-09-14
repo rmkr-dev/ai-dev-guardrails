@@ -28,4 +28,4 @@ Root entry points: [README.md](../README.md), [AGENTS.md](../AGENTS.md), [CHANGE
 
 ## Sync tests (maintainers)
 
-Pytest keeps catalogs honest: `test_docs_checks_sync`, `test_migrate_mapping_sync`, `test_version_sync`, `test_install_docs_profiles_sync`, `test_profiles_sync`, `test_list_profiles_sync`. See [development/development.md](development/development.md).
+Catalog coherence lives in `tests/test_catalog_sync.py` (profiles, docs, migrate mapping, versions, Makefile help). See [development/development.md](development/development.md).

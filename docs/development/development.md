@@ -81,23 +81,17 @@ Pack installs preserve `agents/`, `checklists/`, and `prompts/` under the destin
 - Consumer migration: [migrate-nested-install.md](../references/migrate-nested-install.md)
 - Maturity milestone: [ADR-008](../decisions/ADR-008-v0.4-nested-install-maturity.md)
 
-## Profile catalog sync
+## Catalog sync tests
 
-`src/ai_guardrails/profiles.py` must match the arrays in `scripts/install-packs.sh` (`tests/test_profiles_sync.py`). `--list-profiles` text must mention every array pack (`tests/test_list_profiles_sync.py`).
+Coherence guards live in a single module: `tests/test_catalog_sync.py`.
 
-The Profiles table in [install.md](../references/install.md) must list every `PROFILE_NAMES` entry in order (`tests/test_install_docs_profiles_sync.py`).
+| Area | What it guards |
+| --- | --- |
+| Profiles ↔ installer | `profiles.py` arrays match `scripts/install-packs.sh`; `--list-profiles` lists every pack |
+| Install / profiles docs | `install.md` Profiles table and `profiles.md` cover every `PROFILE_NAMES` entry |
+| Validator docs | README, `architecture.md`, and `validator-checks.md` list the same `DEFAULT_CHECKS` |
+| Migrate mapping | Every `packs/{agents,checklists,prompts}/*.md` path appears in `migrate-nested-install.md` |
+| Version metadata | `pyproject.toml`, `__version__`, `CITATION.cff`, README status, latest CHANGELOG heading |
+| Makefile help | Mentions web profile, nested leftovers, `--no-strict`, install docs |
 
-[profiles.md](../references/profiles.md) must mention every profile name (`tests/test_profiles_docs_sync.py`).
-
-## Validator docs sync
-
-`README.md`, `docs/architecture/architecture.md`, and `docs/references/validator-checks.md` must list the same checks as `DEFAULT_CHECKS` (`tests/test_docs_checks_sync.py`).
-
-## Migrate mapping sync
-
-Every `packs/{agents,checklists,prompts}/*.md` nested path must appear in [migrate-nested-install.md](../references/migrate-nested-install.md) (`tests/test_migrate_mapping_sync.py`).
-
-## Version metadata sync
-
-`pyproject.toml` `version`, `ai_guardrails.__version__`, `CITATION.cff`, README `**vX.Y.Z**` status, and the latest `CHANGELOG.md` `## [X.Y.Z]` heading must match (`tests/test_version_sync.py`).
-
+Prefer extending that module over adding new one-off `*_sync.py` files.
