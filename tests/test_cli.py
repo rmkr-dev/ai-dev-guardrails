@@ -77,3 +77,16 @@ def test_cli_list_checks() -> None:
         "pre_commit",
         "code_of_conduct",
     ]
+
+
+def test_cli_check_json(tmp_path: Path) -> None:
+    _seed_good(tmp_path)
+    runner = CliRunner()
+    result = runner.invoke(main, ["check", str(tmp_path), "--format", "json"])
+    assert result.exit_code == 0
+    import json
+
+    data = json.loads(result.output)
+    assert data["failed"] == 0
+    assert data["total"] == data["passed"]
+    assert any(c["name"] == "readme" for c in data["checks"])

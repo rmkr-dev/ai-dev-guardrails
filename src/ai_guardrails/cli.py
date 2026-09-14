@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -25,16 +26,34 @@ def main() -> None:
     show_default=True,
     help="Exit non-zero when any check fails.",
 )
-def check_cmd(target: Path, strict: bool) -> None:
+@click.option(
+    "--format",
+    "fmt",
+    type=click.Choice(["text", "json"], case_sensitive=False),
+    default="text",
+    show_default=True,
+    help="Output format.",
+)
+def check_cmd(target: Path, strict: bool, fmt: str) -> None:
     """Check TARGET repo for required hygiene files and indicators."""
     results = run_checks(target)
-    failed = 0
-    for r in results:
-        mark = "PASS" if r.ok else "FAIL"
-        click.echo(f"[{mark}] {r.name}: {r.detail}")
-        if not r.ok:
-            failed += 1
-    click.echo(f"{len(results) - failed}/{len(results)} checks passed")
+    failed = sum(1 for r in results if not r.ok)
+    if fmt == "json":
+        payload = {
+            "root": str(target.resolve()),
+            "passed": len(results) - failed,
+            "failed": failed,
+            "total": len(results),
+            "checks": [
+                {"name": r.name, "ok": r.ok, "detail": r.detail} for r in results
+            ],
+        }
+        click.echo(json.dumps(payload, indent=2, sort_keys=True))
+    else:
+        for r in results:
+            mark = "PASS" if r.ok else "FAIL"
+            click.echo(f"[{mark}] {r.name}: {r.detail}")
+        click.echo(f"{len(results) - failed}/{len(results)} checks passed")
     if strict and failed:
         sys.exit(1)
 
@@ -43,12 +62,8 @@ def check_cmd(target: Path, strict: bool) -> None:
 def list_checks_cmd() -> None:
     """Print the default check names in run order."""
     for fn in DEFAULT_CHECKS:
-        # Derive stable names from CheckResult by invoking against a throwaway? 
-        # Prefer explicit order matching DEFAULT_CHECKS implementation names.
         raw = fn.__name__.removeprefix("check_")
         click.echo(raw)
-
-
 
 
 if __name__ == "__main__":
