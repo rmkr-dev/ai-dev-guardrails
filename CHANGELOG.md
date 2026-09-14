@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.1.9] — 2026-09-14
+
+### Added
+
+- Checklists: `packs/checklists/testing.md`, `packs/checklists/observability.md`
+- Examples for testing and observability checklists
+
 ## [0.1.8] — 2026-09-14
 
 ### Added
@@ -77,6 +84,7 @@ All notable changes to **ai-dev-guardrails** are documented here.
 - Dependabot (Actions + pip), `CODEOWNERS`, `SECURITY.md`
 - `docs/references/examples.md` and ADR-001
 
+[0.1.9]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.9
 [0.1.8]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.8
 [0.1.7]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.7
 [0.1.6]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.6
