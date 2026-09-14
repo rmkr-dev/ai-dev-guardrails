@@ -6,6 +6,8 @@ List from a checkout:
 
 ```bash
 bash scripts/install-packs.sh --list-profiles
+ai-guardrails profiles
+ai-guardrails profiles --profile ops --format json
 bash scripts/install-packs.sh /path/to/repo --profile api --dry-run
 ```
 
