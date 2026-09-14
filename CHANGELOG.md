@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.7] — 2026-09-14
+
+### Added
+
+- Pack module: `packs/agents/governance.md` (ownership / policy edits)
+
 ## [0.3.6] — 2026-09-14
 
 ### Added

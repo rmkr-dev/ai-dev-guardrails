@@ -1,3 +1,3 @@
 """ai-guardrails: optional repo hygiene checks for pack consumers."""
 
-__version__ = "0.3.6"
+__version__ = "0.3.7"
