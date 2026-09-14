@@ -2,7 +2,7 @@
 
 Pack distributor for Copilot / Claude / Codex plus optional `ai-guardrails` CLI.
 
-See [development.md](../development/development.md) for local workflow and [ADR-002](../decisions/ADR-002-expanding-hygiene-checks.md) for how hygiene checks grow. Milestone notes: [ADR-004](../decisions/ADR-004-v0.2-pack-and-check-suite.md), [ADR-005](../decisions/ADR-005-a11y-data-and-issue-templates.md).
+See [development.md](../development/development.md) for local workflow and [ADR-002](../decisions/ADR-002-expanding-hygiene-checks.md) for how hygiene checks grow. Milestone notes: [ADR-004](../decisions/ADR-004-v0.2-pack-and-check-suite.md), [ADR-005](../decisions/ADR-005-a11y-data-and-issue-templates.md), [ADR-006](../decisions/ADR-006-0.2x-expansion-checks-and-packs.md).
 
 ## Packs
 
