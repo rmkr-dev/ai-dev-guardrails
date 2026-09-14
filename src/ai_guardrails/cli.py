@@ -59,11 +59,22 @@ def check_cmd(target: Path, strict: bool, fmt: str) -> None:
 
 
 @main.command("list-checks")
-def list_checks_cmd() -> None:
+@click.option(
+    "--format",
+    "fmt",
+    type=click.Choice(["text", "json"], case_sensitive=False),
+    default="text",
+    show_default=True,
+    help="Output format.",
+)
+def list_checks_cmd(fmt: str) -> None:
     """Print the default check names in run order."""
-    for fn in DEFAULT_CHECKS:
-        raw = fn.__name__.removeprefix("check_")
-        click.echo(raw)
+    names = [fn.__name__.removeprefix("check_") for fn in DEFAULT_CHECKS]
+    if fmt == "json":
+        click.echo(json.dumps({"checks": names, "total": len(names)}, indent=2))
+    else:
+        for name in names:
+            click.echo(name)
 
 
 if __name__ == "__main__":

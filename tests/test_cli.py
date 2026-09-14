@@ -94,3 +94,15 @@ def test_cli_check_json(tmp_path: Path) -> None:
     assert data["failed"] == 0
     assert data["total"] == data["passed"]
     assert any(c["name"] == "readme" for c in data["checks"])
+
+
+def test_cli_list_checks_json() -> None:
+    runner = CliRunner()
+    result = runner.invoke(main, ["list-checks", "--format", "json"])
+    assert result.exit_code == 0
+    import json
+
+    data = json.loads(result.output)
+    assert data["total"] == len(data["checks"])
+    assert "readme" in data["checks"]
+    assert "citation" in data["checks"]
