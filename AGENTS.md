@@ -79,3 +79,8 @@ Prefer linking rather than inlining:
 - Supply-chain: `packs/agents/supply-chain.md`
 - Privacy: `packs/agents/privacy.md`
 - Internationalization: `packs/agents/i18n.md`
+
+## Pack modules (maintainers)
+
+When adding or editing installable packs, update together: the module under `packs/`, `packs/README.md`, `docs/references/pack-matrix.md`, install profiles (`scripts/install-packs.sh` + `src/ai_guardrails/profiles.py`), tests, and CHANGELOG. Newer modules include `cost`, `frontend`, and `governance`. Nested install layout: [docs/references/migrate-nested-install.md](docs/references/migrate-nested-install.md).
+
