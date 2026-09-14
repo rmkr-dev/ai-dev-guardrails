@@ -41,3 +41,11 @@ make fmt    # placeholder until a formatter is chosen
 ```
 
 These targets are optional; `make test` and `make check` remain the primary gates.
+
+## Machine-readable check output
+
+```bash
+ai-guardrails check . --format json
+```
+
+Emits passed/failed/total plus per-check `name` / `ok` / `detail`. Exit code still respects `--strict`.

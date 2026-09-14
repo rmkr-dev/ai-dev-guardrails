@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.20] — 2026-09-14
+
+### Added
+
+- CLI: `ai-guardrails check --format json` machine-readable output
+
 ## [0.2.19] — 2026-09-14
 
 ### Added
