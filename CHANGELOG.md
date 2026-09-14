@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.25] — 2026-09-14
+
+### Changed
+
+- Pack matrix: a11y↔accessibility basename twin + migrate pointer
+- Docs index: maintainer sync-tests inventory
+
 ## [0.4.24] — 2026-09-14
 
 ### Changed
