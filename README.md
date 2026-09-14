@@ -6,7 +6,12 @@ Complements [llm-eval-harness](https://github.com/rmkr-dev/llm-eval-harness) and
 
 ## Status
 
-**v0.1.4** — see [CHANGELOG.md](CHANGELOG.md). Packs index: [packs/README.md](packs/README.md). Examples: [docs/references/examples.md](docs/references/examples.md).
+**v0.1.5** — see [CHANGELOG.md](CHANGELOG.md).
+
+- Packs: [packs/README.md](packs/README.md)
+- Examples: [docs/references/examples.md](docs/references/examples.md)
+- Development: [docs/development/development.md](docs/development/development.md)
+- Decisions: [ADR-001](docs/decisions/ADR-001-pack-plus-optional-validator.md), [ADR-002](docs/decisions/ADR-002-expanding-hygiene-checks.md)
 
 ## Validator
 
@@ -16,8 +21,6 @@ ai-guardrails list-checks
 ai-guardrails check .
 pytest -q
 ```
-
-Nine default checks including `gitignore`.
 
 ## CI
 
