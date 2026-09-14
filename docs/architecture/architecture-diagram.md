@@ -1,13 +1,13 @@
 # Architecture diagram
 
-Mermaid view of **this** repository’s surfaces and how a consumer repo relates to them. Docs match reality: packs and the CLI are shown as *planned* until they exist in the tree.
+Mermaid view of **this** repository’s surfaces and how a consumer repo relates to them.
 
 ```mermaid
 flowchart LR
   subgraph packRepo["ai-dev-guardrails"]
     AG["AGENTS.md"]
     DOC["docs/architecture"]
-    PACKS["packs/ planned"]
+    PACKS["packs/ agents checklists prompts"]
     CLI["ai-guardrails CLI planned"]
   end
 
@@ -18,9 +18,9 @@ flowchart LR
   end
 
   AG --> CAG
-  PACKS -.-> CMOD
+  PACKS --> CMOD
   CLI -.-> CCI
   DOC -. describes .-> packRepo
 ```
 
-Solid edges are current. Dashed edges are planned follow-up PRs.
+Solid edges are current. The CLI edge remains planned until the Python package ships.
