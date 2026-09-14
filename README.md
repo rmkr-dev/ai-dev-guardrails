@@ -12,7 +12,7 @@ Complements [llm-eval-harness](https://github.com/rmkr-dev/llm-eval-harness) and
 - Install: [docs/references/install.md](docs/references/install.md) (`scripts/install-packs.sh`)
 - Examples: [docs/references/examples.md](docs/references/examples.md), [sample AGENTS.md](docs/references/sample-agents-md.md), [validator checks](docs/references/validator-checks.md)
 - Development: [docs/development/development.md](docs/development/development.md)
-- Decisions: [ADR-001](docs/decisions/ADR-001-pack-plus-optional-validator.md) … [ADR-004](docs/decisions/ADR-004-v0.2-pack-and-check-suite.md)
+- Decisions: [ADR-001](docs/decisions/ADR-001-pack-plus-optional-validator.md) … [ADR-004](docs/decisions/ADR-004-v0.2-pack-and-check-suite.md) · [ADR-005](docs/decisions/ADR-005-a11y-data-and-issue-templates.md)
 
 ## Validator
 
