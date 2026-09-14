@@ -74,3 +74,7 @@ make install-packs TARGET=/path/to/repo PROFILE=api DRY_RUN=1
 make install-packs TARGET=/path/to/repo DEST=vendor/guardrails
 ```
 
+## Profile catalog sync
+
+`src/ai_guardrails/profiles.py` must match the arrays in `scripts/install-packs.sh`. CI enforces this via `tests/test_profiles_sync.py`.
+
