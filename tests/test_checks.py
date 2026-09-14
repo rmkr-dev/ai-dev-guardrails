@@ -4,7 +4,12 @@ from pathlib import Path
 
 import pytest
 
-from ai_guardrails.checks import check_gitignore, run_checks
+from ai_guardrails.checks import (
+    check_changelog,
+    check_gitignore,
+    check_pr_template,
+    run_checks,
+)
 
 
 def _touch(path: Path, content: str = "# x\n") -> None:
@@ -13,13 +18,14 @@ def _touch(path: Path, content: str = "# x\n") -> None:
 
 
 def _seed_all(tmp_path: Path) -> None:
-    for name in ("AGENTS.md", "README.md", "CONTRIBUTING.md", "SECURITY.md"):
+    for name in ("AGENTS.md", "README.md", "CONTRIBUTING.md", "SECURITY.md", "CHANGELOG.md"):
         _touch(tmp_path / name)
     _touch(tmp_path / "LICENSE", "MIT\n")
     _touch(tmp_path / ".gitignore", "*.pyc\n")
     _touch(tmp_path / "docs" / "architecture" / "overview.md")
     _touch(tmp_path / "tests" / "test_x.py", "def test_x():\n    assert 1\n")
     _touch(tmp_path / ".github" / "CODEOWNERS", "* @rmkr-dev\n")
+    _touch(tmp_path / ".github" / "PULL_REQUEST_TEMPLATE.md", "## Summary\n")
 
 
 def test_gitignore(tmp_path: Path) -> None:
@@ -28,12 +34,32 @@ def test_gitignore(tmp_path: Path) -> None:
     assert check_gitignore(tmp_path).ok is True
 
 
+def test_changelog(tmp_path: Path) -> None:
+    assert check_changelog(tmp_path).ok is False
+    _touch(tmp_path / "CHANGELOG.md")
+    assert check_changelog(tmp_path).ok is True
+
+
+def test_pr_template(tmp_path: Path) -> None:
+    assert check_pr_template(tmp_path).ok is False
+    _touch(tmp_path / ".github" / "PULL_REQUEST_TEMPLATE.md")
+    assert check_pr_template(tmp_path).ok is True
+
+
+def test_pr_template_dir(tmp_path: Path) -> None:
+    _touch(tmp_path / ".github" / "PULL_REQUEST_TEMPLATE" / "default.md")
+    assert check_pr_template(tmp_path).ok is True
+
+
 def test_run_checks_all_pass(tmp_path: Path) -> None:
     _seed_all(tmp_path)
     results = run_checks(tmp_path)
     assert all(r.ok for r in results)
-    assert "gitignore" in {r.name for r in results}
-    assert len(results) == 9
+    names = {r.name for r in results}
+    assert "gitignore" in names
+    assert "changelog" in names
+    assert "pr_template" in names
+    assert len(results) == 11
 
 
 def test_run_checks_rejects_file(tmp_path: Path) -> None:
