@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.24] — 2026-09-14
+
+### Changed
+
+- AGENTS.md maintainer notes: migrate/version/install-docs sync tests
+
 ## [0.4.23] — 2026-09-14
 
 ### Added
