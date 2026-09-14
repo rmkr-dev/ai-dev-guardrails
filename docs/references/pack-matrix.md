@@ -22,6 +22,8 @@ Quick map of **ai-dev-guardrails** modules by audience and when to install them.
 | `agents/privacy.md` | Personal data, analytics, retention |
 | `agents/i18n.md` | User-visible strings, locales, RTL |
 | `agents/support.md` | Public support / triage replies |
+| `agents/threat-model.md` | Security-sensitive slice threat notes |
+| `prompts/threat-model.md` | Drafting threat notes |
 | `prompts/support-reply.md` | Drafting support replies |
 | `checklists/i18n.md` | Pre-merge i18n self-review |
 | `prompts/privacy-review.md` | Reviewing PII-sensitive diffs |

@@ -22,6 +22,7 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [agents/privacy.md](agents/privacy.md) | Copilot / Claude / Codex | Privacy / PII expectations |
 | [agents/i18n.md](agents/i18n.md) | Copilot / Claude / Codex | Internationalization expectations |
 | [agents/support.md](agents/support.md) | Copilot / Claude / Codex | Support / triage expectations |
+| [agents/threat-model.md](agents/threat-model.md) | Copilot / Claude / Codex | Lightweight threat modeling |
 | [checklists/definition-of-done.md](checklists/definition-of-done.md) | Humans + agents | Slice Definition of Done |
 | [checklists/pr-self-review.md](checklists/pr-self-review.md) | Humans + agents | Pre-review checklist |
 | [checklists/release.md](checklists/release.md) | Humans + agents | Release / tag checklist |
@@ -42,6 +43,7 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [prompts/refactor-plan.md](prompts/refactor-plan.md) | Copilot / Claude / Codex | Refactor planning prompt |
 | [prompts/privacy-review.md](prompts/privacy-review.md) | Copilot / Claude / Codex | Privacy / PII review prompt |
 | [prompts/support-reply.md](prompts/support-reply.md) | Copilot / Claude / Codex | Support reply drafting prompt |
+| [prompts/threat-model.md](prompts/threat-model.md) | Copilot / Claude / Codex | Threat note drafting prompt |
 | [prompts/pr-review.md](prompts/pr-review.md) | Copilot / Claude / Codex | Generic PR review prompt |
 | [prompts/pr-review-copilot.md](prompts/pr-review-copilot.md) | GitHub Copilot | Copilot-oriented PR review |
 | [prompts/pr-review-claude.md](prompts/pr-review-claude.md) | Claude | Claude-oriented PR review |
