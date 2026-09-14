@@ -119,4 +119,15 @@ echo "$dryd" | grep -q 'would copy agents/core.md -> vendor/g/agents/core.md' ||
 [[ ! -e "$target9/vendor" ]] || fail "dry-run should not create custom dest"
 pass "dry-run custom --dest"
 
+
+# --- api profile nested ---
+target10="$TMP/api"
+mkdir -p "$target10"
+run_install "$target10" --profile api >/dev/null
+[[ -f "$target10/docs/guardrails/agents/api.md" ]] || fail "api missing agents/api.md"
+[[ -f "$target10/docs/guardrails/agents/supply-chain.md" ]] || fail "api missing agents/supply-chain.md"
+[[ -f "$target10/docs/guardrails/checklists/supply-chain.md" ]] || fail "api missing checklists/supply-chain.md"
+[[ -f "$target10/docs/guardrails/prompts/change-impact.md" ]] || fail "api missing prompts/change-impact.md"
+pass "api profile nested"
+
 echo "All install-packs shell tests passed."
