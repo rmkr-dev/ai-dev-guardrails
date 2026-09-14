@@ -82,5 +82,5 @@ Prefer linking rather than inlining:
 
 ## Pack modules (maintainers)
 
-When adding or editing installable packs, update together: the module under `packs/`, `packs/README.md`, `docs/references/pack-matrix.md`, install profiles (`scripts/install-packs.sh` + `src/ai_guardrails/profiles.py`), tests, and CHANGELOG. Newer modules include `cost`, `frontend`, and `governance`. Nested install layout: [docs/references/migrate-nested-install.md](docs/references/migrate-nested-install.md).
+When adding or editing installable packs, update together: the module under `packs/`, `packs/README.md`, `docs/references/pack-matrix.md`, install profiles (`scripts/install-packs.sh` + `src/ai_guardrails/profiles.py` + `--list-profiles`), tests (`test_profiles_sync`, `test_list_profiles_sync`), and CHANGELOG. Prefer high-signal installer/docs/CI work over new packs unless a named profile need is clear ([ADR-008](docs/decisions/ADR-008-v0.4-nested-install-maturity.md)). Nested install layout: [docs/references/migrate-nested-install.md](docs/references/migrate-nested-install.md). Validator check catalogs: keep `docs/architecture/architecture.md` and `docs/references/validator-checks.md` aligned (`test_docs_checks_sync`).
 
