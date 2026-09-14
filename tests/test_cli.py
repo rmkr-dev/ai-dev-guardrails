@@ -116,3 +116,34 @@ def test_check_no_strict_allows_failures(tmp_path: Path) -> None:
     result = runner.invoke(main, ["check", str(tmp_path), "--no-strict"])
     assert result.exit_code == 0
     assert "FAIL" in result.output
+
+
+def test_check_fail_only(tmp_path: Path) -> None:
+    (tmp_path / "README.md").write_text("# only readme\n")
+    runner = CliRunner()
+    result = runner.invoke(main, ["check", str(tmp_path), "--no-strict", "--fail-only"])
+    assert result.exit_code == 0
+    assert "[FAIL]" in result.output
+    assert "[PASS]" not in result.output
+    assert "checks passed" in result.output
+
+
+def test_list_checks_describe() -> None:
+    runner = CliRunner()
+    result = runner.invoke(main, ["list-checks", "--describe"])
+    assert result.exit_code == 0
+    assert "readme —" in result.output
+    assert "Root README.md present" in result.output
+
+
+def test_list_checks_describe_json() -> None:
+    import json
+
+    runner = CliRunner()
+    result = runner.invoke(main, ["list-checks", "--describe", "--format", "json"])
+    assert result.exit_code == 0
+    data = json.loads(result.output)
+    assert data["total"] == len(data["checks"])
+    assert isinstance(data["checks"][0], dict)
+    assert data["checks"][0]["name"] == "agents_md"
+    assert "summary" in data["checks"][0]

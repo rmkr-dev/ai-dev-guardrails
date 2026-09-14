@@ -321,6 +321,32 @@ def check_support(root: Path) -> CheckResult:
     )
 
 
+
+# Short human summaries for `ai-guardrails list-checks` (kept aligned with docs).
+CHECK_SUMMARIES: dict[str, str] = {
+    "agents_md": "Root AGENTS.md present",
+    "readme": "Root README.md present",
+    "architecture_docs": "Architecture docs under docs/architecture/ (or architecture.md)",
+    "tests_or_ci": "Test indicators and/or CI workflow files",
+    "license": "LICENSE / LICENSE.md / COPYING present",
+    "security_md": "Root SECURITY.md present",
+    "codeowners": "CODEOWNERS present (.github/ preferred)",
+    "contributing": "CONTRIBUTING.md present",
+    "gitignore": "Root .gitignore present",
+    "changelog": "CHANGELOG.md / CHANGELOG / HISTORY.md present",
+    "pr_template": "GitHub PR template present",
+    "dependabot": "Dependabot config present",
+    "editorconfig": "Root .editorconfig present",
+    "makefile": "Makefile present",
+    "issue_templates": "GitHub issue templates present",
+    "pre_commit": "pre-commit config present",
+    "code_of_conduct": "CODE_OF_CONDUCT.md present",
+    "funding": ".github/FUNDING.yml present",
+    "citation": "CITATION.cff (or CITATION.md) present",
+    "support": "SUPPORT.md present",
+}
+
+
 DEFAULT_CHECKS = (
     check_agents_md,
     check_readme,

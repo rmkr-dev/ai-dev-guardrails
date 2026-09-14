@@ -197,3 +197,12 @@ def test_makefile_help_mentions_web_and_nested() -> None:
     assert "Nested install" in text
     assert "--no-strict" in text
     assert "docs/references/install.md" in text
+
+
+def test_check_summaries_cover_default_checks() -> None:
+    from ai_guardrails.checks import CHECK_SUMMARIES
+
+    names = _check_names()
+    assert set(CHECK_SUMMARIES) == set(names)
+    for name in names:
+        assert CHECK_SUMMARIES[name].strip(), f"empty summary for {name}"
