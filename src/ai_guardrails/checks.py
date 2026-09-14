@@ -122,6 +122,18 @@ def check_codeowners(root: Path) -> CheckResult:
     )
 
 
+
+def check_contributing(root: Path) -> CheckResult:
+    for name in ("CONTRIBUTING.md", "CONTRIBUTING"):
+        if _exists(root, name):
+            return CheckResult("contributing", True, f"{name} present")
+    return CheckResult(
+        "contributing",
+        False,
+        "missing CONTRIBUTING.md at repository root",
+    )
+
+
 DEFAULT_CHECKS = (
     check_agents_md,
     check_readme,
@@ -130,6 +142,7 @@ DEFAULT_CHECKS = (
     check_license,
     check_security_md,
     check_codeowners,
+    check_contributing,
 )
 
 
