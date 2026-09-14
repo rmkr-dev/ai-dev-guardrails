@@ -19,6 +19,12 @@ echo "$out" | grep -q '^web:' || fail "list-profiles missing web"
 echo "$out" | grep -q 'agents/frontend.md' || fail "list-profiles web missing frontend"
 pass "list-profiles"
 
+ver_out="$(run_install --version)"
+echo "$ver_out" | grep -q '^ai-dev-guardrails ' || fail "version banner"
+pyver="$(sed -n 's/^version *= *"\([^"]*\)".*/\1/p' "$ROOT/pyproject.toml" | head -n1)"
+echo "$ver_out" | grep -q "$pyver" || fail "version != pyproject ($pyver)"
+pass "script --version"
+
 help_out="$(run_install --help 2>&1 || true)"
 # --help exits 0 via usage
 help_out="$(bash "$SCRIPT" --help)"
