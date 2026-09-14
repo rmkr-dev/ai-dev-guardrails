@@ -1,5 +1,8 @@
 # ai-dev-guardrails
 
+[![CI](https://github.com/rmkr-dev/ai-dev-guardrails/actions/workflows/ci.yml/badge.svg)](https://github.com/rmkr-dev/ai-dev-guardrails/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/rmkr-dev/ai-dev-guardrails)](https://github.com/rmkr-dev/ai-dev-guardrails/releases)
+
 Installable AI+human engineering guardrails for **GitHub Copilot**, **Claude**, and **Codex**.
 
 Complements [llm-eval-harness](https://github.com/rmkr-dev/llm-eval-harness) and [enterprise-github-template](https://github.com/rmkr-dev/enterprise-github-template).
