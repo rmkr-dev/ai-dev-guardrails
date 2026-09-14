@@ -42,4 +42,15 @@ head -1 "$target2/docs/guardrails/agents/cost.md" | grep -qi cost || fail "agent
 head -1 "$target2/docs/guardrails/checklists/cost.md" | grep -qi cost || fail "checklist cost header"
 pass "ops cost no collision"
 
+# --- flat leftover warning ---
+target3="$TMP/flatmix"
+mkdir -p "$target3/docs/guardrails"
+# simulate 0.2.x flat leftover
+echo "# old flat core" > "$target3/docs/guardrails/core.md"
+warn="$(run_install "$target3" --profile baseline 2>&1)"
+echo "$warn" | grep -q "flat leftover docs/guardrails/core.md" || fail "missing flat leftover warning"
+[[ -f "$target3/docs/guardrails/agents/core.md" ]] || fail "nested core missing after mix install"
+[[ -f "$target3/docs/guardrails/core.md" ]] || fail "flat leftover should remain (no delete)"
+pass "flat leftover warning"
+
 echo "All install-packs shell tests passed."

@@ -67,6 +67,8 @@ for f in "$DEST"/*.md; do
 done
 ```
 
+After reinstall, `install-packs.sh` prints a **warning** (stderr) when it detects flat `*.md` siblings beside nested copies; it does **not** delete them.
+
 4. Confirm `docs/guardrails/INSTALL_MANIFEST.txt` lists nested destinations (`agents/...`, `checklists/...`, `prompts/...`).
 
 5. Re-run consumer checks if you use the optional validator:
