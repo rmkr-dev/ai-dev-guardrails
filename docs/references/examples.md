@@ -140,6 +140,10 @@ When a PR touches auth, secrets, or CI permissions, paste [`packs/prompts/securi
 
 Use [`pack-matrix.md`](pack-matrix.md) to choose which modules to copy for a given consumer repo.
 
+## Validator check catalog
+
+Full list of default presence checks: [`validator-checks.md`](validator-checks.md).
+
 ## Complements, not duplicates
 
 | Repo | Use instead when you need |
