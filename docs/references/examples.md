@@ -213,3 +213,10 @@ When a PR changes dependencies, CI permissions, or publish steps:
 
 1. Follow [`packs/agents/supply-chain.md`](../../packs/agents/supply-chain.md) and [`packs/agents/deps.md`](../../packs/agents/deps.md).
 2. Run through [`packs/checklists/supply-chain.md`](../../packs/checklists/supply-chain.md).
+
+## Privacy slices
+
+When a PR touches personal data, analytics, or retention:
+
+1. Follow [`packs/agents/privacy.md`](../../packs/agents/privacy.md).
+2. Paste [`packs/prompts/privacy-review.md`](../../packs/prompts/privacy-review.md) into the review chat.
