@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.12] — 2026-09-14
+
+### Added
+
+- `docs/README.md` documentation index; root README links to it
+
 ## [0.4.11] — 2026-09-14
 
 ### Added
