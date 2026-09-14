@@ -40,7 +40,7 @@ help:
 	@echo "Targets: install test check list-checks profiles lint fmt install-packs install-packs-test"
 	@echo "install-packs requires TARGET=/path/to/repo [PROFILE=baseline|api|ops|data|security|web|full]"
 	@echo "  optional: DEST=rel/path DRY_RUN=1 QUIET=1"
-	@echo "Script extras: --dry-run, --list-profiles (see docs/references/install.md)"
+	@echo "Script extras: --dry-run, --quiet, --list-profiles, --version (see docs/references/install.md)"
 	@echo "  Nested install; flat 0.2.x leftovers are warned (not deleted) on install/--dry-run"
 	@echo "  Profiles include web (frontend/a11y/i18n); see docs/references/install.md"
 	@echo "CLI: ai-guardrails profiles | check --only/--skip/--fail-only/--no-strict | list-checks --describe"
