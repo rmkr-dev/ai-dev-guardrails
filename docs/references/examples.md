@@ -124,6 +124,10 @@ cp packs/prompts/pr-review.md \
 
 When adding libraries or Actions, copy [`packs/agents/deps.md`](../../packs/agents/deps.md) beside other agent modules and link it from `AGENTS.md`. Prefer Dependabot for routine bumps; keep the consumer on a single package manager.
 
+## Test plan prompt
+
+Paste [`packs/prompts/test-plan.md`](../../packs/prompts/test-plan.md) when filling the PR Test plan section (works with Copilot, Claude, or Codex).
+
 ## Complements, not duplicates
 
 | Repo | Use instead when you need |

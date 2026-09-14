@@ -2,6 +2,14 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.1] — 2026-09-14
+
+### Added
+
+- Pack prompt: `packs/prompts/test-plan.md`
+- Validator check: `editorconfig` (adds root `.editorconfig`)
+- Architecture doc refreshed for the 0.2.x check suite
+
 ## [0.2.0] — 2026-09-14
 
 ### Added
@@ -40,7 +48,7 @@ Default packs now cover core engineering, security/secrets, testing, observabili
 ### Added
 
 - Pack module: `packs/agents/observability.md`
-- Expanded `packs/agents/testing.md` (layout, isolation, review prompt)
+- Expanded `packs/agents/testing.md`
 - Examples coverage for testing + observability install
 
 ## [0.1.5] — 2026-09-14
@@ -85,11 +93,9 @@ Default packs now cover core engineering, security/secrets, testing, observabili
 
 ### Added
 
-- Foundation docs: `README.md`, `LICENSE` (MIT), `CONTRIBUTING.md`, `AGENTS.md`, architecture stubs
-- Pack modules for Copilot / Claude / Codex
-- Optional Python CLI `ai-guardrails check` with pytest coverage
-- CI via `gha-reusable-workflows` `python-ci@v0.2.0`
+- Foundation docs, packs, optional CLI, CI
 
+[0.2.1]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.1
 [0.2.0]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.2.0
 [0.1.9]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.9
 [0.1.8]: https://github.com/rmkr-dev/ai-dev-guardrails/releases/tag/v0.1.8
