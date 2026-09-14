@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.3.16] — 2026-09-14
+
+### Changed
+
+- CONTRIBUTING: nested install + ADR-008 guidance; prefer installer/docs/CI over pack spam
+- Development docs: nested install / flat leftover warning + list-profiles sync tests
+
 ## [0.3.15] — 2026-09-14
 
 ### Added

@@ -74,7 +74,14 @@ make install-packs TARGET=/path/to/repo PROFILE=api DRY_RUN=1
 make install-packs TARGET=/path/to/repo DEST=vendor/guardrails
 ```
 
+## Nested install and migration
+
+Pack installs preserve `agents/`, `checklists/`, and `prompts/` under the destination (ADR-007). Consumer docs and samples must use nested paths. Flat 0.2.x leftovers are **warned** (not deleted) by `install-packs.sh` on install and `--dry-run`.
+
+- Consumer migration: [migrate-nested-install.md](../references/migrate-nested-install.md)
+- Maturity milestone: [ADR-008](../decisions/ADR-008-v0.4-nested-install-maturity.md)
+
 ## Profile catalog sync
 
-`src/ai_guardrails/profiles.py` must match the arrays in `scripts/install-packs.sh`. CI enforces this via `tests/test_profiles_sync.py`.
+`src/ai_guardrails/profiles.py` must match the arrays in `scripts/install-packs.sh` (`tests/test_profiles_sync.py`). `--list-profiles` text must mention every array pack (`tests/test_list_profiles_sync.py`).
 
