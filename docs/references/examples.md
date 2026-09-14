@@ -136,6 +136,10 @@ See [`sample-agents-md.md`](sample-agents-md.md) for a copy-paste consumer templ
 
 When a PR touches auth, secrets, or CI permissions, paste [`packs/prompts/security-review.md`](../../packs/prompts/security-review.md) into Copilot / Claude / Codex.
 
+## Pack matrix
+
+Use [`pack-matrix.md`](pack-matrix.md) to choose which modules to copy for a given consumer repo.
+
 ## Complements, not duplicates
 
 | Repo | Use instead when you need |

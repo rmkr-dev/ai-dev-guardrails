@@ -13,6 +13,7 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [agents/ci.md](agents/ci.md) | Copilot / Claude / Codex | CI / Actions expectations |
 | [agents/commits.md](agents/commits.md) | Copilot / Claude / Codex | Conventional commit expectations |
 | [agents/deps.md](agents/deps.md) | Copilot / Claude / Codex | Dependency / supply-chain expectations |
+| [agents/performance.md](agents/performance.md) | Copilot / Claude / Codex | Performance expectations |
 | [checklists/definition-of-done.md](checklists/definition-of-done.md) | Humans + agents | Slice Definition of Done |
 | [checklists/pr-self-review.md](checklists/pr-self-review.md) | Humans + agents | Pre-review checklist |
 | [checklists/release.md](checklists/release.md) | Humans + agents | Release / tag checklist |
@@ -29,3 +30,5 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [prompts/pr-review-codex.md](prompts/pr-review-codex.md) | Codex | Codex-oriented PR review |
 
 See [docs/references/examples.md](../docs/references/examples.md) for copy instructions.
+
+See [docs/references/pack-matrix.md](../docs/references/pack-matrix.md) for a install-when matrix.
