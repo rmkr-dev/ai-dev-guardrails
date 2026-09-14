@@ -244,6 +244,19 @@ def check_issue_templates(root: Path) -> CheckResult:
     )
 
 
+
+def check_pre_commit(root: Path) -> CheckResult:
+    """Pass if a pre-commit config file exists at the repository root."""
+    for name in (".pre-commit-config.yaml", ".pre-commit-config.yml"):
+        if _exists(root, name):
+            return CheckResult("pre_commit", True, f"{name} present")
+    return CheckResult(
+        "pre_commit",
+        False,
+        "missing .pre-commit-config.yaml (or .yml)",
+    )
+
+
 DEFAULT_CHECKS = (
     check_agents_md,
     check_readme,
@@ -260,6 +273,7 @@ DEFAULT_CHECKS = (
     check_editorconfig,
     check_makefile,
     check_issue_templates,
+    check_pre_commit,
 )
 
 

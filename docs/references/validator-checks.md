@@ -19,5 +19,6 @@ Default `ai-guardrails check` rules (presence-oriented). Order matches `ai-guard
 | `editorconfig` | Root `.editorconfig` |
 | `makefile` | `Makefile`, `makefile`, or `GNUmakefile` |
 | `issue_templates` | `.github/ISSUE_TEMPLATE/` (markdown or YAML) or root `ISSUE_TEMPLATE.md` |
+| `pre_commit` | Root `.pre-commit-config.yaml` or `.pre-commit-config.yml` |
 
 See [ADR-002](../decisions/ADR-002-expanding-hygiene-checks.md) and [ADR-003](../decisions/ADR-003-pr-template-and-changelog-checks.md).
