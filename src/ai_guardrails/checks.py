@@ -302,6 +302,25 @@ def check_citation(root: Path) -> CheckResult:
     )
 
 
+
+def check_support(root: Path) -> CheckResult:
+    """Pass if a SUPPORT.md (or docs/SUPPORT.md) file exists."""
+    candidates = [
+        "SUPPORT.md",
+        "SUPPORT",
+        ".github/SUPPORT.md",
+        "docs/SUPPORT.md",
+    ]
+    for rel in candidates:
+        if _exists(root, rel):
+            return CheckResult("support", True, f"{rel} present")
+    return CheckResult(
+        "support",
+        False,
+        "missing SUPPORT.md (root or docs/ preferred)",
+    )
+
+
 DEFAULT_CHECKS = (
     check_agents_md,
     check_readme,
@@ -322,6 +341,7 @@ DEFAULT_CHECKS = (
     check_code_of_conduct,
     check_funding,
     check_citation,
+    check_support,
 )
 
 

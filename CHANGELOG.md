@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.33] — 2026-09-14
+
+### Added
+
+- Validator check: `support` (`SUPPORT.md`)
+- Root `SUPPORT.md` for consumer help routing
+
 ## [0.2.32] — 2026-09-14
 
 ### Added
