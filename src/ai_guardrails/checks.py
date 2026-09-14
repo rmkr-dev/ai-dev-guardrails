@@ -204,6 +204,18 @@ def check_editorconfig(root: Path) -> CheckResult:
     )
 
 
+
+def check_makefile(root: Path) -> CheckResult:
+    for name in ("Makefile", "makefile", "GNUmakefile"):
+        if _exists(root, name):
+            return CheckResult("makefile", True, f"{name} present")
+    return CheckResult(
+        "makefile",
+        False,
+        "missing Makefile (or makefile / GNUmakefile)",
+    )
+
+
 DEFAULT_CHECKS = (
     check_agents_md,
     check_readme,
@@ -218,6 +230,7 @@ DEFAULT_CHECKS = (
     check_pr_template,
     check_dependabot,
     check_editorconfig,
+    check_makefile,
 )
 
 
