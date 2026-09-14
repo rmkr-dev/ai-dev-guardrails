@@ -28,3 +28,4 @@ fmt:
 help:
 	@echo "Targets: install test check list-checks lint fmt install-packs"
 	@echo "install-packs requires TARGET=/path/to/repo [PROFILE=baseline|api|ops|data|security|full]"
+	@echo "Script extras: --dry-run, --list-profiles (see docs/references/install.md)"
