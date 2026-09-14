@@ -83,6 +83,23 @@ jobs:
 
 Add a step in a custom workflow if you need `ai-guardrails check` explicitly beyond pytest.
 
+## Testing and observability checklists
+
+Copy into PR templates or link from `AGENTS.md`:
+
+- [`packs/checklists/testing.md`](../../packs/checklists/testing.md)
+- [`packs/checklists/observability.md`](../../packs/checklists/observability.md)
+
+```bash
+cp packs/checklists/testing.md packs/checklists/observability.md \
+   "$TARGET/docs/guardrails/"
+```
+
+Use alongside the agent modules:
+
+- [`packs/agents/testing.md`](../../packs/agents/testing.md)
+- [`packs/agents/observability.md`](../../packs/agents/observability.md)
+
 ## PR review prompts (Copilot / Claude / Codex)
 
 Copy or `@`-mention the tool-specific prompt when reviewing a PR:
