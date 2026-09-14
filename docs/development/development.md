@@ -65,3 +65,12 @@ make install-packs-test
 
 Covered automatically via `tests/test_install_packs_sh.py` in the default pytest CI job.
 
+## Make install helpers
+
+```bash
+make profiles
+make install-packs TARGET=/path/to/repo PROFILE=ops
+make install-packs TARGET=/path/to/repo PROFILE=api DRY_RUN=1
+make install-packs TARGET=/path/to/repo DEST=vendor/guardrails
+```
+

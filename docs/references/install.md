@@ -8,6 +8,7 @@ From a checkout of **ai-dev-guardrails**:
 
 ```bash
 bash scripts/install-packs.sh /path/to/consumer-repo
+# or: make install-packs TARGET=/path/to/consumer-repo PROFILE=api DRY_RUN=1
 bash scripts/install-packs.sh /path/to/consumer-repo --profile api
 bash scripts/install-packs.sh /path/to/consumer-repo --profile ops
 bash scripts/install-packs.sh /path/to/consumer-repo --profile security
