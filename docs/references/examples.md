@@ -144,6 +144,10 @@ Use [`pack-matrix.md`](pack-matrix.md) to choose which modules to copy for a giv
 
 Full list of default presence checks: [`validator-checks.md`](validator-checks.md).
 
+## Release notes prompt
+
+Paste [`packs/prompts/release-notes.md`](../../packs/prompts/release-notes.md) when drafting a GitHub Release from CHANGELOG.
+
 ## Complements, not duplicates
 
 | Repo | Use instead when you need |
