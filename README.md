@@ -9,11 +9,11 @@ Distilled from personal engineering standards. Complements (does not duplicate):
 
 ## Status
 
-Pack modules, the **`ai-guardrails`** CLI, and GitHub Actions CI (via `gha-reusable-workflows` `python-ci@v0.2.0`) are in place. Examples, ADR-001, CHANGELOG, and the `v0.1.0` tag follow next.
+**v0.1.0** — packs, validator CLI, and CI are available. See [CHANGELOG.md](CHANGELOG.md).
 
 ## Packs (copy into a consumer repo)
 
-See [packs/README.md](packs/README.md).
+See [packs/README.md](packs/README.md) and [docs/references/examples.md](docs/references/examples.md).
 
 | Module | Use |
 | --- | --- |
@@ -39,6 +39,10 @@ Checks: `AGENTS.md`, `README.md`, architecture docs, and tests **or** CI indicat
 - [CODEOWNERS](.github/CODEOWNERS) → `@rmkr-dev`
 - [SECURITY.md](SECURITY.md) for private vulnerability reports
 
+## Decisions
+
+- [ADR-001: Pack modules plus an optional Python validator](docs/decisions/ADR-001-pack-plus-optional-validator.md)
+
 ## Layout
 
 | Path | Role |
@@ -48,6 +52,8 @@ Checks: `AGENTS.md`, `README.md`, architecture docs, and tests **or** CI indicat
 | `src/ai_guardrails/` | Hygiene CLI |
 | `tests/` | Pytest coverage |
 | `docs/architecture/` | Current-state architecture |
+| `docs/references/examples.md` | How to copy packs into a repo |
+| `docs/decisions/` | ADRs |
 | `.github/` | CI, Dependabot, CODEOWNERS |
 
 ## License

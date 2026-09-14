@@ -12,6 +12,4 @@ ADRs record significant choices for **ai-dev-guardrails**.
 
 | ADR | Title | Status |
 | --- | --- | --- |
-| — | *None yet* | — |
-
-First ADRs will cover pack layout and the optional Python validator when those slices ship.
+| [ADR-001](ADR-001-pack-plus-optional-validator.md) | Pack modules plus an optional Python validator | Accepted |
