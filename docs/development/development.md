@@ -13,6 +13,9 @@ Requires Python 3.11+.
 ## Checks
 
 ```bash
+make test
+make check
+# or:
 pytest -q
 ai-guardrails list-checks
 ai-guardrails check .
