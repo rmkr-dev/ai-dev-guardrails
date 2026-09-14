@@ -74,6 +74,7 @@ ops: (baseline +)
   checklists/observability.md
   checklists/accessibility.md
   checklists/resilience.md
+  checklists/cost.md
 
 data: (baseline +)
   agents/data.md
