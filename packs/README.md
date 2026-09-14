@@ -33,6 +33,7 @@ Copyable modules for **GitHub Copilot**, **Claude**, and **Codex** (and humans r
 | [prompts/incident-response.md](prompts/incident-response.md) | Copilot / Claude / Codex | Incident response drafting prompt |
 | [prompts/runbook-draft.md](prompts/runbook-draft.md) | Copilot / Claude / Codex | Runbook drafting prompt |
 | [prompts/migration-review.md](prompts/migration-review.md) | Copilot / Claude / Codex | Migration / schema review prompt |
+| [prompts/refactor-plan.md](prompts/refactor-plan.md) | Copilot / Claude / Codex | Refactor planning prompt |
 | [prompts/pr-review.md](prompts/pr-review.md) | Copilot / Claude / Codex | Generic PR review prompt |
 | [prompts/pr-review-copilot.md](prompts/pr-review-copilot.md) | GitHub Copilot | Copilot-oriented PR review |
 | [prompts/pr-review-claude.md](prompts/pr-review-claude.md) | Claude | Claude-oriented PR review |
