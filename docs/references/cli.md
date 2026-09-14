@@ -16,7 +16,7 @@ Run the default presence checks against `PATH`.
 | `--skip name,name` | *(none)* | Omit these check names |
 | `--fail-only` | off | Text mode: print only failing checks (summary still shown) |
 
-JSON shape: `root`, `passed`, `failed`, `total`, `checks[{name,ok,detail}]`.
+JSON shape: `version`, `root`, `passed`, `failed`, `total`, `checks[{name,ok,detail}]`.
 
 Examples:
 
@@ -45,6 +45,8 @@ Print install profile pack lists (mirrors `scripts/install-packs.sh --list-profi
 | --- | --- | --- |
 | `--format text\|json` | `text` | Human catalog or JSON |
 | `--profile NAME` | *(all)* | Restrict to one profile |
+
+Text mode prints `(N packs)` per named profile. JSON adds a sibling `counts` map (`null` for `full`); `profiles` values stay list-or-string for compatibility.
 
 ```bash
 ai-guardrails list-checks --describe

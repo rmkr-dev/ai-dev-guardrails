@@ -14,6 +14,9 @@ All notable changes to **ai-dev-guardrails** are documented here.
 - Install manifest: `source:` (pyproject version) and `categories:` counts
 - Makefile: `QUIET=1` for `install-packs`
 
+- CLI: `profiles` text shows `(N packs)`; JSON adds sibling `counts` map (compat)
+- CLI: `check --format json` includes `version`
+
 ### Changed
 
 - Consolidated catalog sync tests into `tests/test_catalog_sync.py` (fewer one-off sync modules)
