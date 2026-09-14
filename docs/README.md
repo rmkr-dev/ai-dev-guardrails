@@ -25,3 +25,7 @@ Index for **ai-dev-guardrails** docs (no Node/npm).
 | [decisions/README.md](decisions/README.md) | ADR index (through ADR-008) |
 
 Root entry points: [README.md](../README.md), [AGENTS.md](../AGENTS.md), [CHANGELOG.md](../CHANGELOG.md).
+
+## Sync tests (maintainers)
+
+Pytest keeps catalogs honest: `test_docs_checks_sync`, `test_migrate_mapping_sync`, `test_version_sync`, `test_install_docs_profiles_sync`, `test_profiles_sync`, `test_list_profiles_sync`. See [development/development.md](development/development.md).
