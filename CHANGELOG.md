@@ -2,6 +2,12 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.4.27] — 2026-09-14
+
+### Added
+
+- Test: `test_profiles_docs_sync` keeps profiles.md documenting every `PROFILE_NAMES` entry
+
 ## [0.4.26] — 2026-09-14
 
 ### Added
