@@ -2,6 +2,13 @@
 
 All notable changes to **ai-dev-guardrails** are documented here.
 
+## [0.2.32] — 2026-09-14
+
+### Added
+
+- `docs/references/enterprise-github-template.md` integration guide
+- Cross-links from README, install, examples, and pack-matrix
+
 ## [0.2.31] — 2026-09-14
 
 ### Added
