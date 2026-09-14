@@ -12,8 +12,18 @@ Run the default presence checks against `PATH`.
 | --- | --- | --- |
 | `--strict` / `--no-strict` | `--strict` | Exit `1` if any check fails |
 | `--format text\|json` | `text` | Human lines or JSON document |
+| `--only name,name` | *(all)* | Run only these check names |
+| `--skip name,name` | *(none)* | Omit these check names |
 
 JSON shape: `root`, `passed`, `failed`, `total`, `checks[{name,ok,detail}]`.
+
+Examples:
+
+```bash
+ai-guardrails check . --only readme,license,agents_md
+ai-guardrails check . --skip funding,citation
+ai-guardrails check . --format json --only readme
+```
 
 ### `ai-guardrails list-checks`
 

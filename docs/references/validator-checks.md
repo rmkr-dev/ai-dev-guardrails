@@ -35,3 +35,13 @@ See [ADR-002](../decisions/ADR-002-expanding-hygiene-checks.md) and [ADR-003](..
 List names only: `ai-guardrails list-checks` or `ai-guardrails list-checks --format json`.
 
 CLI flags: [cli.md](cli.md).
+
+## Selecting checks
+
+```bash
+ai-guardrails check . --only readme,license,agents_md
+ai-guardrails check . --skip funding,citation
+```
+
+See [cli.md](cli.md).
+
