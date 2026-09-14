@@ -10,19 +10,19 @@ Read this before changing this repository. Rules apply to people and coding agen
 
 ## Packs in use
 
-- [Core](docs/guardrails/core.md)
-- [Security](docs/guardrails/security.md)
-- [Secrets](docs/guardrails/secrets.md)
-- [Testing](docs/guardrails/testing.md)
+- [Core](docs/guardrails/agents/core.md)
+- [Security](docs/guardrails/agents/security.md)
+- [Secrets](docs/guardrails/agents/secrets.md)
+- [Testing](docs/guardrails/agents/testing.md)
 - [Observability](docs/guardrails/observability.md)
 - [Deps](docs/guardrails/deps.md)
 - [API / contracts](docs/guardrails/api.md)
 - [Incidents](docs/guardrails/incidents.md)
-- [Definition of Done](docs/guardrails/definition-of-done.md)
+- [Definition of Done](docs/guardrails/checklists/definition-of-done.md)
 
 ## Prompts
 
-- Change impact: `docs/guardrails/change-impact.md`
+- Change impact: `docs/guardrails/prompts/change-impact.md`
 - PR body: `docs/guardrails/pr-body.md`
 - PR review: `docs/guardrails/pr-review.md` (or tool-specific variants)
 - Test plan: `docs/guardrails/test-plan.md`

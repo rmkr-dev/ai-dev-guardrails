@@ -39,12 +39,12 @@ Then add a short pointer in the consumer `AGENTS.md`:
 ```markdown
 ## Guardrail packs
 
-- [Core](docs/guardrails/core.md)
-- [Security](docs/guardrails/security.md)
-- [Testing](docs/guardrails/testing.md)
-- [Observability](docs/guardrails/observability.md)
-- [Definition of Done](docs/guardrails/definition-of-done.md)
-- [Change impact prompt](docs/guardrails/change-impact.md)
+- [Core](docs/guardrails/agents/core.md)
+- [Security](docs/guardrails/agents/security.md)
+- [Testing](docs/guardrails/agents/testing.md)
+- [Observability](docs/guardrails/agents/observability.md)
+- [Definition of Done](docs/guardrails/checklists/definition-of-done.md)
+- [Change impact prompt](docs/guardrails/prompts/change-impact.md)
 ```
 
 ## Definition of Done in PRs
@@ -263,4 +263,8 @@ bash scripts/install-packs.sh /path/to/template-derived-repo --profile baseline
 ```
 
 Keep the template `AGENTS.md` and link packs under `docs/guardrails/`. Full pairing notes: [enterprise-github-template.md](enterprise-github-template.md).
+
+## Nested install layout (v0.3+)
+
+`install-packs.sh` preserves `agents/`, `checklists/`, and `prompts/` under the destination so same-basename modules do not collide. Link the nested paths from `AGENTS.md` (see [install.md](install.md)).
 

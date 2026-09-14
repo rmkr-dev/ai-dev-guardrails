@@ -15,7 +15,8 @@ Usage:
   bash scripts/install-packs.sh TARGET_REPO [--profile NAME] [--dest RELDIR] [--dry-run]
   bash scripts/install-packs.sh --list-profiles
 
-Copies markdown packs from this repository into TARGET_REPO/RELDIR (default: docs/guardrails).
+Copies markdown packs from this repository into TARGET_REPO/RELDIR (default: docs/guardrails),
+preserving agents|checklists|prompts/ relative paths (avoids basename collisions).
 Writes INSTALL_MANIFEST.txt in the destination listing profile and copied files.
 
 Profiles:
@@ -236,8 +237,7 @@ if [[ "$DRY_RUN" -eq 1 ]]; then
       echo "MISSING $rel" >&2
       continue
     fi
-    base="$(basename "$rel")"
-    echo "would copy $rel -> $DEST_REL/$base"
+    echo "would copy $rel -> $DEST_REL/$rel"
   done
   echo "would write $DEST_REL/INSTALL_MANIFEST.txt"
   exit 0
@@ -252,10 +252,11 @@ for rel in "${selected[@]}"; do
     echo "skip missing pack: $rel" >&2
     continue
   fi
-  base="$(basename "$rel")"
-  cp "$src" "$DEST/$base"
-  echo "copied $rel -> $DEST_REL/$base"
-  manifest_lines+=("$rel -> $DEST_REL/$base")
+  dest_file="$DEST/$rel"
+  mkdir -p "$(dirname "$dest_file")"
+  cp "$src" "$dest_file"
+  echo "copied $rel -> $DEST_REL/$rel"
+  manifest_lines+=("$rel -> $DEST_REL/$rel")
   copied=$((copied + 1))
 done
 

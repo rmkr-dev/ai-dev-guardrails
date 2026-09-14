@@ -19,9 +19,9 @@ bash scripts/install-packs.sh /path/to/new-repo --profile baseline
 ```markdown
 ## Guardrail packs
 
-- [Core](docs/guardrails/core.md)
-- [Security](docs/guardrails/security.md)
-- [Definition of Done](docs/guardrails/definition-of-done.md)
+- [Core](docs/guardrails/agents/core.md)
+- [Security](docs/guardrails/agents/security.md)
+- [Definition of Done](docs/guardrails/checklists/definition-of-done.md)
 ```
 
 4. Optionally install the validator and run in CI:
