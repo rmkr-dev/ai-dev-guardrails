@@ -194,6 +194,16 @@ def check_dependabot(root: Path) -> CheckResult:
     )
 
 
+
+def check_editorconfig(root: Path) -> CheckResult:
+    ok = _exists(root, ".editorconfig")
+    return CheckResult(
+        "editorconfig",
+        ok,
+        ".editorconfig present" if ok else "missing .editorconfig at repository root",
+    )
+
+
 DEFAULT_CHECKS = (
     check_agents_md,
     check_readme,
@@ -207,6 +217,7 @@ DEFAULT_CHECKS = (
     check_changelog,
     check_pr_template,
     check_dependabot,
+    check_editorconfig,
 )
 
 

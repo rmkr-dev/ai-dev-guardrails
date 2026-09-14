@@ -7,6 +7,7 @@ import pytest
 from ai_guardrails.checks import (
     check_changelog,
     check_dependabot,
+    check_editorconfig,
     check_gitignore,
     check_pr_template,
     run_checks,
@@ -28,6 +29,7 @@ def _seed_all(tmp_path: Path) -> None:
     _touch(tmp_path / ".github" / "CODEOWNERS", "* @rmkr-dev\n")
     _touch(tmp_path / ".github" / "PULL_REQUEST_TEMPLATE.md", "## Summary\n")
     _touch(tmp_path / ".github" / "dependabot.yml", "version: 2\n")
+    _touch(tmp_path / ".editorconfig", "root = true\n")
 
 
 def test_gitignore(tmp_path: Path) -> None:
@@ -56,7 +58,14 @@ def test_pr_template_dir(tmp_path: Path) -> None:
 def test_dependabot(tmp_path: Path) -> None:
     assert check_dependabot(tmp_path).ok is False
     _touch(tmp_path / ".github" / "dependabot.yml", "version: 2\n")
+    _touch(tmp_path / ".editorconfig", "root = true\n")
     assert check_dependabot(tmp_path).ok is True
+
+
+def test_editorconfig(tmp_path: Path) -> None:
+    assert check_editorconfig(tmp_path).ok is False
+    _touch(tmp_path / ".editorconfig", "root = true\n")
+    assert check_editorconfig(tmp_path).ok is True
 
 
 def test_run_checks_all_pass(tmp_path: Path) -> None:
@@ -68,7 +77,8 @@ def test_run_checks_all_pass(tmp_path: Path) -> None:
     assert "changelog" in names
     assert "pr_template" in names
     assert "dependabot" in names
-    assert len(results) == 12
+    assert "editorconfig" in names
+    assert len(results) == 13
 
 
 def test_run_checks_rejects_file(tmp_path: Path) -> None:
